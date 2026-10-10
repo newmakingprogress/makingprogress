@@ -98,6 +98,24 @@ nav{position:sticky;top:0;z-index:50;background:color-mix(in srgb,var(--bg) 92%,
 .flow-step span{font-size:13px;color:var(--muted)}
 
 
+
+/* secciones plegables */
+section.acc{padding:0;background:var(--bg)}
+section.acc .wrap{padding-top:0;padding-bottom:0}
+.acc-h{width:100%;display:flex;justify-content:space-between;align-items:center;gap:24px;background:none;border:none;color:var(--ink);text-align:left;cursor:pointer;padding:34px 0;font-family:inherit}
+.acc-h .eyebrow{margin-bottom:8px;display:block}
+.acc-t{display:block;font-size:clamp(22px,3vw,32px);font-weight:800;letter-spacing:-.025em;line-height:1.15;max-width:760px}
+.acc-ic,.more-btn .ic{flex-shrink:0;width:36px;height:36px;border-radius:50%;border:1.5px solid var(--line);display:grid;place-items:center;font-size:20px;color:var(--accent);transition:transform .25s,background .2s,color .2s,border-color .2s}
+.acc-h:hover .acc-ic{border-color:var(--accent)}
+[aria-expanded="true"] .acc-ic,[aria-expanded="true"] .ic{transform:rotate(45deg);background:var(--accent);color:var(--accent-ink);border-color:var(--accent)}
+.acc-p,.case-more{display:grid;grid-template-rows:0fr;transition:grid-template-rows .35s ease}
+.acc-p.open,.case-more.open{grid-template-rows:1fr}
+.acc-in{overflow:hidden;min-height:0}
+.acc-in>.lead{margin-top:0}
+.acc-p.open .acc-in{padding-bottom:56px}
+.more-btn{display:inline-flex;align-items:center;gap:10px;background:none;border:none;color:var(--accent);font:600 15px 'Inter',sans-serif;cursor:pointer;padding:4px 0;margin:2px 0 14px}
+.more-btn .ic{width:26px;height:26px;font-size:16px}
+.case-more .case-more-in{overflow:hidden;min-height:0}
 /* visual animado del hero */
 .viz{position:relative}
 .viz svg{width:100%;height:auto;display:block;overflow:visible}
@@ -342,8 +360,9 @@ footer{padding:40px 0 48px;border-top:1px solid var(--line);font-size:14px;color
       <div class="case-body">
         <div class="badges"><span class="badge live">En producción</span><span class="badge">Web</span><span class="badge">Meta Ads</span><span class="badge">Hecho para Genuine Reach</span></div>
         <h3>Un programa online con una landing que vende y campañas en dos países</h3>
-        <p><b>Punto de partida:</b> un programa de hipnoparto (RE-NACER, de Positive Mama) que necesitaba una página de venta clara y anuncios que trajeran mujeres interesadas.</p>
-        <p><b>Qué hicimos:</b> armamos la landing de venta completa y las campañas de Meta: conjuntos de anuncios y anuncios, en Argentina y México.</p>
+        <button class="more-btn" type="button" aria-expanded="false" aria-controls="m-1">Cómo lo hicimos <span class="ic" aria-hidden="true">+</span></button>
+        <div class="case-more" id="m-1" inert><div class="case-more-in"><p><b>Punto de partida:</b> un programa de hipnoparto (RE-NACER, de Positive Mama) que necesitaba una página de venta clara y anuncios que trajeran mujeres interesadas.</p>
+        <p><b>Qué hicimos:</b> armamos la landing de venta completa y las campañas de Meta: conjuntos de anuncios y anuncios, en Argentina y México.</p></div></div>
         <div class="case-metric"><b>2 países</b><span>Campañas gestionadas en Argentina y México</span></div>
         <a class="link" href="https://positivemama.org/parto-positivo-re-nacer/" target="_blank" rel="noopener">Ver sitio →</a>
       </div>
@@ -354,8 +373,9 @@ footer{padding:40px 0 48px;border-top:1px solid var(--line);font-size:14px;color
       <div class="case-body">
         <div class="badges"><span class="badge live">En producción</span><span class="badge">Web</span><span class="badge">Registro</span><span class="badge">Hecho para Genuine Reach</span></div>
         <h3>Una landing con registro que termina en una bienvenida</h3>
-        <p><b>Punto de partida:</b> Hipnoparto Internacional quería que profesionales se anotaran a una masterclass gratuita, en una página que transmitiera la calidad de la marca y que después de registrarse les dijera qué hacer.</p>
-        <p><b>Qué hicimos:</b> desarrollamos una landing con formulario de registro muy cuidada, con los colores, el logo y las redes de la marca, y un aviso fijo con fecha y botón de reserva. Al registrarse, la persona pasa a una página de gracias con un video de agradecimiento, el número de contacto y el enlace directo al grupo de Hipnoparto.</p>
+        <button class="more-btn" type="button" aria-expanded="false" aria-controls="m-2">Cómo lo hicimos <span class="ic" aria-hidden="true">+</span></button>
+        <div class="case-more" id="m-2" inert><div class="case-more-in"><p><b>Punto de partida:</b> Hipnoparto Internacional quería que profesionales se anotaran a una masterclass gratuita, en una página que transmitiera la calidad de la marca y que después de registrarse les dijera qué hacer.</p>
+        <p><b>Qué hicimos:</b> desarrollamos una landing con formulario de registro muy cuidada, con los colores, el logo y las redes de la marca, y un aviso fijo con fecha y botón de reserva. Al registrarse, la persona pasa a una página de gracias con un video de agradecimiento, el número de contacto y el enlace directo al grupo de Hipnoparto.</p></div></div>
         <div class="case-metric"><b>Registro → Video → Grupo</b><span>Un recorrido completo: la persona se registra, recibe la bienvenida y entra a la comunidad</span></div>
         <a class="link" href="https://www.hipnopartointernacional.com/registro-profesional" target="_blank" rel="noopener">Ver sitio →</a>
       </div>
@@ -368,10 +388,10 @@ footer{padding:40px 0 48px;border-top:1px solid var(--line);font-size:14px;color
 </section>
 
 <!-- 5. SISTEMA -->
-<section id="sistema">
+<section class="acc" id="sistema">
   <div class="wrap">
-    <p class="eyebrow">Sistema Making Progress</p>
-    <h2>Lo que se repite entre nuestros proyectos no es el diseño: es la forma</h2>
+    <button class="acc-h" type="button" aria-expanded="false" aria-controls="p-sistema"><span><span class="eyebrow">Sistema Making Progress</span><span class="acc-t">Lo que se repite entre nuestros proyectos no es el diseño: es la forma</span></span><span class="acc-ic" aria-hidden="true">+</span></button>
+    <div class="acc-p" id="p-sistema" inert><div class="acc-in">
     <p class="lead">Un negocio que mucha gente todavía no conoce se muestra, se encuentra, conversa y se mantiene. Cada etapa se puede trabajar por separado o en conjunto.</p>
     <div class="sys">
       <div class="sys-col"><div class="sys-n">01</div><h3>Captar</h3><p>Campañas de Meta: estructura, conjuntos de anuncios y anuncios que llevan a las personas correctas.</p></div>
@@ -380,14 +400,15 @@ footer{padding:40px 0 48px;border-top:1px solid var(--line);font-size:14px;color
       <div class="sys-col"><div class="sys-n">04</div><h3>Comunidad</h3><p>Creación y publicación de contenido, y community management.</p></div>
       <div class="sys-col"><div class="sys-n">05</div><h3>Mantener</h3><p>Cuidamos lo que construimos: al día, seguro y funcionando.</p></div>
     </div>
+    </div></div>
   </div>
 </section>
 
 <!-- 6. MANTENIMIENTO -->
-<section class="alt" id="mantenimiento">
+<section class="acc" id="mantenimiento">
   <div class="wrap">
-    <p class="eyebrow">Mantenimiento</p>
-    <h2>Una web publicada no es una web terminada</h2>
+    <button class="acc-h" type="button" aria-expanded="false" aria-controls="p-mantenimiento"><span><span class="eyebrow">Mantenimiento</span><span class="acc-t">Una web publicada no es una web terminada</span></span><span class="acc-ic" aria-hidden="true">+</span></button>
+    <div class="acc-p" id="p-mantenimiento" inert><div class="acc-in">
     <p class="lead">Parte de nuestro trabajo es seguir cuidando lo que construimos: que cargue rápido, esté al día y funcione.</p>
     <div class="mant" style="grid-template-columns:1fr;max-width:640px">
       <ul class="checks">
@@ -398,28 +419,30 @@ footer{padding:40px 0 48px;border-top:1px solid var(--line);font-size:14px;color
         <li><div>Reporte mensual<small>Te contamos qué hicimos y cómo se comportó tu web.</small></div></li>
       </ul>
     </div>
+    </div></div>
   </div>
 </section>
 
 <!-- 8. CÓMO TRABAJAMOS -->
-<section id="proceso">
+<section class="acc" id="proceso">
   <div class="wrap">
-    <p class="eyebrow">Cómo trabajamos</p>
-    <h2>Cuatro pasos, sin sorpresas</h2>
+    <button class="acc-h" type="button" aria-expanded="false" aria-controls="p-proceso"><span><span class="eyebrow">Cómo trabajamos</span><span class="acc-t">Cuatro pasos, sin sorpresas</span></span><span class="acc-ic" aria-hidden="true">+</span></button>
+    <div class="acc-p" id="p-proceso" inert><div class="acc-in">
     <div class="steps">
       <div class="step"><div class="step-n">01</div><h3>Diagnóstico</h3><p>Una charla corta para entender tu negocio, a quién le vendés y qué necesitás.</p></div>
       <div class="step"><div class="step-n">02</div><h3>Propuesta</h3><p>Te contamos por escrito qué haríamos y en qué plazos.</p></div>
       <div class="step"><div class="step-n">03</div><h3>Construcción</h3><p>Armamos la web y las campañas. Revisás y ajustamos antes de publicar.</p></div>
       <div class="step"><div class="step-n">04</div><h3>Lanzamiento y mantenimiento</h3><p>Publicamos, medimos y seguimos mejorando mes a mes.</p></div>
     </div>
+    </div></div>
   </div>
 </section>
 
 <!-- 9. EQUIPO -->
-<section id="equipo">
+<section class="acc" id="equipo">
   <div class="wrap">
-    <p class="eyebrow">Sobre nosotros</p>
-    <h2>Dos socios, a partes iguales</h2>
+    <button class="acc-h" type="button" aria-expanded="false" aria-controls="p-equipo"><span><span class="eyebrow">Sobre nosotros</span><span class="acc-t">Dos socios, a partes iguales</span></span><span class="acc-ic" aria-hidden="true">+</span></button>
+    <div class="acc-p" id="p-equipo" inert><div class="acc-in">
     <p class="lead">Making Progress la lideramos los dos, 50 y 50. Nos complementamos: cada uno cubre lo que el otro no, y todo proyecto pasa por los dos.</p>
     <div class="about-text">
       <p><b>Somos Mateo y Santiago.</b> Mateo nació en Bariloche y Santiago en Capital Federal; hoy vivimos los dos en Entre Ríos y nos conocemos desde hace años. Hacemos marketing para negocios y profesionales: webs, campañas de Meta, setting y contenido.</p>
@@ -434,6 +457,7 @@ footer{padding:40px 0 48px;border-top:1px solid var(--line);font-size:14px;color
         <div><h3>Santiago Pica</h3><div class="role">Socio · Conversaciones y comunidad</div><p>Inicia las conversaciones con los clientes, organiza los archivos y los pendientes y lleva el community management de Making Progress.</p></div>
       </article>
     </div>
+    </div></div>
   </div>
 </section>
 
@@ -490,7 +514,28 @@ document.querySelectorAll(".js-ig").forEach(function(a){a.href = CONTACTO.instag
 var m = document.getElementById("mail-btn"); if(m) m.href = "mailto:" + CONTACTO.email;
 document.querySelectorAll(".js-mail").forEach(function(a){a.href = "mailto:" + CONTACTO.email;});
 
-/* FAQ */
+
+/* plegables: secciones y detalle de casos */
+function setOpen(btn,open){
+  var t=document.getElementById(btn.getAttribute('aria-controls')); if(!t) return;
+  t.classList.toggle('open',open); btn.setAttribute('aria-expanded',open?'true':'false');
+  if(open) t.removeAttribute('inert'); else t.setAttribute('inert','');
+}
+document.querySelectorAll('.acc-h,.more-btn').forEach(function(b){
+  b.addEventListener('click',function(){ setOpen(b,b.getAttribute('aria-expanded')!=='true'); });
+});
+function openFromHash(){
+  var id=location.hash.slice(1); if(!id) return;
+  var el=document.getElementById(id);
+  if(el && el.classList.contains('acc')){ setOpen(el.querySelector('.acc-h'),true); setTimeout(function(){el.scrollIntoView({behavior:'smooth',block:'start'});},60); }
+}
+window.addEventListener('hashchange',openFromHash); openFromHash();
+document.addEventListener('click',function(e){
+  var a=e.target.closest('a[href^="#"]'); if(!a) return;
+  var el=document.getElementById(a.getAttribute('href').slice(1));
+  if(el && el.classList.contains('acc')) setOpen(el.querySelector('.acc-h'),true);
+});
+/* FAQ (sin uso) */
 document.querySelectorAll('.fq').forEach(function(b){
   b.addEventListener('click', function(){
     var item = b.parentElement, open = item.classList.contains('open');
