@@ -1,0 +1,544 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Making Progress · Webs, campañas y ventas</title>
+<meta name="description" content="Diseñamos tu web, la mantenemos, la llenamos de visitas con campañas de Meta y convertimos las consultas en clientes.">
+<link rel="icon" type="image/png" href="assets/monograma-azul.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+
+:root{
+  --bg:#FAFAF8;
+  --bg-alt:#F1F1EC;
+  --surface:#FFFFFF;
+  --ink:#111111;
+  --contact-bg:#111111;--contact-fg:#FAFAF8;
+  --muted:#5C5C66;
+  --line:#DEDED6;
+  --accent:#2447F5;          /* color de marca: cambiá este valor y cambia toda la web */
+  --accent-ink:#FFFFFF;
+  --accent-soft:#E6EBFF;
+  --ok:#0E8F5B;
+  --maxw:1160px;
+}
+@media (prefers-color-scheme:dark){
+  :root:not([data-theme="light"]){
+    --bg:#0E0E10;--bg-alt:#161619;--surface:#1B1B1F;--ink:#F2F2EE;--muted:#A0A0AA;--contact-bg:#1B1B1F;--contact-fg:#F2F2EE;
+    --line:#2C2C32;--accent:#6C86FF;--accent-ink:#0E0E10;--accent-soft:#1D2347;--ok:#3DD598;
+  }
+}
+:root[data-theme="dark"]{
+  --bg:#0E0E10;--bg-alt:#161619;--surface:#1B1B1F;--ink:#F2F2EE;--muted:#A0A0AA;--contact-bg:#1B1B1F;--contact-fg:#F2F2EE;
+  --line:#2C2C32;--accent:#6C86FF;--accent-ink:#0E0E10;--accent-soft:#1D2347;--ok:#3DD598;
+}
+
+html{scroll-behavior:smooth;scroll-padding-top:72px}
+html,body{overflow-x:hidden}
+body{font-family:'Inter',system-ui,sans-serif;background:var(--bg);color:var(--ink);line-height:1.6;-webkit-font-smoothing:antialiased}
+a{color:inherit}
+img,svg{max-width:100%;display:block}
+
+.wrap{max-width:var(--maxw);margin:0 auto;padding:0 24px}
+section{padding:96px 0;border-top:1px solid var(--line)}
+section.alt{background:var(--bg-alt)}
+.eyebrow{font-size:12px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--accent);margin-bottom:14px}
+h1,h2,h3{letter-spacing:-.025em;line-height:1.1}
+h2{font-size:clamp(28px,4vw,44px);font-weight:800;max-width:760px;margin-bottom:16px}
+.lead{font-size:18px;color:var(--muted);max-width:640px}
+
+/* botones */
+.btn{display:inline-flex;align-items:center;gap:8px;padding:14px 26px;border-radius:10px;font-weight:600;font-size:15px;text-decoration:none;border:1.5px solid transparent;transition:transform .15s,background .15s,border-color .15s;cursor:pointer}
+.btn-primary{background:var(--accent);color:var(--accent-ink)}
+.btn-primary:hover{transform:translateY(-1px);filter:brightness(1.08)}
+.btn-ghost{border-color:var(--line);background:var(--surface)}
+.btn-ghost:hover{border-color:var(--ink)}
+.btn:focus-visible,a:focus-visible,button:focus-visible{outline:3px solid var(--accent);outline-offset:3px}
+
+/* nav */
+nav{position:sticky;top:0;z-index:50;background:color-mix(in srgb,var(--bg) 92%,transparent);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+.nav-in{display:flex;align-items:center;justify-content:space-between;height:64px}
+.logo{font-family:'Playfair Display',Georgia,serif;font-weight:700;letter-spacing:.06em;text-transform:uppercase;font-size:15px;text-decoration:none;display:flex;align-items:center;gap:12px}
+.logo img{height:26px;width:auto}
+.foot-logo{height:84px;width:auto;margin-bottom:14px}
+.nav-links{display:flex;align-items:center;gap:28px}
+.nav-links a{font-size:14px;color:var(--muted);text-decoration:none;font-weight:500}
+.nav-links a:hover{color:var(--ink)}
+.nav-links .btn{padding:9px 18px;font-size:14px;color:var(--accent-ink)}
+
+/* hero */
+.hero{padding:88px 0 72px;border-top:none}
+.hero-grid{display:grid;grid-template-columns:1.15fr .85fr;gap:56px;align-items:center}
+.tag{display:inline-block;font-size:12px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);margin-bottom:22px}
+.hero h1{font-size:clamp(38px,5.6vw,68px);font-weight:800;margin-bottom:24px}
+.hero h1 em{font-style:normal;color:var(--accent)}
+.hero .lead{margin-bottom:34px}
+.hero-cta{display:flex;gap:12px;flex-wrap:wrap}
+
+/* diagrama */
+.flow{background:var(--surface);border:1px solid var(--line);border-radius:18px;padding:28px 26px}
+.flow-title{font-size:12px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);margin-bottom:18px}
+.flow-step{display:grid;grid-template-columns:44px 1fr;gap:14px;align-items:center;position:relative;padding-bottom:22px}
+.flow-step:last-child{padding-bottom:0}
+.flow-step:not(:last-child)::after{content:'';position:absolute;left:21px;top:44px;bottom:-2px;width:2px;background:var(--line)}
+.flow-n{width:44px;height:44px;border-radius:12px;background:var(--accent-soft);color:var(--accent);display:grid;place-items:center;font-weight:800;font-size:15px}
+.flow-step b{display:block;font-size:15px;letter-spacing:-.01em}
+.flow-step span{font-size:13px;color:var(--muted)}
+
+
+
+/* secciones plegables */
+section.acc{padding:0;background:var(--bg)}
+section.acc .wrap{padding-top:0;padding-bottom:0}
+.acc-h{width:100%;display:flex;justify-content:space-between;align-items:center;gap:24px;background:none;border:none;color:var(--ink);text-align:left;cursor:pointer;padding:34px 0;font-family:inherit}
+.acc-h .eyebrow{margin-bottom:8px;display:block}
+.acc-t{display:block;font-size:clamp(22px,3vw,32px);font-weight:800;letter-spacing:-.025em;line-height:1.15;max-width:760px}
+.acc-ic,.more-btn .ic{flex-shrink:0;width:36px;height:36px;border-radius:50%;border:1.5px solid var(--line);display:grid;place-items:center;font-size:20px;color:var(--accent);transition:transform .25s,background .2s,color .2s,border-color .2s}
+.acc-h:hover .acc-ic{border-color:var(--accent)}
+[aria-expanded="true"] .acc-ic,[aria-expanded="true"] .ic{transform:rotate(45deg);background:var(--accent);color:var(--accent-ink);border-color:var(--accent)}
+.acc-p,.case-more{display:grid;grid-template-rows:0fr;transition:grid-template-rows .35s ease}
+.acc-p.open,.case-more.open{grid-template-rows:1fr}
+.acc-in{overflow:hidden;min-height:0}
+.acc-in>.lead{margin-top:0}
+.acc-p.open .acc-in{padding-bottom:56px}
+.more-btn{display:inline-flex;align-items:center;gap:10px;background:none;border:none;color:var(--accent);font:600 15px 'Inter',sans-serif;cursor:pointer;padding:4px 0;margin:2px 0 14px}
+.more-btn .ic{width:26px;height:26px;font-size:16px}
+.case-more .case-more-in{overflow:hidden;min-height:0}
+/* visual animado del hero */
+.viz{position:relative}
+.viz svg{width:100%;height:auto;display:block;overflow:visible}
+.viz .lane{stroke:var(--line);stroke-width:2;stroke-dasharray:3 7;fill:none}
+.viz .card{fill:var(--surface);stroke:var(--line);stroke-width:1.5}
+.viz .acc{fill:var(--accent)}
+.viz .acc-s{fill:var(--accent-soft)}
+.viz .ink-s{stroke:var(--accent);stroke-width:2.2;fill:none;stroke-linecap:round;stroke-linejoin:round}
+.viz .mute{fill:var(--line)}
+.viz .win{fill:var(--surface);stroke:var(--ink);stroke-width:1.5}
+.viz .win-bar{fill:var(--bg-alt)}
+.viz .dot{fill:var(--muted)}
+.viz .before{animation:vz-in 9s linear infinite;opacity:0}
+.viz .after{animation:vz-out 9s linear infinite;opacity:0}
+@keyframes vz-in{0%{transform:translateX(0);opacity:0}8%{opacity:1}72%{opacity:1}92%{transform:translateX(212px);opacity:0}100%{transform:translateX(212px);opacity:0}}
+@keyframes vz-out{0%,60%{transform:translateX(0);opacity:0}70%{opacity:1}92%{opacity:1}100%{transform:translateX(86px);opacity:0}}
+.viz-cap{display:flex;justify-content:space-between;gap:8px;margin-top:18px;font-size:12px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--muted)}
+.viz-cap span:nth-child(2){color:var(--ink)}
+.about-text{max-width:720px;margin-top:28px;display:grid;gap:14px;font-size:16.5px;color:var(--muted)}
+.about-text b{color:var(--ink);font-weight:600}
+@media (prefers-reduced-motion:reduce){.viz .before,.viz .after{animation:none;opacity:1}}
+/* dos caminos */
+.paths{display:grid;grid-template-columns:1fr 1fr;gap:20px;margin-top:40px}
+.path{background:var(--surface);border:1px solid var(--line);border-radius:18px;padding:34px 30px;display:flex;flex-direction:column;gap:12px;transition:border-color .15s,transform .15s}
+.path:hover{border-color:var(--accent);transform:translateY(-2px)}
+.path h3{font-size:22px;font-weight:700}
+.path p{color:var(--muted);font-size:15px}
+.path ul{list-style:none;display:flex;flex-direction:column;gap:8px;margin:6px 0 14px;font-size:14.5px}
+.path li::before{content:'→ ';color:var(--accent);font-weight:700}
+.path .btn{margin-top:auto;align-self:flex-start}
+
+/* contadores */
+.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:0;border:1px solid var(--line);border-radius:18px;background:var(--surface);overflow:hidden}
+.stat{padding:30px 26px;border-right:1px solid var(--line)}
+.stat:last-child{border-right:none}
+.stat-n{font-size:clamp(34px,4vw,48px);font-weight:800;letter-spacing:-.04em;line-height:1}
+.stat-l{font-size:14px;font-weight:600;margin-top:10px}
+.stat-s{font-size:12px;color:var(--muted);margin-top:4px}
+.note{font-size:13px;color:var(--muted);margin-top:14px}
+
+/* casos */
+.case{display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:center;padding:56px 0;border-top:1px solid var(--line)}
+.case:first-of-type{border-top:none;padding-top:40px}
+.case.flip .case-body{order:2}
+.badges{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:16px}
+.badge{font-size:11px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;padding:5px 11px;border-radius:999px;border:1px solid var(--line);color:var(--muted)}
+.badge.live{color:var(--ok);border-color:var(--ok)}
+.case h3{font-size:clamp(24px,3vw,32px);font-weight:800;margin-bottom:14px}
+.case p{color:var(--muted);margin-bottom:10px}
+.case-metric{border-left:3px solid var(--accent);padding:4px 0 4px 16px;margin:20px 0}
+.case-metric b{font-size:30px;letter-spacing:-.03em;display:block;line-height:1.1}
+.case-metric span{font-size:13px;color:var(--muted)}
+.case a.link{font-weight:600;font-size:15px;color:var(--accent);text-decoration:none}
+.case a.link:hover{text-decoration:underline}
+.shot{background:var(--surface);border:1px solid var(--line);border-radius:14px;overflow:hidden;aspect-ratio:4/3;display:grid;place-items:center;position:relative}
+.shot img{width:100%;height:100%;object-fit:cover;object-position:top}
+.shot .ph{text-align:center;color:var(--muted);font-size:13px;padding:24px}
+.shot .ph b{display:block;color:var(--ink);font-size:15px;margin-bottom:4px}
+.credit{margin-top:8px;font-size:13px;color:var(--muted);border:1px dashed var(--line);border-radius:12px;padding:14px 18px}
+
+/* sistema */
+.sys{display:grid;grid-template-columns:repeat(5,1fr);gap:0;margin-top:44px;border:1px solid var(--line);border-radius:18px;overflow:hidden;background:var(--surface)}
+.sys-col{padding:28px 24px;border-right:1px solid var(--line)}
+.sys-col:last-child{border-right:none}
+.sys-n{font-size:12px;font-weight:700;color:var(--accent);letter-spacing:.1em}
+.sys-col h3{font-size:19px;margin:10px 0 10px;font-weight:700}
+.sys-col p{font-size:14px;color:var(--muted);margin-bottom:16px}
+.sys-col a{font-size:13px;font-weight:600;color:var(--accent);text-decoration:none}
+.sys-col a:hover{text-decoration:underline}
+
+/* mantenimiento */
+.mant{display:grid;grid-template-columns:1fr 1fr;gap:48px;margin-top:40px;align-items:start}
+.checks{list-style:none;display:grid;gap:14px}
+.checks li{display:grid;grid-template-columns:24px 1fr;gap:12px;font-size:15.5px}
+.checks li::before{content:'✓';color:var(--ok);font-weight:800}
+.checks li small{display:block;color:var(--muted);font-size:13.5px}
+.report{background:var(--surface);border:1px solid var(--line);border-radius:16px;padding:24px}
+.report-h{display:flex;justify-content:space-between;font-size:12px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);margin-bottom:18px}
+.report-row{display:flex;justify-content:space-between;padding:12px 0;border-top:1px solid var(--line);font-size:14.5px}
+.report-row b{font-variant-numeric:tabular-nums}
+.report-row .up{color:var(--ok)}
+
+/* para quién */
+.fit{display:grid;grid-template-columns:1fr 1fr;gap:40px;margin-top:40px}
+.fit h3{font-size:19px;padding-bottom:14px;margin-bottom:18px;border-bottom:2.5px solid var(--accent)}
+.fit .no h3{border-color:var(--line);color:var(--muted)}
+.fit ul{list-style:none;display:grid;gap:12px;font-size:15px}
+.fit li{display:grid;grid-template-columns:22px 1fr;gap:8px}
+.fit .yes li::before{content:'✓';color:var(--ok);font-weight:800}
+.fit .no li{color:var(--muted)}
+.fit .no li::before{content:'✕';color:var(--muted)}
+
+/* pasos */
+.steps{display:grid;grid-template-columns:repeat(4,1fr);gap:20px;margin-top:40px}
+.step{background:var(--surface);border:1px solid var(--line);border-radius:16px;padding:26px 22px}
+.step-n{font-size:34px;font-weight:800;letter-spacing:-.04em;color:var(--accent);line-height:1;margin-bottom:14px}
+.step h3{font-size:18px;margin-bottom:8px}
+.step p{font-size:14px;color:var(--muted)}
+
+/* equipo */
+.team{display:grid;grid-template-columns:1fr 1fr;gap:24px;margin-top:40px}
+.person{display:block;border-top:1px solid var(--ink);padding:22px 0 0}
+.person h3{font-size:21px}
+.role{font-size:12px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--accent);margin:4px 0 10px}
+.person p{font-size:14.5px;color:var(--muted)}
+
+/* faq */
+.faq{max-width:760px;margin-top:36px}
+.fi{border-bottom:1px solid var(--line)}
+.fq{width:100%;background:none;border:none;color:var(--ink);text-align:left;font:600 16px 'Inter',sans-serif;padding:22px 0;display:flex;justify-content:space-between;gap:16px;cursor:pointer}
+.fq .ic{flex-shrink:0;width:26px;height:26px;border-radius:50%;border:1.5px solid var(--line);display:grid;place-items:center;transition:transform .2s;color:var(--accent)}
+.fi.open .ic{transform:rotate(45deg)}
+.fa{max-height:0;overflow:hidden;transition:max-height .3s ease;color:var(--muted);font-size:15px}
+.fi.open .fa{max-height:300px}
+.fa p{padding:0 40px 22px 0}
+
+/* contacto */
+.contact{background:var(--contact-bg);color:var(--contact-fg);border:1px solid var(--line);border-radius:24px;padding:72px 48px;text-align:center}
+.contact h2{margin:0 auto 16px;color:var(--contact-fg)}
+.contact p{color:color-mix(in srgb,var(--contact-fg) 70%,transparent);max-width:560px;margin:0 auto 32px;font-size:17px}
+.contact .btn-primary{background:var(--accent);color:var(--accent-ink)}
+.contact .btn-ghost{background:transparent;color:var(--contact-fg);border-color:color-mix(in srgb,var(--contact-fg) 35%,transparent)}
+.contact .btn-ghost:hover{border-color:var(--contact-fg)}
+.contact-cta{display:flex;gap:12px;justify-content:center;flex-wrap:wrap}
+.contact .btn svg{flex-shrink:0}
+.social{display:flex;gap:10px}
+.social a{width:44px;height:44px;border-radius:12px;border:1px solid var(--line);display:grid;place-items:center;color:var(--ink);background:var(--surface);transition:transform .15s,background .15s,color .15s,border-color .15s}
+.social a:hover{background:var(--accent);color:var(--accent-ink);border-color:var(--accent);transform:translateY(-2px)}
+.foot-social{margin-top:16px}
+
+footer{padding:40px 0 48px;border-top:1px solid var(--line);font-size:14px;color:var(--muted)}
+.foot{display:flex;justify-content:space-between;gap:24px;flex-wrap:wrap}
+.foot-links{display:flex;gap:22px;flex-wrap:wrap}
+.foot-links a{text-decoration:none}
+.foot-links a:hover{color:var(--ink)}
+
+/* mobile */
+@media (max-width:900px){
+  section{padding:64px 0}
+  .hero{padding:48px 0 48px}
+  .hero-grid,.case,.mant,.fit,.team,.paths{grid-template-columns:1fr;gap:32px}
+  .case.flip .case-body{order:0}
+  .stats{grid-template-columns:1fr 1fr}
+  .stat:nth-child(2){border-right:none}
+  .stat:nth-child(-n+2){border-bottom:1px solid var(--line)}
+  .sys{grid-template-columns:1fr 1fr}
+  .sys-col{border-bottom:1px solid var(--line)}
+  .sys-col:nth-child(even),.sys-col:last-child{border-right:none}
+  .sys-col:last-child{border-bottom:none}
+  .steps{grid-template-columns:1fr 1fr}
+  .nav-links a:not(.btn){display:none}
+  .contact{padding:48px 24px;border-radius:18px}
+}
+@media (max-width:520px){
+  .wrap{padding:0 16px}
+  .sys,.steps{grid-template-columns:1fr}
+  .stats{grid-template-columns:1fr 1fr}
+  .stat{padding:22px 16px}
+  .stat-n{font-size:30px}
+  .sys-col{border-right:none;border-bottom:1px solid var(--line)}
+  .stat:last-child,.sys-col:last-child{border-bottom:none}
+  .btn{width:100%;justify-content:center}
+  .nav-links .btn{width:auto}
+}
+@media (prefers-reduced-motion:reduce){*{transition:none!important;scroll-behavior:auto!important}}
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="wrap nav-in">
+    <a href="#top" class="logo" aria-label="Making Progress">
+      <picture><source srcset="assets/monograma-blanco.png" media="(prefers-color-scheme: dark)"><img src="assets/monograma-azul.png" alt="" width="68" height="26"></picture>
+      <span>Making Progress</span>
+    </a>
+    <div class="nav-links">
+      <a href="#casos">Casos</a>
+      <a href="#sistema">Sistema</a>
+      <a href="#mantenimiento">Mantenimiento</a>
+      <a href="#equipo">Sobre nosotros</a>
+      <a href="#contacto" class="btn btn-primary">Contacto</a>
+    </div>
+  </div>
+</nav>
+
+<main id="top">
+
+<!-- 1. HERO -->
+<section class="hero">
+  <div class="wrap hero-grid">
+    <div>
+      <span class="tag">Webs · Campañas · Setting · Entre Ríos, Argentina</span>
+      <h1>Construimos webs y campañas que <em>acercan un negocio a su gente.</em></h1>
+      <p class="lead">Somos Mateo Morales y Santiago Pica, dos socios en Entre Ríos, Argentina. Diseñamos y mantenemos webs, armamos campañas de Meta y ordenamos las conversaciones que llegan después.</p>
+      <div class="hero-cta">
+        <a href="#casos" class="btn btn-primary">Ver casos</a>
+        <a href="#contacto" class="btn btn-ghost">Conocernos</a>
+      </div>
+    </div>
+    <div class="viz" aria-hidden="true">
+      <svg viewBox="0 0 520 330" focusable="false">
+        <line class="lane" x1="0" y1="70" x2="520" y2="70"/><g transform="translate(14 70)"><g class="before" style="animation-delay:-0.0s"><rect class="card" x="0" y="-22" width="64" height="44" rx="9"/><rect class="acc" x="8" y="-14" width="22" height="7" rx="3"/><rect class="mute" x="8" y="-2" width="46" height="5" rx="2.5"/><rect class="mute" x="8" y="8" width="32" height="5" rx="2.5"/></g></g><g transform="translate(364 70)"><g class="after" style="animation-delay:-0.0s"><rect class="card" x="0" y="-18" width="58" height="36" rx="12"/><path class="acc" d="M-1 12l-7 9 14-5z"/><circle class="dot" cx="17" cy="0" r="3"/><circle class="dot" cx="29" cy="0" r="3"/><circle class="dot" cx="41" cy="0" r="3"/></g></g><line class="lane" x1="0" y1="165" x2="520" y2="165"/><g transform="translate(14 165)"><g class="before" style="animation-delay:-3.0s"><rect class="card" x="0" y="-22" width="64" height="44" rx="9"/><path class="acc" d="M32 11c-9-6-14-10-14-16 0-4 3-6 6-6 3 0 6 2 8 5 2-3 5-5 8-5 3 0 6 2 6 6 0 6-5 10-14 16z"/></g></g><g transform="translate(364 165)"><g class="after" style="animation-delay:-3.0s"><circle class="acc" cx="20" cy="0" r="17"/><path d="M12 1l6 6 11-12" fill="none" stroke="var(--accent-ink)" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></g></g><line class="lane" x1="0" y1="260" x2="520" y2="260"/><g transform="translate(14 260)"><g class="before" style="animation-delay:-6.0s"><rect class="card" x="0" y="-22" width="64" height="44" rx="9"/><rect class="acc-s" x="10" y="-12" width="40" height="14" rx="5"/><path class="acc" d="M38 -2l0 20 5-5 4 9 3-1.5-4-9 7 0z"/></g></g><g transform="translate(364 260)"><g class="after" style="animation-delay:-6.0s"><rect class="card" x="0" y="-18" width="58" height="36" rx="12"/><path class="acc" d="M-1 12l-7 9 14-5z"/><rect class="mute" x="10" y="-8" width="38" height="5" rx="2.5"/><rect class="mute" x="10" y="3" width="26" height="5" rx="2.5"/></g></g>
+        <g transform="translate(250 8)">
+          <rect class="win" x="0" y="0" width="104" height="314" rx="14"/>
+          <path class="win-bar" d="M0 14a14 14 0 0 1 14-14h76a14 14 0 0 1 14 14v22H0z"/>
+          <circle class="dot" cx="16" cy="18" r="3.5"/><circle class="dot" cx="28" cy="18" r="3.5"/><circle class="dot" cx="40" cy="18" r="3.5"/>
+          <rect class="acc" x="14" y="56" width="52" height="10" rx="5"/>
+          <rect class="mute" x="14" y="80" width="76" height="6" rx="3"/><rect class="mute" x="14" y="94" width="62" height="6" rx="3"/>
+          <rect class="acc-s" x="14" y="124" width="76" height="46" rx="8"/>
+          <rect class="mute" x="14" y="190" width="76" height="6" rx="3"/><rect class="mute" x="14" y="204" width="50" height="6" rx="3"/>
+          <rect class="acc" x="14" y="266" width="48" height="24" rx="8"/>
+        </g>
+      </svg>
+      <div class="viz-cap"><span>Campaña</span><span>Web</span><span>Conversación</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- 3. NÚMEROS -->
+<section id="numeros">
+  <div class="wrap">
+    <p class="eyebrow">En números</p>
+    <h2>Lo que operamos, medido</h2>
+    <div class="stats">
+      <div class="stat"><div class="stat-n">2</div><div class="stat-l">países con campañas gestionadas</div><div class="stat-s">Argentina y México</div></div>
+      <div class="stat"><div class="stat-n">2</div><div class="stat-l">webs en producción</div><div class="stat-s">Positive Mama e Hipnoparto Internacional</div></div>
+      <div class="stat"><div class="stat-n">2 socios</div><div class="stat-l">al frente de cada proyecto</div><div class="stat-s">Hablás con quienes hacen el trabajo</div></div>
+      <div class="stat"><div class="stat-n">24 h</div><div class="stat-l">tiempo máximo de respuesta</div><div class="stat-s">Es un compromiso nuestro</div></div>
+    </div>
+    <p class="note">Solo publicamos números que podemos comprobar. Vamos a actualizarlos a medida que sumemos proyectos.</p>
+  </div>
+</section>
+
+<!-- 4. CASOS -->
+<section class="alt" id="casos">
+  <div class="wrap">
+    <p class="eyebrow">Casos</p>
+    <h2>Problemas reales, resueltos y funcionando</h2>
+    <p class="lead">Cada caso cuenta de dónde partimos, qué hicimos y cómo está hoy.</p>
+
+    <article class="case">
+      <div class="case-body">
+        <div class="badges"><span class="badge live">En producción</span><span class="badge">Web</span><span class="badge">Meta Ads</span><span class="badge">Hecho para Genuine Reach</span></div>
+        <h3>Un programa online con una landing que vende y campañas en dos países</h3>
+        <button class="more-btn" type="button" aria-expanded="false" aria-controls="m-1">Cómo lo hicimos <span class="ic" aria-hidden="true">+</span></button>
+        <div class="case-more" id="m-1" inert><div class="case-more-in"><p><b>Punto de partida:</b> un programa de hipnoparto (RE-NACER, de Positive Mama) que necesitaba una página de venta clara y anuncios que trajeran mujeres interesadas.</p>
+        <p><b>Qué hicimos:</b> armamos la landing de venta completa y las campañas de Meta: conjuntos de anuncios y anuncios, en Argentina y México.</p></div></div>
+        <div class="case-metric"><b>2 países</b><span>Campañas gestionadas en Argentina y México</span></div>
+        <a class="link" href="https://positivemama.org/parto-positivo-re-nacer/" target="_blank" rel="noopener">Ver sitio →</a>
+      </div>
+      <div class="shot" style="aspect-ratio:1200/684"><img src="assets/caso-renacer.jpg" alt="Landing del programa RE-NACER de Positive Mama" loading="lazy"></div>
+    </article>
+
+    <article class="case flip">
+      <div class="case-body">
+        <div class="badges"><span class="badge live">En producción</span><span class="badge">Web</span><span class="badge">Registro</span><span class="badge">Hecho para Genuine Reach</span></div>
+        <h3>Una landing con registro que termina en una bienvenida</h3>
+        <button class="more-btn" type="button" aria-expanded="false" aria-controls="m-2">Cómo lo hicimos <span class="ic" aria-hidden="true">+</span></button>
+        <div class="case-more" id="m-2" inert><div class="case-more-in"><p><b>Punto de partida:</b> Hipnoparto Internacional quería que profesionales se anotaran a una masterclass gratuita, en una página que transmitiera la calidad de la marca y que después de registrarse les dijera qué hacer.</p>
+        <p><b>Qué hicimos:</b> desarrollamos una landing con formulario de registro muy cuidada, con los colores, el logo y las redes de la marca, y un aviso fijo con fecha y botón de reserva. Al registrarse, la persona pasa a una página de gracias con un video de agradecimiento, el número de contacto y el enlace directo al grupo de Hipnoparto.</p></div></div>
+        <div class="case-metric"><b>Registro → Video → Grupo</b><span>Un recorrido completo: la persona se registra, recibe la bienvenida y entra a la comunidad</span></div>
+        <a class="link" href="https://www.hipnopartointernacional.com/registro-profesional" target="_blank" rel="noopener">Ver sitio →</a>
+      </div>
+      <div class="shot" style="aspect-ratio:1200/629"><img src="assets/caso-hipnoparto.jpg" alt="Landing y registro de la masterclass gratuita de Hipnoparto Internacional" loading="lazy"></div>
+    </article>
+
+
+    <div class="credit">Los proyectos de Genuine Reach fueron realizados por <b>Mateo Morales y Santiago Pica</b>, hoy socios de Making Progress, mientras trabajaban con esa agencia.</div>
+  </div>
+</section>
+
+<!-- 5. SISTEMA -->
+<section class="acc" id="sistema">
+  <div class="wrap">
+    <button class="acc-h" type="button" aria-expanded="false" aria-controls="p-sistema"><span><span class="eyebrow">Sistema Making Progress</span><span class="acc-t">Lo que se repite entre nuestros proyectos no es el diseño: es la forma</span></span><span class="acc-ic" aria-hidden="true">+</span></button>
+    <div class="acc-p" id="p-sistema" inert><div class="acc-in">
+    <p class="lead">Un negocio que mucha gente todavía no conoce se muestra, se encuentra, conversa y se mantiene. Cada etapa se puede trabajar por separado o en conjunto.</p>
+    <div class="sys">
+      <div class="sys-col"><div class="sys-n">01</div><h3>Captar</h3><p>Campañas de Meta: estructura, conjuntos de anuncios y anuncios que llevan a las personas correctas.</p></div>
+      <div class="sys-col"><div class="sys-n">02</div><h3>Presentar</h3><p>Webs y landings claras, rápidas y con la identidad de cada marca.</p></div>
+      <div class="sys-col"><div class="sys-n">03</div><h3>Conversar</h3><p>Setting: ordenamos las consultas que llegan por WhatsApp e Instagram.</p></div>
+      <div class="sys-col"><div class="sys-n">04</div><h3>Comunidad</h3><p>Creación y publicación de contenido, y community management.</p></div>
+      <div class="sys-col"><div class="sys-n">05</div><h3>Mantener</h3><p>Cuidamos lo que construimos: al día, seguro y funcionando.</p></div>
+    </div>
+    </div></div>
+  </div>
+</section>
+
+<!-- 6. MANTENIMIENTO -->
+<section class="acc" id="mantenimiento">
+  <div class="wrap">
+    <button class="acc-h" type="button" aria-expanded="false" aria-controls="p-mantenimiento"><span><span class="eyebrow">Mantenimiento</span><span class="acc-t">Una web publicada no es una web terminada</span></span><span class="acc-ic" aria-hidden="true">+</span></button>
+    <div class="acc-p" id="p-mantenimiento" inert><div class="acc-in">
+    <p class="lead">Parte de nuestro trabajo es seguir cuidando lo que construimos: que cargue rápido, esté al día y funcione.</p>
+    <div class="mant" style="grid-template-columns:1fr;max-width:640px">
+      <ul class="checks">
+        <li><div>Cambios de contenido<small>Textos, fotos, precios y ofertas actualizados cuando los necesites.</small></div></li>
+        <li><div>Revisión técnica mensual<small>Que todo cargue bien, los formularios y botones funcionen y no haya errores.</small></div></li>
+        <li><div>Velocidad y seguridad<small>Una web rápida es una mejor primera impresión.</small></div></li>
+        <li><div>Copias de seguridad<small>Si algo falla, volvemos atrás sin perder trabajo.</small></div></li>
+        <li><div>Reporte mensual<small>Te contamos qué hicimos y cómo se comportó tu web.</small></div></li>
+      </ul>
+    </div>
+    </div></div>
+  </div>
+</section>
+
+<!-- 8. CÓMO TRABAJAMOS -->
+<section class="acc" id="proceso">
+  <div class="wrap">
+    <button class="acc-h" type="button" aria-expanded="false" aria-controls="p-proceso"><span><span class="eyebrow">Cómo trabajamos</span><span class="acc-t">Cuatro pasos, sin sorpresas</span></span><span class="acc-ic" aria-hidden="true">+</span></button>
+    <div class="acc-p" id="p-proceso" inert><div class="acc-in">
+    <div class="steps">
+      <div class="step"><div class="step-n">01</div><h3>Diagnóstico</h3><p>Una charla corta para entender tu negocio, a quién le vendés y qué necesitás.</p></div>
+      <div class="step"><div class="step-n">02</div><h3>Propuesta</h3><p>Te contamos por escrito qué haríamos y en qué plazos.</p></div>
+      <div class="step"><div class="step-n">03</div><h3>Construcción</h3><p>Armamos la web y las campañas. Revisás y ajustamos antes de publicar.</p></div>
+      <div class="step"><div class="step-n">04</div><h3>Lanzamiento y mantenimiento</h3><p>Publicamos, medimos y seguimos mejorando mes a mes.</p></div>
+    </div>
+    </div></div>
+  </div>
+</section>
+
+<!-- 9. EQUIPO -->
+<section class="acc" id="equipo">
+  <div class="wrap">
+    <button class="acc-h" type="button" aria-expanded="false" aria-controls="p-equipo"><span><span class="eyebrow">Sobre nosotros</span><span class="acc-t">Dos socios, a partes iguales</span></span><span class="acc-ic" aria-hidden="true">+</span></button>
+    <div class="acc-p" id="p-equipo" inert><div class="acc-in">
+    <p class="lead">Making Progress la lideramos los dos, 50 y 50. Nos complementamos: cada uno cubre lo que el otro no, y todo proyecto pasa por los dos.</p>
+    <div class="about-text">
+      <p><b>Somos Mateo y Santiago.</b> Mateo nació en Bariloche y Santiago en Capital Federal; hoy vivimos los dos en Entre Ríos y nos conocemos desde hace años. Hacemos marketing para negocios y profesionales: webs, campañas de Meta, setting y contenido.</p>
+      <p>Trabajamos juntos en Genuine Reach, donde armamos webs y subimos campañas en Argentina y México. De ahí salió Making Progress, con la misma idea: que lo que se entrega funcione también después de entregado.</p>
+      <p>Trabajamos de a dos. Uno arma y ejecuta; el otro abre las conversaciones y ordena lo que va quedando. Preferimos explicar qué hacemos y por qué antes que prometer resultados.</p>
+    </div>
+    <div class="team">
+      <article class="person">
+        <div><h3>Mateo Morales</h3><div class="role">Socio · Armado y ejecución</div><p>Se encarga de armar y ejecutar: diseña, construye y publica cada web y deja las campañas listas para salir.</p></div>
+      </article>
+      <article class="person">
+        <div><h3>Santiago Pica</h3><div class="role">Socio · Conversaciones y comunidad</div><p>Inicia las conversaciones con los clientes, organiza los archivos y los pendientes y lleva el community management de Making Progress.</p></div>
+      </article>
+    </div>
+    </div></div>
+  </div>
+</section>
+
+<!-- 11. CONTACTO -->
+<section id="contacto" style="border-top:none">
+  <div class="wrap">
+    <div class="contact">
+      <h2>¿Querés conocernos o contarnos tu proyecto?</h2>
+      <p>Escribinos, sin compromiso. Charlamos y vemos si podemos aportar algo.</p>
+      <div class="contact-cta">
+        <a href="#" class="btn btn-primary js-wa" data-msg="Hola, vi su web y quiero conocerlos."><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3a9 9 0 0 0-7.7 13.6L3 21l4.5-1.2A9 9 0 1 0 12 3z"/><path d="M9 8.2c-.4 2.6 3.2 6.6 6.4 6.6l1-1.6-2-1-.9.8c-1-.4-2-1.4-2.4-2.4l.8-.9-1-2z"/></svg>Escribinos por WhatsApp</a>
+        <a href="#" class="btn btn-ghost" id="ig-btn" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.2" cy="6.8" r=".6" fill="currentColor"/></svg>@newmakingprogress</a>
+        <a href="#" class="btn btn-ghost" id="mail-btn"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2.5"/><path d="m4 7 8 6 8-6"/></svg>Email</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer>
+  <div class="wrap foot">
+    <div><picture><source srcset="assets/logo-blanco.png" media="(prefers-color-scheme: dark)"><img class="foot-logo" src="assets/logo-azul.png" alt="Making Progress" width="106" height="84"></picture><br>Webs, campañas y setting para profesionales y negocios.
+      <div class="social foot-social">
+        <a href="#" class="js-wa" data-msg="Hola, quiero consultar por una web." aria-label="WhatsApp" title="WhatsApp"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3a9 9 0 0 0-7.7 13.6L3 21l4.5-1.2A9 9 0 1 0 12 3z"/><path d="M9 8.2c-.4 2.6 3.2 6.6 6.4 6.6l1-1.6-2-1-.9.8c-1-.4-2-1.4-2.4-2.4l.8-.9-1-2z"/></svg></a>
+        <a href="#" class="js-ig" aria-label="Instagram" title="Instagram"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.2" cy="6.8" r=".6" fill="currentColor"/></svg></a>
+        <a href="#" class="js-mail" aria-label="Email" title="Email"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2.5"/><path d="m4 7 8 6 8-6"/></svg></a>
+      </div>
+    </div>
+    <div class="foot-links"><a href="#casos">Casos</a><a href="#sistema">Sistema</a><a href="#mantenimiento">Mantenimiento</a><a href="#equipo">Sobre nosotros</a><a href="#contacto">Contacto</a></div>
+    <div>© 2026 Making Progress</div>
+  </div>
+</footer>
+
+<script>
+/* ═══════════════════════════════════════════════
+   ✏️  ACÁ EDITÁS TUS DATOS DE CONTACTO  ✏️
+   Todos los botones de la web usan estos valores.
+   ═══════════════════════════════════════════════ */
+const CONTACTO = {
+  whatsapp:  "5493435361633",          // solo números, con código de país (+54 9 3435 36 1633)
+  instagram: "https://www.instagram.com/newmakingprogress",
+  email:     "newmakingprogress@gmail.com"
+};
+
+/* WhatsApp con mensaje precargado */
+document.querySelectorAll('.js-wa').forEach(function(a){
+  var msg = a.dataset.msg || "Hola, quiero más información.";
+  a.href = "https://wa.me/" + CONTACTO.whatsapp + "?text=" + encodeURIComponent(msg);
+  a.target = "_blank"; a.rel = "noopener";
+});
+["ig-link","ig-btn"].forEach(function(id){var e=document.getElementById(id); if(e) e.href = CONTACTO.instagram;});
+document.querySelectorAll(".js-ig").forEach(function(a){a.href = CONTACTO.instagram; a.target="_blank"; a.rel="noopener";});
+var m = document.getElementById("mail-btn"); if(m) m.href = "mailto:" + CONTACTO.email;
+document.querySelectorAll(".js-mail").forEach(function(a){a.href = "mailto:" + CONTACTO.email;});
+
+
+/* plegables: secciones y detalle de casos */
+function setOpen(btn,open){
+  var t=document.getElementById(btn.getAttribute('aria-controls')); if(!t) return;
+  t.classList.toggle('open',open); btn.setAttribute('aria-expanded',open?'true':'false');
+  if(open) t.removeAttribute('inert'); else t.setAttribute('inert','');
+}
+document.querySelectorAll('.acc-h,.more-btn').forEach(function(b){
+  b.addEventListener('click',function(){ setOpen(b,b.getAttribute('aria-expanded')!=='true'); });
+});
+function openFromHash(){
+  var id=location.hash.slice(1); if(!id) return;
+  var el=document.getElementById(id);
+  if(el && el.classList.contains('acc')){ setOpen(el.querySelector('.acc-h'),true); setTimeout(function(){el.scrollIntoView({behavior:'smooth',block:'start'});},60); }
+}
+window.addEventListener('hashchange',openFromHash); openFromHash();
+document.addEventListener('click',function(e){
+  var a=e.target.closest('a[href^="#"]'); if(!a) return;
+  var el=document.getElementById(a.getAttribute('href').slice(1));
+  if(el && el.classList.contains('acc')) setOpen(el.querySelector('.acc-h'),true);
+});
+/* FAQ (sin uso) */
+document.querySelectorAll('.fq').forEach(function(b){
+  b.addEventListener('click', function(){
+    var item = b.parentElement, open = item.classList.contains('open');
+    document.querySelectorAll('.fi').forEach(function(i){
+      i.classList.remove('open');
+      i.querySelector('.fq').setAttribute('aria-expanded','false');
+    });
+    if(!open){ item.classList.add('open'); b.setAttribute('aria-expanded','true'); }
+  });
+});
+</script>
+</body>
+</html>
