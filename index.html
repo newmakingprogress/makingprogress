@@ -253,8 +253,11 @@ footer{padding:40px 0 48px;border-top:1px solid var(--line);font-size:14px;color
 }
 @media (max-width:520px){
   .wrap{padding:0 16px}
-  .stats,.sys,.steps{grid-template-columns:1fr}
-  .stat,.sys-col{border-right:none;border-bottom:1px solid var(--line)}
+  .sys,.steps{grid-template-columns:1fr}
+  .stats{grid-template-columns:1fr 1fr}
+  .stat{padding:22px 16px}
+  .stat-n{font-size:30px}
+  .sys-col{border-right:none;border-bottom:1px solid var(--line)}
   .stat:last-child,.sys-col:last-child{border-bottom:none}
   .btn{width:100%;justify-content:center}
   .nav-links .btn{width:auto}
