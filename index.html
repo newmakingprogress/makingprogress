@@ -202,6 +202,11 @@ nav{position:sticky;top:0;z-index:50;background:color-mix(in srgb,var(--bg) 92%,
 .contact .btn-ghost{background:transparent;color:var(--bg);border-color:color-mix(in srgb,var(--bg) 35%,transparent)}
 .contact .btn-ghost:hover{border-color:var(--bg)}
 .contact-cta{display:flex;gap:12px;justify-content:center;flex-wrap:wrap}
+.contact .btn svg{flex-shrink:0}
+.social{display:flex;gap:10px}
+.social a{width:44px;height:44px;border-radius:12px;border:1px solid var(--line);display:grid;place-items:center;color:var(--ink);background:var(--surface);transition:transform .15s,background .15s,color .15s,border-color .15s}
+.social a:hover{background:var(--accent);color:var(--accent-ink);border-color:var(--accent);transform:translateY(-2px)}
+.foot-social{margin-top:16px}
 
 footer{padding:40px 0 48px;border-top:1px solid var(--line);font-size:14px;color:var(--muted)}
 .foot{display:flex;justify-content:space-between;gap:24px;flex-wrap:wrap}
@@ -497,9 +502,9 @@ footer{padding:40px 0 48px;border-top:1px solid var(--line);font-size:14px;color
       <h2>¿Tu negocio todavía depende del boca a boca?</h2>
       <p>Escribinos. En la primera charla vas a saber qué parte de tu sistema te está frenando y qué conviene hacer primero.</p>
       <div class="contact-cta">
-        <a href="#" class="btn btn-primary js-wa" data-msg="Hola, quiero agendar una charla de diagnóstico.">Escribinos por WhatsApp</a>
-        <a href="#" class="btn btn-ghost" id="ig-btn" target="_blank" rel="noopener">Instagram</a>
-        <a href="#" class="btn btn-ghost" id="mail-btn">Email</a>
+        <a href="#" class="btn btn-primary js-wa" data-msg="Hola, quiero agendar una charla de diagnóstico."><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3a9 9 0 0 0-7.7 13.6L3 21l4.5-1.2A9 9 0 1 0 12 3z"/><path d="M9 8.2c-.4 2.6 3.2 6.6 6.4 6.6l1-1.6-2-1-.9.8c-1-.4-2-1.4-2.4-2.4l.8-.9-1-2z"/></svg>Escribinos por WhatsApp</a>
+        <a href="#" class="btn btn-ghost" id="ig-btn" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.2" cy="6.8" r=".6" fill="currentColor"/></svg>@newmakingprogress</a>
+        <a href="#" class="btn btn-ghost" id="mail-btn"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2.5"/><path d="m4 7 8 6 8-6"/></svg>Email</a>
       </div>
     </div>
   </div>
@@ -509,7 +514,13 @@ footer{padding:40px 0 48px;border-top:1px solid var(--line);font-size:14px;color
 
 <footer>
   <div class="wrap foot">
-    <div><picture><source srcset="assets/logo-blanco.png" media="(prefers-color-scheme: dark)"><img class="foot-logo" src="assets/logo-azul.png" alt="Making Progress" width="106" height="84"></picture><br>Webs, campañas y setting para profesionales y negocios.</div>
+    <div><picture><source srcset="assets/logo-blanco.png" media="(prefers-color-scheme: dark)"><img class="foot-logo" src="assets/logo-azul.png" alt="Making Progress" width="106" height="84"></picture><br>Webs, campañas y setting para profesionales y negocios.
+      <div class="social foot-social">
+        <a href="#" class="js-wa" data-msg="Hola, quiero consultar por una web." aria-label="WhatsApp" title="WhatsApp"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3a9 9 0 0 0-7.7 13.6L3 21l4.5-1.2A9 9 0 1 0 12 3z"/><path d="M9 8.2c-.4 2.6 3.2 6.6 6.4 6.6l1-1.6-2-1-.9.8c-1-.4-2-1.4-2.4-2.4l.8-.9-1-2z"/></svg></a>
+        <a href="#" class="js-ig" aria-label="Instagram" title="Instagram"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.2" cy="6.8" r=".6" fill="currentColor"/></svg></a>
+        <a href="#" class="js-mail" aria-label="Email" title="Email"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2.5"/><path d="m4 7 8 6 8-6"/></svg></a>
+      </div>
+    </div>
     <div class="foot-links"><a href="#casos">Casos</a><a href="#sistema">Sistema</a><a href="#mantenimiento">Mantenimiento</a><a href="#equipo">Equipo</a><a href="#contacto">Contacto</a></div>
     <div>© 2026 Making Progress</div>
   </div>
@@ -521,8 +532,8 @@ footer{padding:40px 0 48px;border-top:1px solid var(--line);font-size:14px;color
    Todos los botones de la web usan estos valores.
    ═══════════════════════════════════════════════ */
 const CONTACTO = {
-  whatsapp:  "5490000000000",          // [[COMPLETAR]] solo números, con código de país. Ej Argentina: 549 + área + número
-  instagram: "https://www.instagram.com/[[COMPLETAR]]",
+  whatsapp:  "5493435361633",          // solo números, con código de país (+54 9 3435 36 1633)
+  instagram: "https://www.instagram.com/newmakingprogress",
   email:     "newmakingprogress@gmail.com"
 };
 
@@ -533,7 +544,9 @@ document.querySelectorAll('.js-wa').forEach(function(a){
   a.target = "_blank"; a.rel = "noopener";
 });
 ["ig-link","ig-btn"].forEach(function(id){var e=document.getElementById(id); if(e) e.href = CONTACTO.instagram;});
+document.querySelectorAll(".js-ig").forEach(function(a){a.href = CONTACTO.instagram; a.target="_blank"; a.rel="noopener";});
 var m = document.getElementById("mail-btn"); if(m) m.href = "mailto:" + CONTACTO.email;
+document.querySelectorAll(".js-mail").forEach(function(a){a.href = "mailto:" + CONTACTO.email;});
 
 /* FAQ */
 document.querySelectorAll('.fq').forEach(function(b){
