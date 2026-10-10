@@ -137,11 +137,11 @@ nav{position:sticky;top:0;z-index:50;background:color-mix(in srgb,var(--bg) 92%,
 .credit{margin-top:8px;font-size:13px;color:var(--muted);border:1px dashed var(--line);border-radius:12px;padding:14px 18px}
 
 /* sistema */
-.sys{display:grid;grid-template-columns:repeat(4,1fr);gap:0;margin-top:44px;border:1px solid var(--line);border-radius:18px;overflow:hidden;background:var(--surface)}
+.sys{display:grid;grid-template-columns:repeat(5,1fr);gap:0;margin-top:44px;border:1px solid var(--line);border-radius:18px;overflow:hidden;background:var(--surface)}
 .sys-col{padding:28px 24px;border-right:1px solid var(--line)}
 .sys-col:last-child{border-right:none}
 .sys-n{font-size:12px;font-weight:700;color:var(--accent);letter-spacing:.1em}
-.sys-col h3{font-size:20px;margin:10px 0 10px;font-weight:700}
+.sys-col h3{font-size:19px;margin:10px 0 10px;font-weight:700}
 .sys-col p{font-size:14px;color:var(--muted);margin-bottom:16px}
 .sys-col a{font-size:13px;font-weight:600;color:var(--accent);text-decoration:none}
 .sys-col a:hover{text-decoration:underline}
@@ -177,9 +177,7 @@ nav{position:sticky;top:0;z-index:50;background:color-mix(in srgb,var(--bg) 92%,
 
 /* equipo */
 .team{display:grid;grid-template-columns:1fr 1fr;gap:24px;margin-top:40px}
-.person{display:grid;grid-template-columns:120px 1fr;gap:22px;background:var(--surface);border:1px solid var(--line);border-radius:18px;padding:24px;align-items:start}
-.avatar{width:120px;height:120px;border-radius:16px;background:var(--accent-soft);color:var(--accent);display:grid;place-items:center;font-weight:800;font-size:34px;overflow:hidden}
-.avatar img{width:100%;height:100%;object-fit:cover}
+.person{display:block;border-top:1px solid var(--ink);padding:22px 0 0}
 .person h3{font-size:21px}
 .role{font-size:12px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--accent);margin:4px 0 10px}
 .person p{font-size:14.5px;color:var(--muted)}
@@ -224,8 +222,9 @@ footer{padding:40px 0 48px;border-top:1px solid var(--line);font-size:14px;color
   .stat:nth-child(2){border-right:none}
   .stat:nth-child(-n+2){border-bottom:1px solid var(--line)}
   .sys{grid-template-columns:1fr 1fr}
-  .sys-col:nth-child(2){border-right:none}
-  .sys-col:nth-child(-n+2){border-bottom:1px solid var(--line)}
+  .sys-col{border-bottom:1px solid var(--line)}
+  .sys-col:nth-child(even),.sys-col:last-child{border-right:none}
+  .sys-col:last-child{border-bottom:none}
   .steps{grid-template-columns:1fr 1fr}
   .nav-links a:not(.btn){display:none}
   .contact{padding:48px 24px;border-radius:18px}
@@ -235,8 +234,6 @@ footer{padding:40px 0 48px;border-top:1px solid var(--line);font-size:14px;color
   .stats,.sys,.steps{grid-template-columns:1fr}
   .stat,.sys-col{border-right:none;border-bottom:1px solid var(--line)}
   .stat:last-child,.sys-col:last-child{border-bottom:none}
-  .person{grid-template-columns:84px 1fr;gap:16px;padding:18px}
-  .avatar{width:84px;height:84px;font-size:26px}
   .btn{width:100%;justify-content:center}
   .nav-links .btn{width:auto}
 }
@@ -314,9 +311,9 @@ footer{padding:40px 0 48px;border-top:1px solid var(--line);font-size:14px;color
         <p><b>Punto de partida:</b> un programa de hipnoparto (RE-NACER, de Positive Mama) que necesitaba una página de venta clara y anuncios que trajeran mujeres interesadas.</p>
         <p><b>Qué hicimos:</b> armamos la landing de venta completa y las campañas de Meta: conjuntos de anuncios y anuncios, en Argentina y México.</p>
         <div class="case-metric"><b>2 países</b><span>Campañas gestionadas en Argentina y México</span></div>
-        <a class="link" href="https://positivemama.org" target="_blank" rel="noopener">Ver sitio →</a>
+        <a class="link" href="https://positivemama.org/parto-positivo-re-nacer/" target="_blank" rel="noopener">Ver sitio →</a>
       </div>
-      <div class="shot"><div class="ph"><b>[[COMPLETAR: captura de la landing RE-NACER]]</b>Guardala en assets/caso-renacer.jpg y reemplazá este bloque por &lt;img src="assets/caso-renacer.jpg" alt="Landing RE-NACER"&gt;</div></div>
+      <div class="shot" style="aspect-ratio:1200/684"><img src="assets/caso-renacer.jpg" alt="Landing del programa RE-NACER de Positive Mama" loading="lazy"></div>
     </article>
 
     <article class="case flip">
@@ -339,14 +336,15 @@ footer{padding:40px 0 48px;border-top:1px solid var(--line);font-size:14px;color
 <!-- 5. SISTEMA -->
 <section id="sistema">
   <div class="wrap">
-    <p class="eyebrow">El sistema Making Progress</p>
-    <h2>Lo que se repite en cada cliente no es el diseño: es el sistema</h2>
-    <p class="lead">Cuatro piezas que combinamos según lo que necesita cada proyecto.</p>
+    <p class="eyebrow">Sistema Making Progress</p>
+    <h2>Lo que se repite entre nuestros proyectos no es el diseño: es la forma</h2>
+    <p class="lead">Un negocio que mucha gente todavía no conoce se muestra, se encuentra, conversa y se mantiene. Cada etapa se puede trabajar por separado o en conjunto.</p>
     <div class="sys">
-      <div class="sys-col"><div class="sys-n">01</div><h3>Web</h3><p>Diseño y desarrollo de páginas y landings, rápidas y pensadas para que se entiendan.</p></div>
-      <div class="sys-col"><div class="sys-n">02</div><h3>Mantenimiento</h3><p>Cuidamos lo que construimos: al día, seguro y funcionando.</p><a href="#mantenimiento">Qué incluye →</a></div>
-      <div class="sys-col"><div class="sys-n">03</div><h3>Campañas Meta</h3><p>Estructura de campañas, conjuntos de anuncios y anuncios en Meta.</p></div>
-      <div class="sys-col"><div class="sys-n">04</div><h3>Setting</h3><p>Ordenamos las consultas que llegan por WhatsApp e Instagram.</p></div>
+      <div class="sys-col"><div class="sys-n">01</div><h3>Captar</h3><p>Campañas de Meta: estructura, conjuntos de anuncios y anuncios que llevan a las personas correctas.</p></div>
+      <div class="sys-col"><div class="sys-n">02</div><h3>Presentar</h3><p>Webs y landings claras, rápidas y con la identidad de cada marca.</p></div>
+      <div class="sys-col"><div class="sys-n">03</div><h3>Conversar</h3><p>Setting: ordenamos las consultas que llegan por WhatsApp e Instagram.</p></div>
+      <div class="sys-col"><div class="sys-n">04</div><h3>Comunidad</h3><p>Creación y publicación de contenido, y community management.</p></div>
+      <div class="sys-col"><div class="sys-n">05</div><h3>Mantener</h3><p>Cuidamos lo que construimos: al día, seguro y funcionando.</p></div>
     </div>
   </div>
 </section>
@@ -391,11 +389,9 @@ footer{padding:40px 0 48px;border-top:1px solid var(--line);font-size:14px;color
     <p class="lead">Making Progress la lideramos los dos, 50 y 50. Nos complementamos: cada uno cubre lo que el otro no, y todo proyecto pasa por los dos.</p>
     <div class="team">
       <article class="person">
-        <div class="avatar">MM<!-- <img src="assets/mateo.jpg" alt="Mateo Morales"> --></div>
         <div><h3>Mateo Morales</h3><div class="role">Socio · Armado y ejecución</div><p>Se encarga de armar y ejecutar: diseña, construye y publica cada web y deja las campañas listas para salir.</p></div>
       </article>
       <article class="person">
-        <div class="avatar">SP<!-- <img src="assets/santiago.jpg" alt="Santiago Pica"> --></div>
         <div><h3>Santiago Pica</h3><div class="role">Socio · Conversaciones y comunidad</div><p>Inicia las conversaciones con los clientes, organiza los archivos y los pendientes y lleva el community management de Making Progress.</p></div>
       </article>
     </div>
