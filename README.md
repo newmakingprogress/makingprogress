@@ -1,18 +1,18 @@
 # Making Progress
 
-Web oficial de Making Progress (Mateo Morales y Santiago Pica). Es un **HTML estático**: todo está en `index.html`.
+Web oficial de Making Progress (Mateo Morales y Santiago Pica). Es un **HTML estático**: todo el sitio está en `index.html` y las imágenes en `assets/`.
 
 ## Cómo verla
 Abrí `index.html` con doble clic en tu navegador.
 
-## Qué completar antes de publicar
-1. Buscá `[[COMPLETAR]]` y `[[N]]` dentro de `index.html` y reemplazalos.
-2. **Contacto:** al final del archivo, en el bloque `CONTACTO` (WhatsApp, Instagram y email). Todos los botones usan esos datos.
-3. **Color de marca:** al inicio, la variable `--accent`.
-4. **Imágenes:** guardalas en `assets/` (capturas de los casos, fotos de Mateo y Santiago) y reemplazá los bloques marcados.
+## Qué se edita y dónde
+- **Contacto (WhatsApp, Instagram, email):** al final de `index.html`, en el bloque `CONTACTO`. Todos los botones usan esos datos.
+- **Color de marca:** al inicio de `index.html`, la variable `--accent`.
+- **Logo e imágenes de los casos:** carpeta `assets/`.
 
 ## Cómo publicarla gratis
-- **Netlify:** entrá a app.netlify.com/drop y arrastrá la carpeta del proyecto.
-- **GitHub Pages:** Settings → Pages → elegí la rama y la carpeta raíz.
+**GitHub Pages:** Settings → Pages → *Deploy from a branch* → rama `main`, carpeta `/ (root)` → Save. En uno o dos minutos queda online.
 
-Después conectá tu dominio (por ejemplo makingprogress.com.ar) desde el panel del servicio.
+**Netlify (alternativa):** app.netlify.com/drop y arrastrar la carpeta del proyecto.
+
+Para usar un dominio propio, conectalo desde el panel del servicio elegido.
