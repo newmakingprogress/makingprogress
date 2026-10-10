@@ -5,9 +5,10 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Making Progress · Webs, campañas y ventas</title>
 <meta name="description" content="Diseñamos tu web, la mantenemos, la llenamos de visitas con campañas de Meta y convertimos las consultas en clientes.">
+<link rel="icon" type="image/png" href="assets/monograma-azul.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
 
 <!--
   ╔══════════════════════════════════════════════════════════════╗
@@ -69,8 +70,9 @@ h2{font-size:clamp(28px,4vw,44px);font-weight:800;max-width:760px;margin-bottom:
 /* nav */
 nav{position:sticky;top:0;z-index:50;background:color-mix(in srgb,var(--bg) 92%,transparent);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
 .nav-in{display:flex;align-items:center;justify-content:space-between;height:64px}
-.logo{font-weight:800;letter-spacing:-.03em;font-size:18px;text-decoration:none;display:flex;align-items:center;gap:8px}
-.logo i{width:10px;height:10px;border-radius:50%;background:var(--accent);display:inline-block}
+.logo{font-family:'Playfair Display',Georgia,serif;font-weight:700;letter-spacing:.06em;text-transform:uppercase;font-size:15px;text-decoration:none;display:flex;align-items:center;gap:12px}
+.logo img{height:26px;width:auto}
+.foot-logo{height:84px;width:auto;margin-bottom:14px}
 .nav-links{display:flex;align-items:center;gap:28px}
 .nav-links a{font-size:14px;color:var(--muted);text-decoration:none;font-weight:500}
 .nav-links a:hover{color:var(--ink)}
@@ -240,7 +242,10 @@ footer{padding:40px 0 48px;border-top:1px solid var(--line);font-size:14px;color
 
 <nav>
   <div class="wrap nav-in">
-    <a href="#top" class="logo"><i></i>Making Progress</a>
+    <a href="#top" class="logo" aria-label="Making Progress">
+      <picture><source srcset="assets/monograma-blanco.png" media="(prefers-color-scheme: dark)"><img src="assets/monograma-azul.png" alt="" width="68" height="26"></picture>
+      <span>Making Progress</span>
+    </a>
     <div class="nav-links">
       <a href="#casos">Casos</a>
       <a href="#sistema">Sistema</a>
@@ -504,7 +509,7 @@ footer{padding:40px 0 48px;border-top:1px solid var(--line);font-size:14px;color
 
 <footer>
   <div class="wrap foot">
-    <div><b style="color:var(--ink)">Making Progress</b><br>Webs, campañas y setting para profesionales y negocios.</div>
+    <div><picture><source srcset="assets/logo-blanco.png" media="(prefers-color-scheme: dark)"><img class="foot-logo" src="assets/logo-azul.png" alt="Making Progress" width="106" height="84"></picture><br>Webs, campañas y setting para profesionales y negocios.</div>
     <div class="foot-links"><a href="#casos">Casos</a><a href="#sistema">Sistema</a><a href="#mantenimiento">Mantenimiento</a><a href="#equipo">Equipo</a><a href="#contacto">Contacto</a></div>
     <div>© 2026 Making Progress</div>
   </div>
