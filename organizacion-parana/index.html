@@ -509,6 +509,7 @@ footer{border-top:4px solid var(--bordo)}
 .fm-ey{display:inline-block;font:800 .78rem var(--head);letter-spacing:.16em;text-transform:uppercase;border-bottom:3px solid #141414;padding-bottom:3px;margin-bottom:10px}
 .fotom h2{font-size:clamp(2rem,4vw,3rem);text-transform:uppercase;margin-bottom:8px}
 .fotom p{max-width:36rem;color:#2A2618}
+.fm-j{list-style:none;display:flex;flex-wrap:wrap;gap:8px;margin-top:14px}.fm-j li{padding:6px 14px;border:2px solid #141414;border-radius:999px;font:800 .8rem var(--head);text-transform:uppercase;letter-spacing:.05em}
 .fm-f{background:#fff;color:#141414;border-radius:14px;padding:18px;box-shadow:0 18px 36px rgba(60,40,0,.22)}
 .fm-f label{display:block;font:800 .82rem var(--head);text-transform:uppercase;letter-spacing:.06em;margin-bottom:8px}
 .fm-row{display:flex;gap:8px}
@@ -600,11 +601,12 @@ footer{border-top:4px solid var(--bordo)}
       <div class="fm-t">
         <span class="fm-ey">Gestoría</span>
         <h2 id="fm-t">¿Tenés fotomultas?</h2>
-        <p>Te decimos si tu auto o tu moto tiene multas, revisamos si están bien hechas y te ayudamos con el descargo o con el pago.</p>
+        <p>Consultá si tu auto tiene fotomultas, revisamos si están bien hechas y te ayudamos con el descargo o con el pago.</p>
+        <ul class="fm-j" aria-label="Jurisdicciones"><li>Entre Ríos</li><li>Provincia de Buenos Aires</li><li>CABA</li><li>Otras jurisdicciones</li></ul>
       </div>
       <form class="fm-f" id="fm-f" novalidate>
         <label for="fm-pat">Tu patente</label>
-        <div class="fm-row"><input id="fm-pat" autocomplete="off" autocapitalize="characters" maxlength="9" placeholder="Ejemplo: AB123CD"><a class="btn btn-n" id="fm-wa" href="https://wa.me/5493435125019?text=Hola%2C%20quiero%20consultar%20si%20tengo%20fotomultas."><svg><use href="#wa"/></svg>Consultar</a></div>
+        <div class="fm-row"><input id="fm-pat" autocomplete="off" autocapitalize="characters" maxlength="9" placeholder="Ejemplo: AB123CD"><a class="btn btn-n" id="fm-wa" href="https://wa.me/5493435125019?text=Hola%2C%20quiero%20consultar%20si%20mi%20auto%20tiene%20fotomultas."><svg><use href="#wa"/></svg>Consultar</a></div>
         <small>Te respondemos por WhatsApp.</small>
       </form>
     </div>
@@ -977,7 +979,7 @@ $("enviar").addEventListener("click", e => {
 /* Fotomultas: la patente viaja en el mensaje */
 (function(){
   const f = () => { const p = $("fm-pat").value.toUpperCase().replace(/[^A-Z0-9]/g, "");
-    $("fm-wa").href = wa("Hola, quiero consultar si tengo fotomultas." + (p ? " Mi patente es " + p + "." : "")); };
+    $("fm-wa").href = wa("Hola, quiero consultar si mi auto tiene fotomultas." + (p ? " Mi patente es " + p + "." : "")); };
   $("fm-pat").addEventListener("input", f); $("fm-f").addEventListener("submit", e => { e.preventDefault(); f(); $("fm-wa").click(); }); f();
 })();
 /* Siniestro */
