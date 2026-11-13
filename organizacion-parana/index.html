@@ -532,20 +532,15 @@ footer{border-top:4px solid var(--bordo)}
 .tabs button[aria-selected="true"]{background:var(--bordo);color:#fff;box-shadow:0 12px 26px rgba(122,31,61,.35)}
 .tabs button[aria-selected="true"] svg{background:var(--oro-l);color:#2A0B16}
 @media (max-width:620px){.tabs button{flex-direction:column;align-items:flex-start;gap:10px;padding:14px}.tabs button{min-width:0}.tabs button b{font-size:.86rem;font-stretch:100%;letter-spacing:0}.tabs button small{font-size:.82rem}}
-/* Banner grande de fotomultas en Gestoría */
-.fotom-g::before{inset:0 0 auto 0}
-.fotom-g::after{content:"";position:absolute;inset:auto 0 0 0;height:14px;background:repeating-linear-gradient(-45deg,#141414 0 18px,#F2C230 18px 36px)}
-.fotom-g{background:radial-gradient(120% 90% at 85% 40%,#FFD84D 0,#F2C230 55%,#E8B61E 100%)}
-.gnav{background:var(--bordo-d);color:#fff}.gnav .wrap{display:flex;flex-wrap:wrap;align-items:center;gap:8px 10px;padding-block:14px}.gnav span{font:800 .8rem var(--head);letter-spacing:.14em;text-transform:uppercase;color:var(--oro-l);margin-right:6px}.gnav a{padding:7px 14px;border:1px solid rgba(255,255,255,.4);border-radius:999px;color:#fff;text-decoration:none;font:700 .88rem var(--sans);transition:background .15s,color .15s}.gnav a:hover,.gnav a:focus-visible{background:var(--oro-l);color:#2A0B16;border-color:var(--oro-l)}
-.fmg-g{display:grid;grid-template-columns:minmax(0,1.05fr) minmax(0,.95fr);gap:30px 56px;align-items:center;padding-block:56px 74px}
-.fotom-g h2{font-size:clamp(2.6rem,4.6vw,3.9rem);line-height:.95;margin-bottom:16px}@media (max-width:900px){.fotom-g h2{font-size:clamp(2.6rem,10vw,3.6rem)}}
-.fmg-lead{font-size:1.25rem;max-width:34rem;color:#1F1B0E}
-.fmg-f{margin-top:24px;padding:22px;border:3px solid #141414;box-shadow:8px 8px 0 #141414}
-.fmg-f label{font-size:.95rem}
-.fmg-f .fm-row input{min-height:60px;font-size:1.35rem}
-.fmg-f .fm-row .btn{min-height:60px;padding-inline:26px}
-.fmg-i{display:flex;justify-content:center}
-.fmg-ilus{width:100%;max-width:540px;height:auto;filter:drop-shadow(0 20px 24px rgba(60,40,0,.25))}
+/* Tarjeta de fotomultas dentro de Gestoría */
+.fmc{position:relative;overflow:hidden;background:radial-gradient(120% 100% at 90% 0,#FFD84D 0,#F2C230 60%,#E8B61E 100%);color:#141414;border-radius:16px;padding:34px 26px 26px;box-shadow:0 18px 40px rgba(0,0,0,.35)}
+.fmc::before{content:"";position:absolute;inset:0 0 auto 0;height:10px;background:repeating-linear-gradient(-45deg,#141414 0 14px,#F2C230 14px 28px)}
+.fmc-h{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-bottom:10px}
+.fmc h3{font-size:clamp(1.9rem,3.4vw,2.6rem);line-height:.95;text-transform:uppercase;color:#141414}
+.fmc>p{max-width:34rem;color:#2A2618;margin-bottom:12px}
+.fmc .fm-j{margin-top:0;margin-bottom:16px}.fmc .fm-j li{padding:5px 12px;font-size:.74rem}
+.fmc .fm-f{border:3px solid #141414;box-shadow:5px 5px 0 #141414}
+.fmc-ilus{flex:none;width:170px;height:auto}
 .fmg-cono{opacity:.28}
 .tl{opacity:.28}.tl-r{opacity:1}
 @media (prefers-reduced-motion:no-preference){
@@ -553,8 +548,9 @@ footer{border-top:4px solid var(--bordo)}
   .tl{animation:tl 6s infinite}.tl-r{animation-name:tl-r}.tl-y{animation-name:tl-y}.tl-g{animation-name:tl-g}
   @keyframes tl-r{0%,40%{opacity:1}44%,100%{opacity:.25}}@keyframes tl-g{0%,44%{opacity:.25}48%,86%{opacity:1}90%,100%{opacity:.25}}@keyframes tl-y{0%,86%{opacity:.25}88%,98%{opacity:1}100%{opacity:.25}}
 }
-@media (max-width:900px){.fmg-g{grid-template-columns:minmax(0,1fr);padding-block:54px 70px}.fmg-i{order:-1}.fmg-ilus{max-width:360px}}
-@media (max-width:620px){.fmg-f{box-shadow:5px 5px 0 #141414;padding:16px}.fmg-ilus{max-width:300px}}
+.gest-g{align-items:start}
+@media (max-width:900px){.gest .escena-g{display:none}}
+@media (max-width:620px){.fmc{padding:30px 18px 20px}.fmc-ilus{width:110px}.fmc .fm-row{flex-direction:column}.fmc .fm-row .btn{width:100%}}
 .esc-n{display:none}
 @media (prefers-color-scheme:dark){.esc-d{display:none}.esc-n{display:inline}}
 .impacto{transform-box:fill-box;transform-origin:center}
@@ -823,34 +819,6 @@ footer{border-top:4px solid var(--bordo)}
 
   </div>
   <div class="vista" id="v-gestoria">
-  <nav class="gnav" aria-label="Trámites de gestoría"><div class="wrap"><span>Gestoría y trámites</span><a href="#gestoria">Transferencia de vehículo</a><a href="#gestoria">Cédula azul</a><a href="#gestoria">Informe de dominio</a><a href="#gestoria">Verificación policial</a><a href="#gestoria">Patentes y multas</a><a href="#gestoria">Baja de vehículo</a><a href="#gestoria">Asesoría legal</a></div></nav>
-  <section class="fotom fotom-g" id="fotomultas-g" aria-labelledby="fg-t">
-    <div class="wrap fmg-g">
-      <div class="fmg-t">
-        <span class="fm-ey">Gestoría · Autos</span>
-        <h2 id="fg-t">¿Tenés fotomultas?</h2>
-        <p class="fmg-lead">Consultá si tu auto tiene fotomultas, revisamos si están bien hechas y te ayudamos con el pago voluntario.</p>
-        <ul class="fm-j" aria-label="Jurisdicciones"><li>Entre Ríos</li><li>Provincia de Buenos Aires</li><li>CABA</li><li>Otras jurisdicciones</li></ul>
-        <form class="fm-f fmg-f" id="fg-f" novalidate>
-          <label for="fg-pat">Escribí tu patente</label>
-          <div class="fm-row"><input id="fg-pat" autocomplete="off" autocapitalize="characters" maxlength="9" placeholder="Ejemplo: AB123CD"><a class="btn btn-n" id="fg-wa" href="https://wa.me/5493435125019?text=Hola%2C%20quiero%20consultar%20si%20mi%20auto%20tiene%20fotomultas."><svg><use href="#wa"/></svg>Consultar</a></div>
-          <small>Te respondemos por WhatsApp.</small>
-        </form>
-      </div>
-      <div class="fmg-i"><svg class="fmg-ilus" viewBox="0 0 520 440" aria-hidden="true">
-  <rect y="360" width="520" height="80" fill="#262626"/><rect y="354" width="520" height="8" fill="#fff"/><path d="M0 402H520" stroke="#F2C230" stroke-width="4" stroke-dasharray="28 20"/>
-  <rect x="62" y="236" width="12" height="126" fill="#1B1B1B"/><rect x="28" y="62" width="80" height="182" rx="16" fill="#1B1B1B"/>
-  <circle class="tl tl-r" cx="68" cy="106" r="21" fill="#E5484D"/><circle class="tl tl-y" cx="68" cy="153" r="21" fill="#FFC53D"/><circle class="tl tl-g" cx="68" cy="200" r="21" fill="#30A46C"/>
-  <rect x="372" y="44" width="14" height="318" fill="#1B1B1B"/><rect x="206" y="40" width="180" height="14" rx="5" fill="#1B1B1B"/><rect x="236" y="54" width="12" height="16" fill="#1B1B1B"/>
-  <path class="fmg-cono" d="M248 134 140 300H356z" fill="#fff"/>
-  <rect x="196" y="68" width="120" height="76" rx="14" fill="#1B1B1B"/><rect x="206" y="78" width="100" height="56" rx="9" fill="#2E2E2E"/>
-  <circle cx="248" cy="106" r="24" fill="#0F0F0F" stroke="#555" stroke-width="5"/><circle cx="248" cy="106" r="11" fill="#3D6BB3"/><circle cx="243" cy="101" r="4" fill="#fff" opacity=".8"/><rect x="280" y="86" width="14" height="8" rx="2" fill="#E5484D"/>
-  <use href="#auto-s" x="122" y="262" width="250" height="112" style="color:#D9480F;--v:#2B2B2B"/>
-  <rect x="462" y="190" width="10" height="172" fill="#1B1B1B"/><circle cx="467" cy="148" r="44" fill="#fff" stroke="#E5484D" stroke-width="12"/><text x="467" y="163" text-anchor="middle" font-family="Archivo,Arial,sans-serif" font-weight="900" font-size="40" fill="#141414">40</text>
-</svg></div>
-    </div>
-  </section>
-
   <section class="blk gest" id="gestoria">
     <div class="wrap gest-g">
       <div class="rev">
@@ -864,6 +832,26 @@ footer{border-top:4px solid var(--bordo)}
         </svg>
       </div>
       <div class="legal rev">
+        <div class="fmc" id="fotomultas-g">
+          <div class="fmc-h"><div><span class="fm-ey">Gestoría · Autos</span><h3 id="fg-t">¿Tenés fotomultas?</h3></div><svg class="fmc-ilus" viewBox="0 0 520 440" aria-hidden="true">
+  <rect y="360" width="520" height="80" fill="#262626"/><rect y="354" width="520" height="8" fill="#fff"/><path d="M0 402H520" stroke="#F2C230" stroke-width="4" stroke-dasharray="28 20"/>
+  <rect x="62" y="236" width="12" height="126" fill="#1B1B1B"/><rect x="28" y="62" width="80" height="182" rx="16" fill="#1B1B1B"/>
+  <circle class="tl tl-r" cx="68" cy="106" r="21" fill="#E5484D"/><circle class="tl tl-y" cx="68" cy="153" r="21" fill="#FFC53D"/><circle class="tl tl-g" cx="68" cy="200" r="21" fill="#30A46C"/>
+  <rect x="372" y="44" width="14" height="318" fill="#1B1B1B"/><rect x="206" y="40" width="180" height="14" rx="5" fill="#1B1B1B"/><rect x="236" y="54" width="12" height="16" fill="#1B1B1B"/>
+  <path class="fmg-cono" d="M248 134 140 300H356z" fill="#fff"/>
+  <rect x="196" y="68" width="120" height="76" rx="14" fill="#1B1B1B"/><rect x="206" y="78" width="100" height="56" rx="9" fill="#2E2E2E"/>
+  <circle cx="248" cy="106" r="24" fill="#0F0F0F" stroke="#555" stroke-width="5"/><circle cx="248" cy="106" r="11" fill="#3D6BB3"/><circle cx="243" cy="101" r="4" fill="#fff" opacity=".8"/><rect x="280" y="86" width="14" height="8" rx="2" fill="#E5484D"/>
+  <use href="#auto-s" x="122" y="262" width="250" height="112" style="color:#D9480F;--v:#2B2B2B"/>
+  <rect x="462" y="190" width="10" height="172" fill="#1B1B1B"/><circle cx="467" cy="148" r="44" fill="#fff" stroke="#E5484D" stroke-width="12"/><text x="467" y="163" text-anchor="middle" font-family="Archivo,Arial,sans-serif" font-weight="900" font-size="40" fill="#141414">40</text>
+</svg></div>
+          <p>Consultá si tu auto tiene fotomultas, revisamos si están bien hechas y te ayudamos con el pago voluntario.</p>
+          <ul class="fm-j" aria-label="Jurisdicciones"><li>Entre Ríos</li><li>Provincia de Buenos Aires</li><li>CABA</li><li>Otras jurisdicciones</li></ul>
+          <form class="fm-f" id="fg-f" novalidate>
+            <label for="fg-pat">Escribí tu patente</label>
+            <div class="fm-row"><input id="fg-pat" autocomplete="off" autocapitalize="characters" maxlength="9" placeholder="Ejemplo: AB123CD"><a class="btn btn-n" id="fg-wa" href="https://wa.me/5493435125019?text=Hola%2C%20quiero%20consultar%20si%20mi%20auto%20tiene%20fotomultas."><svg><use href="#wa"/></svg>Consultar</a></div>
+            <small>Te respondemos por WhatsApp.</small>
+          </form>
+        </div>
         <div class="tram"><a class="tr" href="https://wa.me/5493435125019?text=Hola%2C%20quiero%20consultar%20por%20este%20tr%C3%A1mite%3A%20transferencia%20de%20veh%C3%ADculo."><svg viewBox="0 0 24 24"><use href="#check"/></svg>Transferencia de vehículo</a><a class="tr" href="https://wa.me/5493435125019?text=Hola%2C%20quiero%20consultar%20por%20este%20tr%C3%A1mite%3A%20c%C3%A9dula%20azul."><svg viewBox="0 0 24 24"><use href="#check"/></svg>Cédula azul</a><a class="tr" href="https://wa.me/5493435125019?text=Hola%2C%20quiero%20consultar%20por%20este%20tr%C3%A1mite%3A%20informe%20de%20dominio."><svg viewBox="0 0 24 24"><use href="#check"/></svg>Informe de dominio</a><a class="tr" href="https://wa.me/5493435125019?text=Hola%2C%20quiero%20consultar%20por%20este%20tr%C3%A1mite%3A%20verificaci%C3%B3n%20policial."><svg viewBox="0 0 24 24"><use href="#check"/></svg>Verificación policial</a><a class="tr" href="https://wa.me/5493435125019?text=Hola%2C%20quiero%20consultar%20por%20este%20tr%C3%A1mite%3A%20patentes%20y%20multas."><svg viewBox="0 0 24 24"><use href="#check"/></svg>Patentes y multas</a><a class="tr" href="https://wa.me/5493435125019?text=Hola%2C%20quiero%20consultar%20por%20este%20tr%C3%A1mite%3A%20baja%20de%20veh%C3%ADculo."><svg viewBox="0 0 24 24"><use href="#check"/></svg>Baja de vehículo</a></div>
         <div class="legal-c"><h3>Asesoría legal</h3><p>Orientación y asistencia profesional. Contanos tu consulta y te decimos cómo seguir.</p><a class="btn btn-p" href="https://wa.me/5493435125019?text=Hola%2C%20quiero%20hacer%20una%20consulta%20de%20asesor%C3%ADa%20legal."><svg><use href="#wa"/></svg>Consultar</a></div>
       </div>
