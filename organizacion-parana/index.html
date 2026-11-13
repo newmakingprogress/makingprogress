@@ -536,7 +536,8 @@ footer{border-top:4px solid var(--bordo)}
 .fotom-g::before{inset:0 0 auto 0}
 .fotom-g::after{content:"";position:absolute;inset:auto 0 0 0;height:14px;background:repeating-linear-gradient(-45deg,#141414 0 18px,#F2C230 18px 36px)}
 .fotom-g{background:radial-gradient(120% 90% at 85% 40%,#FFD84D 0,#F2C230 55%,#E8B61E 100%)}
-.fmg-g{display:grid;grid-template-columns:minmax(0,1.05fr) minmax(0,.95fr);gap:30px 56px;align-items:center;padding-block:76px 90px}
+.gnav{background:var(--bordo-d);color:#fff}.gnav .wrap{display:flex;flex-wrap:wrap;align-items:center;gap:8px 10px;padding-block:14px}.gnav span{font:800 .8rem var(--head);letter-spacing:.14em;text-transform:uppercase;color:var(--oro-l);margin-right:6px}.gnav a{padding:7px 14px;border:1px solid rgba(255,255,255,.4);border-radius:999px;color:#fff;text-decoration:none;font:700 .88rem var(--sans);transition:background .15s,color .15s}.gnav a:hover,.gnav a:focus-visible{background:var(--oro-l);color:#2A0B16;border-color:var(--oro-l)}
+.fmg-g{display:grid;grid-template-columns:minmax(0,1.05fr) minmax(0,.95fr);gap:30px 56px;align-items:center;padding-block:56px 74px}
 .fotom-g h2{font-size:clamp(2.6rem,4.6vw,3.9rem);line-height:.95;margin-bottom:16px}@media (max-width:900px){.fotom-g h2{font-size:clamp(2.6rem,10vw,3.6rem)}}
 .fmg-lead{font-size:1.25rem;max-width:34rem;color:#1F1B0E}
 .fmg-f{margin-top:24px;padding:22px;border:3px solid #141414;box-shadow:8px 8px 0 #141414}
@@ -822,6 +823,7 @@ footer{border-top:4px solid var(--bordo)}
 
   </div>
   <div class="vista" id="v-gestoria">
+  <nav class="gnav" aria-label="Trámites de gestoría"><div class="wrap"><span>Gestoría y trámites</span><a href="#gestoria">Transferencia de vehículo</a><a href="#gestoria">Cédula azul</a><a href="#gestoria">Informe de dominio</a><a href="#gestoria">Verificación policial</a><a href="#gestoria">Patentes y multas</a><a href="#gestoria">Baja de vehículo</a><a href="#gestoria">Asesoría legal</a></div></nav>
   <section class="fotom fotom-g" id="fotomultas-g" aria-labelledby="fg-t">
     <div class="wrap fmg-g">
       <div class="fmg-t">
