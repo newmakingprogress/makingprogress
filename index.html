@@ -274,6 +274,33 @@ footer{padding:40px 0 48px;border-top:1px solid var(--line);font-size:14px;color
   .nav-links .btn{width:auto}
 }
 @media (prefers-reduced-motion:reduce){*{transition:none!important;scroll-behavior:auto!important}}
+
+/* franja por qué nosotros */
+.pq{padding:56px 0;background:var(--surface)}
+.pq-g{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:40px}
+.pq-n{display:block;font-size:13px;font-weight:700;color:var(--accent);letter-spacing:.08em;margin-bottom:10px}
+.pq-i h3{font-size:21px;font-weight:800;margin-bottom:8px}
+.pq-i p{color:var(--muted);font-size:15px}
+/* trabajos navegables */
+.tb-tit{margin:64px 0 28px;padding-top:40px;border-top:1px solid var(--line)}
+.tb-tit h3{font-size:clamp(24px,3vw,32px);font-weight:800;margin-bottom:8px}
+.tb-tit p{color:var(--muted);max-width:640px}
+.tb-g{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:40px 28px;margin-bottom:48px}
+.tb-h h3{font-size:19px;font-weight:800;margin-bottom:2px}
+.tb-h p{font-size:14px;color:var(--muted);margin-bottom:14px}
+.tb .badges{margin-bottom:10px}
+.tb-f{border:1px solid var(--line);border-radius:22px;overflow:hidden;background:var(--surface);box-shadow:0 18px 40px rgba(0,0,0,.08);max-width:360px}
+.tb-bar{display:flex;align-items:center;gap:6px;padding:10px 14px;border-bottom:1px solid var(--line);font-size:11px;color:var(--muted)}
+.tb-bar i{width:8px;height:8px;border-radius:50%;background:var(--line)}
+.tb-bar span{margin-left:8px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.tb-v{position:relative;aspect-ratio:390/640;background:var(--bg-alt)}
+.tb-v img,.tb-v iframe{position:absolute;inset:0;width:100%;height:100%;border:0;object-fit:cover;object-position:top}
+.tb-v iframe{width:390px;height:640px;transform-origin:0 0}
+.tb-go{position:absolute;left:50%;bottom:18px;transform:translateX(-50%);padding:11px 20px;border-radius:999px;border:0;background:var(--accent);color:var(--accent-ink);font:600 14px 'Inter',sans-serif;cursor:pointer;box-shadow:0 8px 20px rgba(0,0,0,.18);white-space:nowrap}
+.tb-go:hover{filter:brightness(1.08)}
+.tb a.link{display:inline-block;margin-top:14px;font-weight:600;font-size:14px;color:var(--accent);text-decoration:none}
+@media (max-width:980px){.tb-g{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media (max-width:640px){.pq-g{grid-template-columns:1fr;gap:24px}.tb-g{grid-template-columns:1fr}.tb-f{max-width:none}}
 </style>
 </head>
 <body>
@@ -302,7 +329,7 @@ footer{padding:40px 0 48px;border-top:1px solid var(--line);font-size:14px;color
     <div>
       <span class="tag">Webs · Campañas · Setting · Entre Ríos, Argentina</span>
       <h1>Construimos webs y campañas que <em>acercan un negocio a su gente.</em></h1>
-      <p class="lead">Somos Mateo Morales y Santiago Pica, dos socios en Entre Ríos, Argentina. Diseñamos y mantenemos webs, armamos campañas de Meta y ordenamos las conversaciones que llegan después.</p>
+      <p class="lead">Somos Mateo Morales y Santiago Pica, dos socios en Entre Ríos, Argentina. Diseñamos y mantenemos webs, armamos campañas de Meta y ordenamos las conversaciones que llegan después. Te mostramos una demo de tu web antes de contratar, la entregamos rápido y te acompañamos siempre.</p>
       <div class="hero-cta">
         <a href="#casos" class="btn btn-primary">Ver casos</a>
         <a href="#contacto" class="btn btn-ghost">Conocernos</a>
@@ -327,6 +354,15 @@ footer{padding:40px 0 48px;border-top:1px solid var(--line);font-size:14px;color
   </div>
 </section>
 
+<!-- 2b. POR QUÉ NOSOTROS -->
+<section class="pq" aria-label="Cómo trabajamos con vos">
+  <div class="wrap pq-g">
+    <div class="pq-i"><h3>Atención constante</h3><p>Respondemos todos los días y seguimos cuidando tu web después de publicarla.</p></div>
+    <div class="pq-i"><h3>Rápidos y eficaces</h3><p>De la demo a la web publicada en días, no en meses.</p></div>
+    <div class="pq-i"><h3>Demo incluida</h3><p>Antes de decidir, ves tu página funcionando, con tu marca y tus datos.</p></div>
+  </div>
+</section>
+
 <!-- 3. NÚMEROS -->
 <section id="numeros">
   <div class="wrap">
@@ -334,7 +370,7 @@ footer{padding:40px 0 48px;border-top:1px solid var(--line);font-size:14px;color
     <h2>Lo que operamos, medido</h2>
     <div class="stats">
       <div class="stat"><div class="stat-n">2</div><div class="stat-l">países con campañas gestionadas</div><div class="stat-s">Argentina y México</div></div>
-      <div class="stat"><div class="stat-n">2</div><div class="stat-l">webs en producción</div><div class="stat-s">Positive Mama e Hipnoparto Internacional</div></div>
+      <div class="stat"><div class="stat-n">+10</div><div class="stat-l">páginas web hechas</div><div class="stat-s">Estudios jurídicos, seguros, comercios y marcas, como Organización Paraná, Estudio Herrera y Positive Mama</div></div>
       <div class="stat"><div class="stat-n">2 socios</div><div class="stat-l">al frente de cada proyecto</div><div class="stat-s">Hablás con quienes hacen el trabajo</div></div>
       <div class="stat"><div class="stat-n">24 h</div><div class="stat-l">tiempo máximo de respuesta</div><div class="stat-s">Es un compromiso nuestro</div></div>
     </div>
@@ -375,6 +411,58 @@ footer{padding:40px 0 48px;border-top:1px solid var(--line);font-size:14px;color
       <div class="shot" style="aspect-ratio:1200/629"><img src="assets/caso-hipnoparto.jpg" alt="Landing y registro de la masterclass gratuita de Hipnoparto Internacional" loading="lazy"></div>
     </article>
 
+
+    <div class="tb-tit"><h3>Más trabajos</h3><p>Navegalos acá mismo, como en un celular. Las marcadas como <b>Demo</b> son propuestas que preparamos para mostrar cómo podría quedar la web de cada negocio.</p></div>
+    <div class="tb-g">
+      <article class="tb">
+        <div class="tb-h"><div class="badges"><span class="badge live">En producción</span></div><h3>Estudio Jurídico Herrera</h3><p>Estudio jurídico · Resistencia, Chaco</p></div>
+        <div class="tb-f" data-src="https://estudiojuridicoherrerayasoc.com.ar/" data-name="Estudio Jurídico Herrera">
+          <div class="tb-bar"><i></i><i></i><i></i><span>estudiojuridicoherrerayasoc.com.ar</span></div>
+          <div class="tb-v"><img src="assets/caso-herrera.jpg" alt="Vista de Estudio Jurídico Herrera en celular" loading="lazy" width="390" height="720"><button class="tb-go" type="button">Navegar la web</button></div>
+        </div>
+        <a class="link" href="https://estudiojuridicoherrerayasoc.com.ar/" target="_blank" rel="noopener">Abrir en pantalla completa →</a>
+      </article>
+      <article class="tb">
+        <div class="tb-h"><div class="badges"><span class="badge live">En producción</span></div><h3>Organización Paraná</h3><p>Seguros y gestoría · Paraná, Entre Ríos</p></div>
+        <div class="tb-f" data-src="https://www.organizacionparana.org/" data-name="Organización Paraná">
+          <div class="tb-bar"><i></i><i></i><i></i><span>www.organizacionparana.org</span></div>
+          <div class="tb-v"><img src="assets/caso-organizacion-parana.jpg" alt="Vista de Organización Paraná en celular" loading="lazy" width="390" height="720"><button class="tb-go" type="button">Navegar la web</button></div>
+        </div>
+        <a class="link" href="https://www.organizacionparana.org/" target="_blank" rel="noopener">Abrir en pantalla completa →</a>
+      </article>
+      <article class="tb">
+        <div class="tb-h"><div class="badges"><span class="badge">Demo</span></div><h3>Laqueados Rosario</h3><p>Muebles a medida · Rosario</p></div>
+        <div class="tb-f" data-src="demos/laqueados-rosario.html" data-name="Laqueados Rosario">
+          <div class="tb-bar"><i></i><i></i><i></i><span>newmakingprogress.com/demos/laqueados-rosario.html</span></div>
+          <div class="tb-v"><img src="assets/caso-laqueados.jpg" alt="Vista de Laqueados Rosario en celular" loading="lazy" width="390" height="720"><button class="tb-go" type="button">Navegar la demo</button></div>
+        </div>
+        <a class="link" href="demos/laqueados-rosario.html" target="_blank" rel="noopener">Abrir en pantalla completa →</a>
+      </article>
+      <article class="tb">
+        <div class="tb-h"><div class="badges"><span class="badge">Demo</span></div><h3>By Papas</h3><p>Gastronomía con sucursales</p></div>
+        <div class="tb-f" data-src="demos/by-papas.html" data-name="By Papas">
+          <div class="tb-bar"><i></i><i></i><i></i><span>newmakingprogress.com/demos/by-papas.html</span></div>
+          <div class="tb-v"><img src="assets/caso-by-papas.jpg" alt="Vista de By Papas en celular" loading="lazy" width="390" height="720"><button class="tb-go" type="button">Navegar la demo</button></div>
+        </div>
+        <a class="link" href="demos/by-papas.html" target="_blank" rel="noopener">Abrir en pantalla completa →</a>
+      </article>
+      <article class="tb">
+        <div class="tb-h"><div class="badges"><span class="badge">Demo</span></div><h3>Kamlofky & López Ciarroca</h3><p>Estudio jurídico · Paraná</p></div>
+        <div class="tb-f" data-src="demos/klc-abogados.html" data-name="Kamlofky & López Ciarroca">
+          <div class="tb-bar"><i></i><i></i><i></i><span>newmakingprogress.com/demos/klc-abogados.html</span></div>
+          <div class="tb-v"><img src="assets/caso-klc.jpg" alt="Vista de Kamlofky & López Ciarroca en celular" loading="lazy" width="390" height="720"><button class="tb-go" type="button">Navegar la demo</button></div>
+        </div>
+        <a class="link" href="demos/klc-abogados.html" target="_blank" rel="noopener">Abrir en pantalla completa →</a>
+      </article>
+      <article class="tb">
+        <div class="tb-h"><div class="badges"><span class="badge">Demo</span></div><h3>La Selva Resto & Café</h3><p>Cafetería · Paraná</p></div>
+        <div class="tb-f" data-src="demos/la-selva-cafe.html" data-name="La Selva Resto & Café">
+          <div class="tb-bar"><i></i><i></i><i></i><span>newmakingprogress.com/demos/la-selva-cafe.html</span></div>
+          <div class="tb-v"><img src="assets/caso-la-selva.jpg" alt="Vista de La Selva Resto & Café en celular" loading="lazy" width="390" height="720"><button class="tb-go" type="button">Navegar la demo</button></div>
+        </div>
+        <a class="link" href="demos/la-selva-cafe.html" target="_blank" rel="noopener">Abrir en pantalla completa →</a>
+      </article>
+    </div>
 
     <div class="credit">Los proyectos de Genuine Reach fueron realizados por <b>Mateo Morales y Santiago Pica</b>, hoy socios de Making Progress, mientras trabajaban con esa agencia.</div>
   </div>
@@ -539,6 +627,17 @@ document.querySelectorAll('.fq').forEach(function(b){
     if(!open){ item.classList.add('open'); b.setAttribute('aria-expanded','true'); }
   });
 });
+
+/* trabajos: la vista se vuelve navegable al tocar "Navegar" */
+function fitFrame(v){var f=v.querySelector('iframe'); if(f) f.style.transform='scale('+(v.clientWidth/390)+')';}
+document.querySelectorAll('.tb-go').forEach(function(b){
+  b.addEventListener('click',function(){
+    var box=b.closest('.tb-f'), v=box.querySelector('.tb-v'), f=document.createElement('iframe');
+    f.src=box.dataset.src; f.title=box.dataset.name; f.loading='lazy';
+    v.innerHTML=''; v.appendChild(f); fitFrame(v);
+  });
+});
+window.addEventListener('resize',function(){document.querySelectorAll('.tb-v').forEach(fitFrame);});
 </script>
 </body>
 </html>
