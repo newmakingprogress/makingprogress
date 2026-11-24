@@ -3,557 +3,888 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Making Progress · Webs, campañas y ventas</title>
-<meta name="description" content="Diseñamos tu web, la mantenemos, la llenamos de visitas con campañas de Meta y convertimos las consultas en clientes.">
+<title>Making Progress · Webs y campañas para negocios y profesionales</title>
+<meta name="description" content="Un medio hacia el éxito. Diseñamos tu web, la mantenemos, la llenamos de visitas con campañas de Meta y convertimos las consultas en clientes.">
+<link rel="canonical" href="https://newmakingprogress.com/">
+<meta property="og:title" content="Making Progress · Un medio hacia el éxito">
+<meta property="og:description" content="Webs y campañas para negocios y profesionales. Trabajos reales, demo incluida y atención constante.">
+<meta property="og:type" content="website">
+<meta name="theme-color" content="#2447F5">
 <link rel="icon" type="image/png" href="assets/monograma-azul.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
-
+<link href="https://fonts.googleapis.com/css2?family=Libre+Caslon+Text:ital,wght@0,400;0,700;1,400&family=Libre+Franklin:wght@400;500;600&display=swap" rel="stylesheet">
 <style>
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
-
 :root{
-  --bg:#FAFAF8;
-  --bg-alt:#F1F1EC;
-  --surface:#FFFFFF;
-  --ink:#111111;
-  --contact-bg:#111111;--contact-fg:#FAFAF8;
-  --muted:#5C5C66;
-  --line:#DEDED6;
-  --accent:#2447F5;          /* color de marca: cambiá este valor y cambia toda la web */
-  --accent-ink:#FFFFFF;
-  --accent-soft:#E6EBFF;
-  --ok:#0E8F5B;
-  --maxw:1160px;
+  --marmol:#F3F5FA;        /* fondo: mármol con matiz azul */
+  --marmol-2:#E8ECF7;
+  --tinta:#0C1233;         /* texto: azul noche, nunca negro */
+  --tinta-2:#3B4468;
+  --azul:#2447F5;          /* color de marca */
+  --azul-prof:#1A32B8;
+  --azul-suave:#DEE5FF;
+  --linea:#C7D0EB;
+  --serif:"Libre Caslon Text","Iowan Old Style",Georgia,serif;
+  --sans:"Libre Franklin","Helvetica Neue",Arial,sans-serif;
+  --ease:cubic-bezier(.23,1,.32,1);
+  --s1:8px;--s2:16px;--s3:24px;--s4:32px;--s5:48px;--s6:64px;--s7:96px;--s8:144px;
+  --max:1200px;--nav:68px;
+  color-scheme:light;
 }
-@media (prefers-color-scheme:dark){
-  :root:not([data-theme="light"]){
-    --bg:#0E0E10;--bg-alt:#161619;--surface:#1B1B1F;--ink:#F2F2EE;--muted:#A0A0AA;--contact-bg:#1B1B1F;--contact-fg:#F2F2EE;
-    --line:#2C2C32;--accent:#6C86FF;--accent-ink:#0E0E10;--accent-soft:#1D2347;--ok:#3DD598;
-  }
-}
-:root[data-theme="dark"]{
-  --bg:#0E0E10;--bg-alt:#161619;--surface:#1B1B1F;--ink:#F2F2EE;--muted:#A0A0AA;--contact-bg:#1B1B1F;--contact-fg:#F2F2EE;
-  --line:#2C2C32;--accent:#6C86FF;--accent-ink:#0E0E10;--accent-soft:#1D2347;--ok:#3DD598;
-}
-
-html{scroll-behavior:smooth;scroll-padding-top:72px}
-html,body{overflow-x:hidden}
-body{font-family:'Inter',system-ui,sans-serif;background:var(--bg);color:var(--ink);line-height:1.6;-webkit-font-smoothing:antialiased}
+html{scroll-behavior:smooth;scroll-padding-top:calc(var(--nav) + 12px)}
+html,body{overflow-x:clip}
+body{font-family:var(--sans);font-size:17px;line-height:1.65;background:var(--marmol);color:var(--tinta);-webkit-font-smoothing:antialiased}
+img,svg{display:block;max-width:100%}
 a{color:inherit}
-img,svg{max-width:100%;display:block}
-
-.wrap{max-width:var(--maxw);margin:0 auto;padding:0 24px}
-section{padding:96px 0;border-top:1px solid var(--line)}
-section.alt{background:var(--bg-alt)}
-.eyebrow{font-size:12px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--accent);margin-bottom:14px}
-h1,h2,h3{letter-spacing:-.025em;line-height:1.1}
-h2{font-size:clamp(28px,4vw,44px);font-weight:800;max-width:760px;margin-bottom:16px}
-.lead{font-size:18px;color:var(--muted);max-width:640px}
+button{font:inherit;color:inherit;cursor:pointer;background:none;border:0}
+:focus-visible{outline:3px solid var(--azul);outline-offset:3px;border-radius:2px}
+.wrap{max-width:var(--max);margin:0 auto;padding:0 var(--s4)}
+.serif{font-family:var(--serif)}
+h1,h2,h3{font-family:var(--serif);font-weight:700;line-height:1.06;letter-spacing:-.012em;text-wrap:balance}
+h2{font-size:clamp(2.2rem,4.6vw,3.9rem)}
+h3{font-size:1.5rem;line-height:1.2}
+p{max-width:62ch}
+.lead{font-size:1.15rem;color:var(--tinta-2);max-width:56ch}
 
 /* botones */
-.btn{display:inline-flex;align-items:center;gap:8px;padding:14px 26px;border-radius:10px;font-weight:600;font-size:15px;text-decoration:none;border:1.5px solid transparent;transition:transform .15s,background .15s,border-color .15s;cursor:pointer}
-.btn-primary{background:var(--accent);color:var(--accent-ink)}
-.btn-primary:hover{transform:translateY(-1px);filter:brightness(1.08)}
-.btn-ghost{border-color:var(--line);background:var(--surface)}
-.btn-ghost:hover{border-color:var(--ink)}
-.btn:focus-visible,a:focus-visible,button:focus-visible{outline:3px solid var(--accent);outline-offset:3px}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;min-height:50px;padding:0 var(--s4);font:600 .95rem var(--sans);text-decoration:none;border:1.5px solid transparent;border-radius:3px;transition:background 160ms ease,color 160ms ease,border-color 160ms ease,transform 120ms var(--ease)}
+.btn:active{transform:scale(.97)}
+.btn-p{background:var(--azul);color:var(--marmol)}
+.btn-s{border-color:var(--tinta);color:var(--tinta)}
+.btn-w{background:var(--marmol);color:var(--azul-prof)}
+.btn-wg{border-color:rgba(243,245,250,.6);color:var(--marmol)}
+.btn svg{width:20px;height:20px;fill:none;stroke:currentColor;stroke-width:1.7;stroke-linecap:round;stroke-linejoin:round}
+@media (hover:hover) and (pointer:fine){
+  .btn-p:hover{background:var(--azul-prof)}
+  .btn-s:hover{background:var(--tinta);color:var(--marmol)}
+  .btn-w:hover{background:#fff}
+  .btn-wg:hover{background:rgba(243,245,250,.14);border-color:var(--marmol)}
+}
 
-/* nav */
-nav{position:sticky;top:0;z-index:50;background:color-mix(in srgb,var(--bg) 92%,transparent);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
-.nav-in{display:flex;align-items:center;justify-content:space-between;height:64px}
-.logo{font-family:'Playfair Display',Georgia,serif;font-weight:700;letter-spacing:.06em;text-transform:uppercase;font-size:15px;text-decoration:none;display:flex;align-items:center;gap:12px}
+/* navegación */
+nav{position:sticky;top:0;z-index:30;background:color-mix(in oklab,var(--marmol) 90%,transparent);backdrop-filter:blur(10px);border-bottom:1px solid var(--linea)}
+.nav-in{height:var(--nav);display:flex;align-items:center;justify-content:space-between;gap:var(--s3)}
+.logo{display:flex;align-items:center;gap:12px;text-decoration:none;font:700 1.05rem var(--serif);letter-spacing:.01em}
 .logo img{height:26px;width:auto}
-.foot-logo{height:84px;width:auto;margin-bottom:14px}
-.nav-links{display:flex;align-items:center;gap:28px}
-.nav-links a{font-size:14px;color:var(--muted);text-decoration:none;font-weight:500}
-.nav-links a:hover{color:var(--ink)}
-.nav-links .btn{padding:9px 18px;font-size:14px;color:var(--accent-ink)}
+.nav-links{display:flex;align-items:center;gap:var(--s4)}
+.nav-links a:not(.btn){text-decoration:none;font-size:.95rem;color:var(--tinta-2);padding:8px 0;border-bottom:1.5px solid transparent;transition:color 160ms ease,border-color 160ms ease}
+.nav-links .btn{min-height:44px;padding:0 var(--s3);white-space:nowrap}
+@media (hover:hover) and (pointer:fine){.nav-links a:not(.btn):hover{color:var(--tinta);border-color:var(--azul)}}
 
-/* hero */
-.hero{padding:88px 0 72px;border-top:none}
-.hero-grid{display:grid;grid-template-columns:1.15fr .85fr;gap:56px;align-items:center}
-.tag{display:inline-block;font-size:12px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);margin-bottom:22px}
-.hero h1{font-size:clamp(38px,5.6vw,68px);font-weight:800;margin-bottom:24px}
-.hero h1 em{font-style:normal;color:var(--accent)}
-.hero .lead{margin-bottom:34px}
-.hero-cta{display:flex;gap:12px;flex-wrap:wrap}
+/* greca: borde clásico */
+.greca{height:24px;background-repeat:repeat-x;background-position:left center;background-size:32px 24px}
+.greca.azul{background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='32' height='24' viewBox='0 0 32 24'%3E%3Cpath d='M0 22H28V2H4V16H20V8H12M28 22H32' fill='none' stroke='%232447F5' stroke-width='1.6'/%3E%3C/svg%3E")}
+.greca.claro{background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='32' height='24' viewBox='0 0 32 24'%3E%3Cpath d='M0 22H28V2H4V16H20V8H12M28 22H32' fill='none' stroke='%23F3F5FA' stroke-opacity='.55' stroke-width='1.6'/%3E%3C/svg%3E")}
 
-/* diagrama */
-.flow{background:var(--surface);border:1px solid var(--line);border-radius:18px;padding:28px 26px}
-.flow-title{font-size:12px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);margin-bottom:18px}
-.flow-step{display:grid;grid-template-columns:44px 1fr;gap:14px;align-items:center;position:relative;padding-bottom:22px}
-.flow-step:last-child{padding-bottom:0}
-.flow-step:not(:last-child)::after{content:'';position:absolute;left:21px;top:44px;bottom:-2px;width:2px;background:var(--line)}
-.flow-n{width:44px;height:44px;border-radius:12px;background:var(--accent-soft);color:var(--accent);display:grid;place-items:center;font-weight:800;font-size:15px}
-.flow-step b{display:block;font-size:15px;letter-spacing:-.01em}
-.flow-step span{font-size:13px;color:var(--muted)}
+/* portada */
+.hero{min-height:calc(100dvh - var(--nav));display:grid;align-items:center;padding:var(--s6) 0 var(--s7)}
+.hero-g{display:grid;grid-template-columns:minmax(0,7fr) minmax(0,5fr);gap:var(--s5);align-items:center}
+.hero h1{font-size:clamp(3rem,5.7vw,5.6rem);line-height:1;letter-spacing:-.025em}
+.hero .lead{margin:var(--s4) 0 var(--s5);font-size:1.25rem}
+.hero-cta{display:flex;gap:var(--s2);flex-wrap:wrap}
+.hero-loc{margin-top:var(--s5);font-size:.92rem;color:var(--tinta-2)}
+.arco{position:relative;justify-self:end;width:min(100%,520px);aspect-ratio:640/690;border-radius:999px 999px 0 0;background:linear-gradient(180deg,var(--azul-suave),var(--marmol-2));display:grid;align-items:end;padding:0 2% 0}
+.arco svg{width:100%;height:auto;color:var(--azul);overflow:visible}
+.arco::before{content:"";position:absolute;inset:14px 14px 0;border:1px solid var(--azul);border-bottom:0;border-radius:999px 999px 0 0;opacity:.35;pointer-events:none}
+.arco .l{stroke-width:1.5}.arco .f{stroke-width:1;opacity:.7}.arco .h{stroke-width:.8;opacity:.5}
+@keyframes trazo{to{stroke-dashoffset:0}}
+@keyframes aparece{from{opacity:0}to{opacity:1}}
+.arco .l{stroke-dasharray:1;stroke-dashoffset:1;animation:trazo 1.5s var(--ease) forwards;animation-delay:calc(var(--i) * 16ms)}
+.arco .f,.arco .h{opacity:0;animation:aparece .8s ease forwards;animation-delay:calc(var(--i) * 16ms + .5s)}
+.arco .f{--o:.7}.arco .h{--o:.5}
+@keyframes aparece-f{from{opacity:0}to{opacity:.7}}
+@keyframes aparece-h{from{opacity:0}to{opacity:.5}}
+.arco .f{animation-name:aparece-f}.arco .h{animation-name:aparece-h}
+@media (prefers-reduced-motion:reduce){
+  .arco .l{stroke-dashoffset:0;animation:none}
+  .arco .f{opacity:.7;animation:none}.arco .h{opacity:.5;animation:none}
+  html{scroll-behavior:auto}
+}
 
+/* virtudes */
+.vir{border-top:1px solid var(--linea);border-bottom:1px solid var(--linea)}
+.vir-g{display:grid;grid-template-columns:repeat(3,1fr)}
+.vir-i{padding:var(--s5) var(--s4);border-left:1px solid var(--linea)}
+.vir-i:first-child{border-left:0;padding-left:0}
+.vir-i h3{font-size:1.35rem;margin-bottom:var(--s1)}
+.vir-i p{color:var(--tinta-2);font-size:.98rem}
 
+/* epígrafe */
+.epi{background:var(--azul);color:var(--marmol);padding:0}
+.epi-in{padding:var(--s7) 0;text-align:left;display:grid;grid-template-columns:minmax(0,3fr) minmax(0,9fr);gap:var(--s5);align-items:start}
+.epi-mark{font:400 7rem/0.8 var(--serif);opacity:.35}
+.epi blockquote p{font:400 clamp(1.9rem,4.2vw,3.4rem)/1.18 var(--serif);max-width:24ch;letter-spacing:-.01em}
+.epi cite{display:block;margin-top:var(--s3);font:500 .95rem var(--sans);font-style:normal;opacity:.85}
+.epi.marmol{background:var(--marmol-2);color:var(--tinta)}
+.epi.marmol .epi-mark{color:var(--azul);opacity:.5}
+.epi.marmol blockquote p{color:var(--tinta)}
+.laurel-bg{position:absolute;right:4%;top:50%;transform:translateY(-50%);width:min(34vw,360px);color:var(--azul);opacity:.5;pointer-events:none}
+.epi.marmol{position:relative;overflow:hidden}
 
-/* secciones plegables */
-section.acc{padding:0;background:var(--bg)}
-section.acc .wrap{padding-top:0;padding-bottom:0}
-.acc-h{width:100%;display:flex;justify-content:space-between;align-items:center;gap:24px;background:none;border:none;color:var(--ink);text-align:left;cursor:pointer;padding:34px 0;font-family:inherit}
-.acc-h .eyebrow{margin-bottom:8px;display:block}
-.acc-t{display:block;font-size:clamp(22px,3vw,32px);font-weight:800;letter-spacing:-.025em;line-height:1.15;max-width:760px}
-.acc-ic,.more-btn .ic{flex-shrink:0;width:36px;height:36px;border-radius:50%;border:1.5px solid var(--line);display:grid;place-items:center;font-size:20px;color:var(--accent);transition:transform .25s,background .2s,color .2s,border-color .2s}
-.acc-h:hover .acc-ic{border-color:var(--accent)}
-[aria-expanded="true"] .acc-ic,[aria-expanded="true"] .ic{transform:rotate(45deg);background:var(--accent);color:var(--accent-ink);border-color:var(--accent)}
-.acc-p,.case-more{display:grid;grid-template-rows:0fr;transition:grid-template-rows .35s ease}
-.acc-p.open,.case-more.open{grid-template-rows:1fr}
-.acc-in{overflow:hidden;min-height:0}
-.acc-in>.lead{margin-top:0}
-.acc-p.open .acc-in{padding-bottom:56px}
-.more-btn{display:inline-flex;align-items:center;gap:10px;background:none;border:none;color:var(--accent);font:600 15px 'Inter',sans-serif;cursor:pointer;padding:4px 0;margin:2px 0 14px}
-.more-btn .ic{width:26px;height:26px;font-size:16px}
-.case-more .case-more-in{overflow:hidden;min-height:0}
-/* visual animado del hero */
-.viz{position:relative}
-.viz svg{width:100%;height:auto;display:block;overflow:visible}
-.viz .lane{stroke:var(--line);stroke-width:2;stroke-dasharray:3 7;fill:none}
-.viz .card{fill:var(--surface);stroke:var(--line);stroke-width:1.5}
-.viz .acc{fill:var(--accent)}
-.viz .acc-s{fill:var(--accent-soft)}
-.viz .ink-s{stroke:var(--accent);stroke-width:2.2;fill:none;stroke-linecap:round;stroke-linejoin:round}
-.viz .mute{fill:var(--line)}
-.viz .win{fill:var(--surface);stroke:var(--ink);stroke-width:1.5}
-.viz .win-bar{fill:var(--bg-alt)}
-.viz .dot{fill:var(--muted)}
-.viz .before{animation:vz-in 9s linear infinite;opacity:0}
-.viz .after{animation:vz-out 9s linear infinite;opacity:0}
-@keyframes vz-in{0%{transform:translateX(0);opacity:0}8%{opacity:1}72%{opacity:1}92%{transform:translateX(212px);opacity:0}100%{transform:translateX(212px);opacity:0}}
-@keyframes vz-out{0%,60%{transform:translateX(0);opacity:0}70%{opacity:1}92%{opacity:1}100%{transform:translateX(86px);opacity:0}}
-.viz-cap{display:flex;justify-content:space-between;gap:8px;margin-top:18px;font-size:12px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--muted)}
-.viz-cap span:nth-child(2){color:var(--ink)}
-.about-text{max-width:720px;margin-top:28px;display:grid;gap:14px;font-size:16.5px;color:var(--muted)}
-.about-text b{color:var(--ink);font-weight:600}
-@media (prefers-reduced-motion:reduce){.viz .before,.viz .after{animation:none;opacity:1}}
-/* dos caminos */
-.paths{display:grid;grid-template-columns:1fr 1fr;gap:20px;margin-top:40px}
-.path{background:var(--surface);border:1px solid var(--line);border-radius:18px;padding:34px 30px;display:flex;flex-direction:column;gap:12px;transition:border-color .15s,transform .15s}
-.path:hover{border-color:var(--accent);transform:translateY(-2px)}
-.path h3{font-size:22px;font-weight:700}
-.path p{color:var(--muted);font-size:15px}
-.path ul{list-style:none;display:flex;flex-direction:column;gap:8px;margin:6px 0 14px;font-size:14.5px}
-.path li::before{content:'→ ';color:var(--accent);font-weight:700}
-.path .btn{margin-top:auto;align-self:flex-start}
+/* secciones */
+.blk{padding:var(--s8) 0}
+.head{display:flex;justify-content:space-between;align-items:end;gap:var(--s5);flex-wrap:wrap;margin-bottom:var(--s6)}
+.head .lead{max-width:46ch}
 
-/* contadores */
-.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:0;border:1px solid var(--line);border-radius:18px;background:var(--surface);overflow:hidden}
-.stat{padding:30px 26px;border-right:1px solid var(--line)}
-.stat:last-child{border-right:none}
-.stat-n{font-size:clamp(34px,4vw,48px);font-weight:800;letter-spacing:-.04em;line-height:1}
-.stat-l{font-size:14px;font-weight:600;margin-top:10px}
-.stat-s{font-size:12px;color:var(--muted);margin-top:4px}
-.note{font-size:13px;color:var(--muted);margin-top:14px}
+/* trabajos: marco de navegador + celular */
+.nav-dots{display:flex;gap:6px}.nav-dots i{width:9px;height:9px;border-radius:50%;background:var(--linea)}
+.bro{background:#fff;border:1px solid var(--linea);border-radius:8px;overflow:hidden;box-shadow:0 18px 40px -22px rgba(12,18,51,.35)}
+.bro-bar{display:flex;align-items:center;gap:14px;padding:11px 14px;border-bottom:1px solid var(--linea);background:var(--marmol)}
+.bro-bar span{flex:1;font-size:.78rem;color:var(--tinta-2);background:#fff;border:1px solid var(--linea);border-radius:99px;padding:3px 14px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.bro img{width:100%;height:auto;aspect-ratio:1200/750;object-fit:cover;object-position:top}
+.cel{position:absolute;width:21%;aspect-ratio:9/19;border:5px solid var(--tinta);border-radius:20px;overflow:hidden;background:#fff;box-shadow:0 18px 36px -14px rgba(12,18,51,.55)}
+.cel img{width:100%;height:100%;object-fit:cover;object-position:top}
+.fig{position:relative}
+.fig .cel{right:-3%;bottom:-9%}
 
-/* casos */
-.case{display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:center;padding:56px 0;border-top:1px solid var(--line)}
-.case:first-of-type{border-top:none;padding-top:40px}
-.case.flip .case-body{order:2}
-.badges{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:16px}
-.badge{font-size:11px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;padding:5px 11px;border-radius:999px;border:1px solid var(--line);color:var(--muted)}
-.badge.live{color:var(--ok);border-color:var(--ok)}
-.case h3{font-size:clamp(24px,3vw,32px);font-weight:800;margin-bottom:14px}
-.case p{color:var(--muted);margin-bottom:10px}
-.case-metric{border-left:3px solid var(--accent);padding:4px 0 4px 16px;margin:20px 0}
-.case-metric b{font-size:30px;letter-spacing:-.03em;display:block;line-height:1.1}
-.case-metric span{font-size:13px;color:var(--muted)}
-.case a.link{font-weight:600;font-size:15px;color:var(--accent);text-decoration:none}
-.case a.link:hover{text-decoration:underline}
-.shot{background:var(--surface);border:1px solid var(--line);border-radius:14px;overflow:hidden;aspect-ratio:4/3;display:grid;place-items:center;position:relative}
-.shot img{width:100%;height:100%;object-fit:cover;object-position:top}
-.shot .ph{text-align:center;color:var(--muted);font-size:13px;padding:24px}
-.shot .ph b{display:block;color:var(--ink);font-size:15px;margin-bottom:4px}
-.credit{margin-top:8px;font-size:13px;color:var(--muted);border:1px dashed var(--line);border-radius:12px;padding:14px 18px}
+.feat{display:grid;grid-template-columns:minmax(0,8fr) minmax(0,4fr);gap:var(--s6);align-items:center;margin-bottom:var(--s8)}
+.feat.flip{grid-template-columns:minmax(0,4fr) minmax(0,8fr)}
+.feat.flip .fig{order:2}.feat.flip .feat-t{order:1}
+.feat.flip .fig .cel{right:auto;left:-3%}
+.tags{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:var(--s3)}
+.tag{font:500 .8rem var(--sans);padding:4px 12px;border:1px solid var(--linea);border-radius:99px;color:var(--tinta-2)}
+.tag.vivo{border-color:var(--azul);color:var(--azul-prof);background:var(--azul-suave)}
+.feat-t h3{font-size:clamp(1.7rem,2.6vw,2.2rem);margin-bottom:var(--s3)}
+.feat-t .metric{margin:var(--s4) 0;padding-left:var(--s3);border-left:3px solid var(--azul)}
+.feat-t .metric b{display:block;font:700 1.25rem var(--serif)}
+.feat-t .metric span{font-size:.95rem;color:var(--tinta-2)}
+details.mas summary{list-style:none;cursor:pointer;font:600 .95rem var(--sans);padding:10px 0;display:inline-flex;gap:10px;align-items:center;color:var(--azul-prof)}
+details.mas summary::-webkit-details-marker{display:none}
+details.mas summary::after{content:"+";font-size:1.3rem;line-height:1;transition:transform 200ms var(--ease)}
+details.mas[open] summary::after{transform:rotate(45deg)}
+details.mas p{margin-top:var(--s2);font-size:.98rem;color:var(--tinta-2)}
+.vinc{display:inline-block;margin-top:var(--s3);font-weight:600;color:var(--azul-prof);text-decoration:underline;text-underline-offset:4px;text-decoration-thickness:1.5px}
 
-/* sistema */
-.sys{display:grid;grid-template-columns:repeat(5,1fr);gap:0;margin-top:44px;border:1px solid var(--line);border-radius:18px;overflow:hidden;background:var(--surface)}
-.sys-col{padding:28px 24px;border-right:1px solid var(--line)}
-.sys-col:last-child{border-right:none}
-.sys-n{font-size:12px;font-weight:700;color:var(--accent);letter-spacing:.1em}
-.sys-col h3{font-size:19px;margin:10px 0 10px;font-weight:700}
-.sys-col p{font-size:14px;color:var(--muted);margin-bottom:16px}
-.sys-col a{font-size:13px;font-weight:600;color:var(--accent);text-decoration:none}
-.sys-col a:hover{text-decoration:underline}
+.filtros{display:flex;gap:8px;flex-wrap:wrap}
+.filtros button{min-height:44px;padding:0 var(--s3);border:1.5px solid var(--linea);border-radius:99px;font:500 .95rem var(--sans);color:var(--tinta-2);transition:background 160ms ease,color 160ms ease,border-color 160ms ease}
+.filtros button[aria-pressed="true"]{background:var(--tinta);border-color:var(--tinta);color:var(--marmol)}
+@media (hover:hover) and (pointer:fine){.filtros button:hover{border-color:var(--tinta)}}
+.grid-w{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:var(--s7) var(--s5)}
+.work .fig{margin-bottom:var(--s5)}
+.work .fig .cel{width:24%;right:-2%;bottom:-12%}
+.work h3{font-size:1.45rem;margin:var(--s2) 0 4px}
+.work .rubro{color:var(--tinta-2);font-size:.95rem;margin-bottom:var(--s3)}
+.work-a{display:flex;gap:var(--s2);align-items:center;flex-wrap:wrap}
+.work-a .btn{min-height:46px;padding:0 var(--s3);font-size:.92rem}
+.work[hidden]{display:none}
 
-/* mantenimiento */
-.mant{display:grid;grid-template-columns:1fr 1fr;gap:48px;margin-top:40px;align-items:start}
-.checks{list-style:none;display:grid;gap:14px}
-.checks li{display:grid;grid-template-columns:24px 1fr;gap:12px;font-size:15.5px}
-.checks li::before{content:'✓';color:var(--ok);font-weight:800}
-.checks li small{display:block;color:var(--muted);font-size:13.5px}
-.report{background:var(--surface);border:1px solid var(--line);border-radius:16px;padding:24px}
-.report-h{display:flex;justify-content:space-between;font-size:12px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);margin-bottom:18px}
-.report-row{display:flex;justify-content:space-between;padding:12px 0;border-top:1px solid var(--line);font-size:14.5px}
-.report-row b{font-variant-numeric:tabular-nums}
-.report-row .up{color:var(--ok)}
+/* servicios */
+.srv{background:var(--marmol-2)}
+.srv-g{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,7fr);gap:var(--s7);align-items:start}
+.srv-l{position:sticky;top:calc(var(--nav) + var(--s5))}
+.srv-l h2{margin-bottom:var(--s3)}
+.srv-col{width:84px;color:var(--azul);margin-top:var(--s5)}
+.srv-col .l{stroke-width:1.6}.srv-col .f{stroke-width:1;opacity:.7}.srv-col .h{stroke-width:.8;opacity:.5}
+.srv ol{list-style:none}
+.srv li{display:grid;grid-template-columns:72px 1fr;gap:var(--s3);padding:var(--s4) 0;border-top:1px solid var(--linea)}
+.srv li:last-child{border-bottom:1px solid var(--linea)}
+.rom{font:400 2.3rem/1 var(--serif);color:var(--azul)}
+.srv li h3{margin-bottom:6px}
+.srv li p{color:var(--tinta-2);font-size:1rem}
+.checks{list-style:none;margin-top:var(--s2);display:grid;gap:10px}
+.checks li{display:block;padding:0;border:0;font-size:.95rem;color:var(--tinta-2);padding-left:22px;position:relative}
+.checks li::before{content:"";position:absolute;left:0;top:.62em;width:10px;height:1.5px;background:var(--azul)}
+.checks b{color:var(--tinta);font-weight:600}
 
-/* para quién */
-.fit{display:grid;grid-template-columns:1fr 1fr;gap:40px;margin-top:40px}
-.fit h3{font-size:19px;padding-bottom:14px;margin-bottom:18px;border-bottom:2.5px solid var(--accent)}
-.fit .no h3{border-color:var(--line);color:var(--muted)}
-.fit ul{list-style:none;display:grid;gap:12px;font-size:15px}
-.fit li{display:grid;grid-template-columns:22px 1fr;gap:8px}
-.fit .yes li::before{content:'✓';color:var(--ok);font-weight:800}
-.fit .no li{color:var(--muted)}
-.fit .no li::before{content:'✕';color:var(--muted)}
+/* método: escalera */
+.esc{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:0;align-items:stretch}
+.paso{padding:var(--s4) var(--s3) var(--s5);border-top:3px solid var(--azul);border-left:1px solid var(--linea);position:relative}
+.paso:first-child{border-left:0;padding-left:0}
+.paso-w:nth-child(1){padding-top:168px}.paso-w:nth-child(2){padding-top:112px}.paso-w:nth-child(3){padding-top:56px}.paso-w:nth-child(4){padding-top:0}
+.paso h3{margin:var(--s2) 0 var(--s1);font-size:1.4rem}
+.paso p{font-size:.98rem;color:var(--tinta-2)}
+.paso .rom{display:block}
+.paso-w{display:flex;flex-direction:column}
+.paso-w .paso{flex:1;background:linear-gradient(180deg,var(--azul-suave) 0,var(--marmol) 140px)}
+.paso-w .sp{display:none}
 
-/* pasos */
-.steps{display:grid;grid-template-columns:repeat(4,1fr);gap:20px;margin-top:40px}
-.step{background:var(--surface);border:1px solid var(--line);border-radius:16px;padding:26px 22px}
-.step-n{font-size:34px;font-weight:800;letter-spacing:-.04em;color:var(--accent);line-height:1;margin-bottom:14px}
-.step h3{font-size:18px;margin-bottom:8px}
-.step p{font-size:14px;color:var(--muted)}
-
-/* equipo */
-.team{display:grid;grid-template-columns:1fr 1fr;gap:24px;margin-top:40px}
-.person{display:block;border-top:1px solid var(--ink);padding:22px 0 0}
-.person h3{font-size:21px}
-.role{font-size:12px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--accent);margin:4px 0 10px}
-.person p{font-size:14.5px;color:var(--muted)}
-
-/* faq */
-.faq{max-width:760px;margin-top:36px}
-.fi{border-bottom:1px solid var(--line)}
-.fq{width:100%;background:none;border:none;color:var(--ink);text-align:left;font:600 16px 'Inter',sans-serif;padding:22px 0;display:flex;justify-content:space-between;gap:16px;cursor:pointer}
-.fq .ic{flex-shrink:0;width:26px;height:26px;border-radius:50%;border:1.5px solid var(--line);display:grid;place-items:center;transition:transform .2s;color:var(--accent)}
-.fi.open .ic{transform:rotate(45deg)}
-.fa{max-height:0;overflow:hidden;transition:max-height .3s ease;color:var(--muted);font-size:15px}
-.fi.open .fa{max-height:300px}
-.fa p{padding:0 40px 22px 0}
+/* nosotros */
+.nos-g{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,7fr);gap:var(--s7);align-items:start}
+.nos-g h2{margin-bottom:var(--s3)}
+.nos-t p{margin-bottom:var(--s3);color:var(--tinta-2)}
+.team{display:grid;grid-template-columns:1fr 1fr;gap:var(--s5);margin-top:var(--s6)}
+.person{display:grid;gap:var(--s2)}
+.med{position:relative;width:132px;height:132px;display:grid;place-items:center;color:var(--azul)}
+.med svg{position:absolute;inset:0;width:100%;height:100%}
+.med b{font:700 2.2rem var(--serif);color:var(--tinta)}
+.person h3{font-size:1.45rem}
+.person .rol{font:600 .9rem var(--sans);color:var(--azul-prof)}
+.person p{font-size:.98rem;color:var(--tinta-2)}
+.nums{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));margin-top:var(--s7);border-top:1px solid var(--linea)}
+.nums div{padding:var(--s3) var(--s3) 0 0}
+.nums b{display:block;font:700 1.9rem var(--serif)}
+.nums span{font-size:.9rem;color:var(--tinta-2)}
+.credit{margin-top:var(--s5);font-size:.9rem;color:var(--tinta-2);max-width:72ch}
 
 /* contacto */
-.contact{background:var(--contact-bg);color:var(--contact-fg);border:1px solid var(--line);border-radius:24px;padding:72px 48px;text-align:center}
-.contact h2{margin:0 auto 16px;color:var(--contact-fg)}
-.contact p{color:color-mix(in srgb,var(--contact-fg) 70%,transparent);max-width:560px;margin:0 auto 32px;font-size:17px}
-.contact .btn-primary{background:var(--accent);color:var(--accent-ink)}
-.contact .btn-ghost{background:transparent;color:var(--contact-fg);border-color:color-mix(in srgb,var(--contact-fg) 35%,transparent)}
-.contact .btn-ghost:hover{border-color:var(--contact-fg)}
-.contact-cta{display:flex;gap:12px;justify-content:center;flex-wrap:wrap}
-.contact .btn svg{flex-shrink:0}
-.social{display:flex;gap:10px}
-.social a{width:44px;height:44px;border-radius:12px;border:1px solid var(--line);display:grid;place-items:center;color:var(--ink);background:var(--surface);transition:transform .15s,background .15s,color .15s,border-color .15s}
-.social a:hover{background:var(--accent);color:var(--accent-ink);border-color:var(--accent);transform:translateY(-2px)}
-.foot-social{margin-top:16px}
+.cto{position:relative;background:var(--azul);color:var(--marmol);overflow:hidden;padding:var(--s8) 0 calc(var(--s8) + 40px)}
+.cto-sol{position:absolute;right:-8%;bottom:0;width:min(860px,95vw);color:var(--marmol);opacity:.3;pointer-events:none}
+.cto h2{font-size:clamp(2.6rem,6vw,5rem);margin-bottom:var(--s3);max-width:14ch}
+.cto p{font-size:1.15rem;opacity:.92;max-width:44ch}
+.cto-cta{display:flex;gap:var(--s2);flex-wrap:wrap;margin-top:var(--s5)}
+.cto-lema{margin-top:var(--s7);font:italic 400 1.1rem var(--serif);opacity:.85}
+.cto-lema small{display:block;margin-top:4px;font:500 .85rem var(--sans);font-style:normal;opacity:.8}
+.cto .wrap{position:relative}
 
-footer{padding:40px 0 48px;border-top:1px solid var(--line);font-size:14px;color:var(--muted)}
-.foot{display:flex;justify-content:space-between;gap:24px;flex-wrap:wrap}
-.foot-links{display:flex;gap:22px;flex-wrap:wrap}
-.foot-links a{text-decoration:none}
-.foot-links a:hover{color:var(--ink)}
+footer{background:var(--marmol);padding:var(--s6) 0 var(--s5);border-top:1px solid var(--linea)}
+.foot{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,4fr) minmax(0,3fr);gap:var(--s5);align-items:start}
+.foot img{height:70px;width:auto;margin-bottom:var(--s2)}
+.foot p{font-size:.95rem;color:var(--tinta-2)}
+.foot-l{display:grid;gap:10px;font-size:.95rem}
+.foot-l a{text-decoration:none;color:var(--tinta-2)}
+@media (hover:hover) and (pointer:fine){.foot-l a:hover{color:var(--azul-prof);text-decoration:underline}}
+.foot small{color:var(--tinta-2);font-size:.85rem}
 
-/* mobile */
-@media (max-width:900px){
-  section{padding:64px 0}
-  .hero{padding:48px 0 48px}
-  .hero-grid,.case,.mant,.fit,.team,.paths{grid-template-columns:1fr;gap:32px}
-  .case.flip .case-body{order:0}
-  .stats{grid-template-columns:1fr 1fr}
-  .stat:nth-child(2){border-right:none}
-  .stat:nth-child(-n+2){border-bottom:1px solid var(--line)}
-  .sys{grid-template-columns:1fr 1fr}
-  .sys-col{border-bottom:1px solid var(--line)}
-  .sys-col:nth-child(even),.sys-col:last-child{border-right:none}
-  .sys-col:last-child{border-bottom:none}
-  .steps{grid-template-columns:1fr 1fr}
+/* visor de trabajos */
+dialog{border:0;padding:0;background:transparent;max-width:100vw;max-height:100dvh;margin:auto;color:var(--marmol)}
+dialog::backdrop{background:rgba(12,18,51,.78)}
+.vw{display:grid;justify-items:center;gap:var(--s2);padding:var(--s3)}
+.vw-top{display:flex;justify-content:space-between;align-items:center;gap:var(--s3);width:100%;max-width:440px}
+.vw-top b{font:700 1.15rem var(--serif)}
+.vw-x{width:44px;height:44px;border:1.5px solid rgba(243,245,250,.5);border-radius:50%;font-size:1.3rem;line-height:1;color:var(--marmol)}
+.vw-ph{border:8px solid var(--tinta);border-radius:34px;overflow:hidden;background:#fff;position:relative;box-shadow:0 30px 60px -20px #000}
+.vw-ph iframe{border:0;width:390px;height:780px;transform-origin:0 0;background:#fff}
+.vw a{color:var(--marmol);font-weight:600;font-size:.95rem}
+
+/* responsive */
+@media (max-width:1000px){
+  .nav-links a:not(.btn){display:none}.logo span{display:inline}
+  .feat.flip .fig .cel{left:auto;right:-3%}
+  .hero-g{grid-template-columns:1fr;gap:var(--s6)}
+  .arco{justify-self:center;width:min(100%,440px)}
+  .feat,.feat.flip{grid-template-columns:1fr;gap:var(--s6)}
+  .feat.flip .fig,.feat.flip .feat-t{order:0}
+  .grid-w{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .srv-g,.nos-g{grid-template-columns:1fr;gap:var(--s6)}
+  .srv-l{position:static}.srv-col{display:none}
+  .foot{grid-template-columns:1fr 1fr}.foot>div:first-child{grid-column:1/-1}
+  .epi-in{grid-template-columns:1fr;gap:var(--s2);padding:var(--s6) 0}.epi-mark{font-size:4.5rem}
+}
+@media (max-width:720px){
+  body{font-size:16px}
+  .wrap{padding:0 var(--s3)}
   .nav-links a:not(.btn){display:none}
-  .contact{padding:48px 24px;border-radius:18px}
+  .logo span{display:none}
+  .blk{padding:var(--s7) 0}
+  .hero{padding:var(--s5) 0 var(--s6)}
+  .vir-g{grid-template-columns:1fr}.vir-i{border-left:0;border-top:1px solid var(--linea);padding:var(--s3) 0}.vir-i:first-child{border-top:0}
+  .grid-w{grid-template-columns:1fr;gap:var(--s7)}
+  .srv li{grid-template-columns:48px 1fr;gap:var(--s2)}.rom{font-size:1.8rem}
+  .esc{grid-template-columns:1fr}.paso-w:nth-child(n){padding-top:0}.paso,.paso:first-child{padding:var(--s3) 0 var(--s4);border-left:0;background:none}
+  .team{grid-template-columns:1fr}
+  .nums{grid-template-columns:1fr 1fr}
+  .head{margin-bottom:var(--s5)}
+  .fig .cel,.work .fig .cel{width:26%;right:-2%;bottom:-8%}
+  .feat.flip .fig .cel{left:auto;right:-2%}
+  .cto-sol{width:150vw;right:-45%;opacity:.22}
+  .laurel-bg{display:none}
 }
-@media (max-width:520px){
-  .wrap{padding:0 16px}
-  .sys,.steps{grid-template-columns:1fr}
-  .stats{grid-template-columns:1fr 1fr}
-  .stat{padding:22px 16px}
-  .stat-n{font-size:30px}
-  .sys-col{border-right:none;border-bottom:1px solid var(--line)}
-  .stat:last-child,.sys-col:last-child{border-bottom:none}
-  .btn{width:100%;justify-content:center}
-  .nav-links .btn{width:auto}
-}
-@media (prefers-reduced-motion:reduce){*{transition:none!important;scroll-behavior:auto!important}}
-
-/* franja por qué nosotros */
-.pq{padding:56px 0;background:var(--surface)}
-.pq-g{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:40px}
-.pq-n{display:block;font-size:13px;font-weight:700;color:var(--accent);letter-spacing:.08em;margin-bottom:10px}
-.pq-i h3{font-size:21px;font-weight:800;margin-bottom:8px}
-.pq-i p{color:var(--muted);font-size:15px}
-/* trabajos navegables */
-.tb-tit{margin:64px 0 28px;padding-top:40px;border-top:1px solid var(--line)}
-.tb-tit h3{font-size:clamp(24px,3vw,32px);font-weight:800;margin-bottom:8px}
-.tb-tit p{color:var(--muted);max-width:640px}
-.tb-g{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:40px 28px;margin-bottom:48px}
-.tb-h h3{font-size:19px;font-weight:800;margin-bottom:2px}
-.tb-h p{font-size:14px;color:var(--muted);margin-bottom:14px}
-.tb .badges{margin-bottom:10px}
-.tb-f{border:1px solid var(--line);border-radius:22px;overflow:hidden;background:var(--surface);box-shadow:0 18px 40px rgba(0,0,0,.08);max-width:360px}
-.tb-bar{display:flex;align-items:center;gap:6px;padding:10px 14px;border-bottom:1px solid var(--line);font-size:11px;color:var(--muted)}
-.tb-bar i{width:8px;height:8px;border-radius:50%;background:var(--line)}
-.tb-bar span{margin-left:8px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
-.tb-v{position:relative;aspect-ratio:390/640;background:var(--bg-alt)}
-.tb-v img,.tb-v iframe{position:absolute;inset:0;width:100%;height:100%;border:0;object-fit:cover;object-position:top}
-.tb-v iframe{width:390px;height:640px;transform-origin:0 0}
-.tb-go{position:absolute;left:50%;bottom:18px;transform:translateX(-50%);padding:11px 20px;border-radius:999px;border:0;background:var(--accent);color:var(--accent-ink);font:600 14px 'Inter',sans-serif;cursor:pointer;box-shadow:0 8px 20px rgba(0,0,0,.18);white-space:nowrap}
-.tb-go:hover{filter:brightness(1.08)}
-.tb a.link{display:inline-block;margin-top:14px;font-weight:600;font-size:14px;color:var(--accent);text-decoration:none}
-@media (max-width:980px){.tb-g{grid-template-columns:repeat(2,minmax(0,1fr))}}
-@media (max-width:640px){.pq-g{grid-template-columns:1fr;gap:24px}.tb-g{grid-template-columns:1fr}.tb-f{max-width:none}}
 </style>
 </head>
 <body>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false"><defs>
+<symbol id="templo" viewBox="0 0 640 644"><g fill="none" stroke="currentColor" stroke-linejoin="round" stroke-linecap="round"><path class="l" d="M64 528H576V552H64Z"/>
+<path class="l" d="M48 552H592V576H48Z"/>
+<path class="l" d="M32 576H608V600H32Z"/>
+<path class="l" d="M16 600H624V624H16Z"/>
+<path class="l" d="M115 246L111 528M145 246L149 528"/>
+<path class="f" d="M121.8 252L119.5 525"/>
+<path class="f" d="M130 252L130 525"/>
+<path class="f" d="M138.2 252L140.4 525"/>
+<path class="h" d="M140.3 254L143.1 522"/>
+<path class="h" d="M141.4 254L144.4 522"/>
+<path class="h" d="M142.4 254L145.8 522"/>
+<path class="h" d="M143.5 254L147.1 522"/>
+<path class="h" d="M144.6 254L148.4 522"/>
+<path class="l" d="M114 246C111 240 107 237 106 234H154C153 237 149 240 146 246Z"/>
+<path class="l" d="M102 234H158V224H102Z"/>
+<path class="l" d="M191 246L187 528M221 246L225 528"/>
+<path class="f" d="M197.8 252L195.6 525"/>
+<path class="f" d="M206 252L206 525"/>
+<path class="f" d="M214.2 252L216.4 525"/>
+<path class="h" d="M216.3 254L219.1 522"/>
+<path class="h" d="M217.4 254L220.4 522"/>
+<path class="h" d="M218.4 254L221.8 522"/>
+<path class="h" d="M219.5 254L223.1 522"/>
+<path class="h" d="M220.6 254L224.4 522"/>
+<path class="l" d="M190 246C187 240 183 237 182 234H230C229 237 225 240 222 246Z"/>
+<path class="l" d="M178 234H234V224H178Z"/>
+<path class="l" d="M267 246L263 528M297 246L301 528"/>
+<path class="f" d="M273.8 252L271.6 525"/>
+<path class="f" d="M282 252L282 525"/>
+<path class="f" d="M290.2 252L292.4 525"/>
+<path class="h" d="M292.4 254L295.1 522"/>
+<path class="h" d="M293.4 254L296.4 522"/>
+<path class="h" d="M294.4 254L297.8 522"/>
+<path class="h" d="M295.5 254L299.1 522"/>
+<path class="h" d="M296.6 254L300.4 522"/>
+<path class="l" d="M266 246C263 240 259 237 258 234H306C305 237 301 240 298 246Z"/>
+<path class="l" d="M254 234H310V224H254Z"/>
+<path class="l" d="M343 246L339 528M373 246L377 528"/>
+<path class="f" d="M349.8 252L347.6 525"/>
+<path class="f" d="M358 252L358 525"/>
+<path class="f" d="M366.2 252L368.4 525"/>
+<path class="h" d="M368.4 254L371.1 522"/>
+<path class="h" d="M369.4 254L372.4 522"/>
+<path class="h" d="M370.4 254L373.8 522"/>
+<path class="h" d="M371.5 254L375.1 522"/>
+<path class="h" d="M372.6 254L376.4 522"/>
+<path class="l" d="M342 246C339 240 335 237 334 234H382C381 237 377 240 374 246Z"/>
+<path class="l" d="M330 234H386V224H330Z"/>
+<path class="l" d="M419 246L415 528M449 246L453 528"/>
+<path class="f" d="M425.8 252L423.6 525"/>
+<path class="f" d="M434 252L434 525"/>
+<path class="f" d="M442.2 252L444.4 525"/>
+<path class="h" d="M444.4 254L447.1 522"/>
+<path class="h" d="M445.4 254L448.4 522"/>
+<path class="h" d="M446.4 254L449.8 522"/>
+<path class="h" d="M447.5 254L451.1 522"/>
+<path class="h" d="M448.6 254L452.4 522"/>
+<path class="l" d="M418 246C415 240 411 237 410 234H458C457 237 453 240 450 246Z"/>
+<path class="l" d="M406 234H462V224H406Z"/>
+<path class="l" d="M495 246L491 528M525 246L529 528"/>
+<path class="f" d="M501.8 252L499.6 525"/>
+<path class="f" d="M510 252L510 525"/>
+<path class="f" d="M518.2 252L520.5 525"/>
+<path class="h" d="M520.4 254L523.1 522"/>
+<path class="h" d="M521.4 254L524.4 522"/>
+<path class="h" d="M522.5 254L525.8 522"/>
+<path class="h" d="M523.5 254L527.1 522"/>
+<path class="h" d="M524.5 254L528.4 522"/>
+<path class="l" d="M494 246C491 240 487 237 486 234H534C533 237 529 240 526 246Z"/>
+<path class="l" d="M482 234H538V224H482Z"/>
+<path class="l" d="M96 224H544V200H96Z"/>
+<path class="l" d="M96 200H544V158H96Z"/>
+<path class="l" d="M101 200V158M115 200V158"/>
+<path class="f" d="M105.5 196V162"/>
+<path class="f" d="M108 196V162"/>
+<path class="f" d="M110.5 196V162"/>
+<path class="l" d="M135.9 200V158M149.9 200V158"/>
+<path class="f" d="M140.4 196V162"/>
+<path class="f" d="M142.9 196V162"/>
+<path class="f" d="M145.4 196V162"/>
+<path class="l" d="M170.8 200V158M184.8 200V158"/>
+<path class="f" d="M175.3 196V162"/>
+<path class="f" d="M177.8 196V162"/>
+<path class="f" d="M180.3 196V162"/>
+<path class="l" d="M205.8 200V158M219.8 200V158"/>
+<path class="f" d="M210.3 196V162"/>
+<path class="f" d="M212.8 196V162"/>
+<path class="f" d="M215.3 196V162"/>
+<path class="l" d="M240.7 200V158M254.7 200V158"/>
+<path class="f" d="M245.2 196V162"/>
+<path class="f" d="M247.7 196V162"/>
+<path class="f" d="M250.2 196V162"/>
+<path class="l" d="M275.6 200V158M289.6 200V158"/>
+<path class="f" d="M280.1 196V162"/>
+<path class="f" d="M282.6 196V162"/>
+<path class="f" d="M285.1 196V162"/>
+<path class="l" d="M310.5 200V158M324.5 200V158"/>
+<path class="f" d="M315 196V162"/>
+<path class="f" d="M317.5 196V162"/>
+<path class="f" d="M320 196V162"/>
+<path class="l" d="M345.4 200V158M359.4 200V158"/>
+<path class="f" d="M349.9 196V162"/>
+<path class="f" d="M352.4 196V162"/>
+<path class="f" d="M354.9 196V162"/>
+<path class="l" d="M380.4 200V158M394.4 200V158"/>
+<path class="f" d="M384.9 196V162"/>
+<path class="f" d="M387.4 196V162"/>
+<path class="f" d="M389.9 196V162"/>
+<path class="l" d="M415.3 200V158M429.3 200V158"/>
+<path class="f" d="M419.8 196V162"/>
+<path class="f" d="M422.3 196V162"/>
+<path class="f" d="M424.8 196V162"/>
+<path class="l" d="M450.2 200V158M464.2 200V158"/>
+<path class="f" d="M454.7 196V162"/>
+<path class="f" d="M457.2 196V162"/>
+<path class="f" d="M459.7 196V162"/>
+<path class="l" d="M485.1 200V158M499.1 200V158"/>
+<path class="f" d="M489.6 196V162"/>
+<path class="f" d="M492.1 196V162"/>
+<path class="f" d="M494.6 196V162"/>
+<path class="l" d="M520 200V158M534 200V158"/>
+<path class="f" d="M524.5 196V162"/>
+<path class="f" d="M527 196V162"/>
+<path class="f" d="M529.5 196V162"/>
+<path class="l" d="M84 158H556V140H84Z"/>
+<path class="l" d="M84 140H556L320 32Z"/>
+<path class="l" d="M112 132H528L320 52Z"/>
+<path class="l" d="M278 132A42 42 0 0 1 362 132"/>
+<path class="l" d="M292 132A28 28 0 0 1 348 132"/>
+<path class="f" d="M270 132L248 132"/>
+<path class="f" d="M273.8 112.9L253.5 104.4"/>
+<path class="f" d="M284.6 96.6L269.1 81.1"/>
+<path class="f" d="M300.9 85.8L292.4 65.5"/>
+<path class="f" d="M339.1 85.8L347.6 65.5"/>
+<path class="f" d="M355.4 96.6L370.9 81.1"/>
+<path class="f" d="M366.2 112.9L386.5 104.4"/>
+<path class="f" d="M370 132L392 132"/>
+<path class="l" d="M320 32V22M312 22H328"/>
+<path class="h" d="M16 628H624"/>
+<path class="h" d="M46 634H594"/>
+<path class="h" d="M76 640H564"/></g></symbol>
+<symbol id="columna" viewBox="0 0 120 392"><g fill="none" stroke="currentColor" stroke-linejoin="round" stroke-linecap="round"><path class="l" d="M30 20H90V8H30Z"/>
+<path class="l" d="M36 20C38 28 42 32 44 38H76C78 32 82 28 84 20"/>
+<path class="l" d="M44 38L40 360M76 38L80 360"/>
+<path class="f" d="M50.4 44L48 356"/>
+<path class="f" d="M56.8 44L56 356"/>
+<path class="f" d="M63.2 44L64 356"/>
+<path class="f" d="M69.6 44L72 356"/>
+<path class="h" d="M71.2 46L74 352"/>
+<path class="h" d="M72.2 46L75.2 352"/>
+<path class="h" d="M73.1 46L76.4 352"/>
+<path class="h" d="M74.1 46L77.6 352"/>
+<path class="h" d="M75 46L78.8 352"/>
+<path class="l" d="M26 360H94V374H26ZM18 374H102V388H18Z"/></g></symbol>
+<symbol id="laurel" viewBox="0 0 200 200"><g fill="currentColor" fill-opacity=".14" stroke="currentColor" stroke-width="1.1"><path d="M0 0C8 -6 8 -20 0 -28C-8 -20 -8 -6 0 0Z" transform="translate(89.6 159.1) rotate(318)"/>
+<path d="M0 0C7.4 -5.5 7.4 -18.4 0 -25.8C-7.4 -18.4 -7.4 -5.5 0 0Z" transform="translate(89.6 159.1) rotate(242)"/>
+<path d="M0 0C7.8 -5.8 7.8 -19.4 0 -27.2C-7.8 -19.4 -7.8 -5.8 0 0Z" transform="translate(75.9 155) rotate(331.6)"/>
+<path d="M0 0C7.1 -5.4 7.1 -17.9 0 -25C-7.1 -17.9 -7.1 -5.4 0 0Z" transform="translate(75.9 155) rotate(255.6)"/>
+<path d="M0 0C7.5 -5.7 7.5 -18.8 0 -26.4C-7.5 -18.8 -7.5 -5.7 0 0Z" transform="translate(63.7 147.7) rotate(345.3)"/>
+<path d="M0 0C6.9 -5.2 6.9 -17.3 0 -24.3C-6.9 -17.3 -6.9 -5.2 0 0Z" transform="translate(63.7 147.7) rotate(269.3)"/>
+<path d="M0 0C7.3 -5.5 7.3 -18.3 0 -25.6C-7.3 -18.3 -7.3 -5.5 0 0Z" transform="translate(53.4 137.8) rotate(358.9)"/>
+<path d="M0 0C6.7 -5 6.7 -16.8 0 -23.5C-6.7 -16.8 -6.7 -5 0 0Z" transform="translate(53.4 137.8) rotate(282.9)"/>
+<path d="M0 0C7.1 -5.3 7.1 -17.7 0 -24.7C-7.1 -17.7 -7.1 -5.3 0 0Z" transform="translate(45.8 125.8) rotate(372.5)"/>
+<path d="M0 0C6.5 -4.9 6.5 -16.3 0 -22.8C-6.5 -16.3 -6.5 -4.9 0 0Z" transform="translate(45.8 125.8) rotate(296.5)"/>
+<path d="M0 0C6.8 -5.1 6.8 -17.1 0 -23.9C-6.8 -17.1 -6.8 -5.1 0 0Z" transform="translate(41.3 112.3) rotate(386.2)"/>
+<path d="M0 0C6.3 -4.7 6.3 -15.7 0 -22C-6.3 -15.7 -6.3 -4.7 0 0Z" transform="translate(41.3 112.3) rotate(310.2)"/>
+<path d="M0 0C6.6 -5 6.6 -16.5 0 -23.1C-6.6 -16.5 -6.6 -5 0 0Z" transform="translate(40 98.1) rotate(399.8)"/>
+<path d="M0 0C6.1 -4.6 6.1 -15.2 0 -21.3C-6.1 -15.2 -6.1 -4.6 0 0Z" transform="translate(40 98.1) rotate(323.8)"/>
+<path d="M0 0C6.4 -4.8 6.4 -15.9 0 -22.3C-6.4 -15.9 -6.4 -4.8 0 0Z" transform="translate(42.2 84) rotate(413.5)"/>
+<path d="M0 0C5.9 -4.4 5.9 -14.7 0 -20.5C-5.9 -14.7 -5.9 -4.4 0 0Z" transform="translate(42.2 84) rotate(337.5)"/>
+<path d="M0 0C6.1 -4.6 6.1 -15.3 0 -21.5C-6.1 -15.3 -6.1 -4.6 0 0Z" transform="translate(47.6 70.8) rotate(427.1)"/>
+<path d="M0 0C5.6 -4.2 5.6 -14.1 0 -19.8C-5.6 -14.1 -5.6 -4.2 0 0Z" transform="translate(47.6 70.8) rotate(351.1)"/>
+<path d="M0 0C5.9 -4.4 5.9 -14.8 0 -20.7C-5.9 -14.8 -5.9 -4.4 0 0Z" transform="translate(55.9 59.3) rotate(440.7)"/>
+<path d="M0 0C5.4 -4.1 5.4 -13.6 0 -19C-5.4 -13.6 -5.4 -4.1 0 0Z" transform="translate(55.9 59.3) rotate(364.7)"/>
+<path d="M0 0C5.7 -4.3 5.7 -14.2 0 -19.9C-5.7 -14.2 -5.7 -4.3 0 0Z" transform="translate(66.8 50) rotate(454.4)"/>
+<path d="M0 0C5.2 -3.9 5.2 -13 0 -18.3C-5.2 -13 -5.2 -3.9 0 0Z" transform="translate(66.8 50) rotate(378.4)"/>
+<path d="M0 0C5.4 -4.1 5.4 -13.6 0 -19C-5.4 -13.6 -5.4 -4.1 0 0Z" transform="translate(79.5 43.6) rotate(468)"/>
+<path d="M0 0C5 -3.8 5 -12.5 0 -17.5C-5 -12.5 -5 -3.8 0 0Z" transform="translate(79.5 43.6) rotate(392)"/><path fill="none" stroke-width="1.4" d="M96 163A60 60 0 0 1 79.0 43.0"/><g transform="translate(200 0) scale(-1 1)"><path d="M0 0C8 -6 8 -20 0 -28C-8 -20 -8 -6 0 0Z" transform="translate(89.6 159.1) rotate(318)"/>
+<path d="M0 0C7.4 -5.5 7.4 -18.4 0 -25.8C-7.4 -18.4 -7.4 -5.5 0 0Z" transform="translate(89.6 159.1) rotate(242)"/>
+<path d="M0 0C7.8 -5.8 7.8 -19.4 0 -27.2C-7.8 -19.4 -7.8 -5.8 0 0Z" transform="translate(75.9 155) rotate(331.6)"/>
+<path d="M0 0C7.1 -5.4 7.1 -17.9 0 -25C-7.1 -17.9 -7.1 -5.4 0 0Z" transform="translate(75.9 155) rotate(255.6)"/>
+<path d="M0 0C7.5 -5.7 7.5 -18.8 0 -26.4C-7.5 -18.8 -7.5 -5.7 0 0Z" transform="translate(63.7 147.7) rotate(345.3)"/>
+<path d="M0 0C6.9 -5.2 6.9 -17.3 0 -24.3C-6.9 -17.3 -6.9 -5.2 0 0Z" transform="translate(63.7 147.7) rotate(269.3)"/>
+<path d="M0 0C7.3 -5.5 7.3 -18.3 0 -25.6C-7.3 -18.3 -7.3 -5.5 0 0Z" transform="translate(53.4 137.8) rotate(358.9)"/>
+<path d="M0 0C6.7 -5 6.7 -16.8 0 -23.5C-6.7 -16.8 -6.7 -5 0 0Z" transform="translate(53.4 137.8) rotate(282.9)"/>
+<path d="M0 0C7.1 -5.3 7.1 -17.7 0 -24.7C-7.1 -17.7 -7.1 -5.3 0 0Z" transform="translate(45.8 125.8) rotate(372.5)"/>
+<path d="M0 0C6.5 -4.9 6.5 -16.3 0 -22.8C-6.5 -16.3 -6.5 -4.9 0 0Z" transform="translate(45.8 125.8) rotate(296.5)"/>
+<path d="M0 0C6.8 -5.1 6.8 -17.1 0 -23.9C-6.8 -17.1 -6.8 -5.1 0 0Z" transform="translate(41.3 112.3) rotate(386.2)"/>
+<path d="M0 0C6.3 -4.7 6.3 -15.7 0 -22C-6.3 -15.7 -6.3 -4.7 0 0Z" transform="translate(41.3 112.3) rotate(310.2)"/>
+<path d="M0 0C6.6 -5 6.6 -16.5 0 -23.1C-6.6 -16.5 -6.6 -5 0 0Z" transform="translate(40 98.1) rotate(399.8)"/>
+<path d="M0 0C6.1 -4.6 6.1 -15.2 0 -21.3C-6.1 -15.2 -6.1 -4.6 0 0Z" transform="translate(40 98.1) rotate(323.8)"/>
+<path d="M0 0C6.4 -4.8 6.4 -15.9 0 -22.3C-6.4 -15.9 -6.4 -4.8 0 0Z" transform="translate(42.2 84) rotate(413.5)"/>
+<path d="M0 0C5.9 -4.4 5.9 -14.7 0 -20.5C-5.9 -14.7 -5.9 -4.4 0 0Z" transform="translate(42.2 84) rotate(337.5)"/>
+<path d="M0 0C6.1 -4.6 6.1 -15.3 0 -21.5C-6.1 -15.3 -6.1 -4.6 0 0Z" transform="translate(47.6 70.8) rotate(427.1)"/>
+<path d="M0 0C5.6 -4.2 5.6 -14.1 0 -19.8C-5.6 -14.1 -5.6 -4.2 0 0Z" transform="translate(47.6 70.8) rotate(351.1)"/>
+<path d="M0 0C5.9 -4.4 5.9 -14.8 0 -20.7C-5.9 -14.8 -5.9 -4.4 0 0Z" transform="translate(55.9 59.3) rotate(440.7)"/>
+<path d="M0 0C5.4 -4.1 5.4 -13.6 0 -19C-5.4 -13.6 -5.4 -4.1 0 0Z" transform="translate(55.9 59.3) rotate(364.7)"/>
+<path d="M0 0C5.7 -4.3 5.7 -14.2 0 -19.9C-5.7 -14.2 -5.7 -4.3 0 0Z" transform="translate(66.8 50) rotate(454.4)"/>
+<path d="M0 0C5.2 -3.9 5.2 -13 0 -18.3C-5.2 -13 -5.2 -3.9 0 0Z" transform="translate(66.8 50) rotate(378.4)"/>
+<path d="M0 0C5.4 -4.1 5.4 -13.6 0 -19C-5.4 -13.6 -5.4 -4.1 0 0Z" transform="translate(79.5 43.6) rotate(468)"/>
+<path d="M0 0C5 -3.8 5 -12.5 0 -17.5C-5 -12.5 -5 -3.8 0 0Z" transform="translate(79.5 43.6) rotate(392)"/><path fill="none" stroke-width="1.4" d="M96 163A60 60 0 0 1 79.0 43.0"/></g></g></symbol>
+<symbol id="sol" viewBox="0 0 800 304"><g stroke="currentColor" stroke-width="1.2"><path d="M340 300A60 60 0 0 1 460 300" fill="none"/>
+<path d="M290 300A110 110 0 0 1 510 300" fill="none"/>
+<path d="M240 300A160 160 0 0 1 560 300" fill="none"/>
+<path d="M190 300A210 210 0 0 1 610 300" fill="none"/>
+<path d="M170 300L70 300" fill="none"/>
+<path d="M172 270L72.8 256.9" fill="none"/>
+<path d="M177.8 240.5L81.2 214.6" fill="none"/>
+<path d="M187.5 212L95.1 173.7" fill="none"/>
+<path d="M200.8 185L114.2 135" fill="none"/>
+<path d="M217.5 160L138.2 99.1" fill="none"/>
+<path d="M237.4 137.4L166.7 66.7" fill="none"/>
+<path d="M260 117.5L199.1 38.2" fill="none"/>
+<path d="M285 100.8L235 14.2" fill="none"/>
+<path d="M312 87.5L273.7 -4.9" fill="none"/>
+<path d="M340.5 77.8L314.6 -18.8" fill="none"/>
+<path d="M370 72L356.9 -27.2" fill="none"/>
+<path d="M400 70L400 -30" fill="none"/>
+<path d="M430 72L443.1 -27.2" fill="none"/>
+<path d="M459.5 77.8L485.4 -18.8" fill="none"/>
+<path d="M488 87.5L526.3 -4.9" fill="none"/>
+<path d="M515 100.8L565 14.2" fill="none"/>
+<path d="M540 117.5L600.9 38.2" fill="none"/>
+<path d="M562.6 137.4L633.3 66.7" fill="none"/>
+<path d="M582.5 160L661.8 99.1" fill="none"/>
+<path d="M599.2 185L685.8 135" fill="none"/>
+<path d="M612.5 212L704.9 173.7" fill="none"/>
+<path d="M622.2 240.5L718.8 214.6" fill="none"/>
+<path d="M628 270L727.2 256.9" fill="none"/>
+<path d="M630 300L730 300" fill="none"/>
+<path d="M0 300H800" fill="none"/></g></symbol>
+</defs></svg>
 
-<nav>
+<nav aria-label="Principal">
   <div class="wrap nav-in">
-    <a href="#top" class="logo" aria-label="Making Progress">
-      <picture><source srcset="assets/monograma-blanco.png" media="(prefers-color-scheme: dark)"><img src="assets/monograma-azul.png" alt="" width="68" height="26"></picture>
-      <span>Making Progress</span>
-    </a>
+    <a href="#top" class="logo" aria-label="Making Progress, inicio"><img src="assets/monograma-azul.png" alt="" width="68" height="26"><span>Making Progress</span></a>
     <div class="nav-links">
-      <a href="#casos">Casos</a>
-      <a href="#sistema">Sistema</a>
-      <a href="#mantenimiento">Mantenimiento</a>
-      <a href="#equipo">Sobre nosotros</a>
-      <a href="#contacto" class="btn btn-primary">Contacto</a>
+      <a href="#trabajos">Trabajos</a>
+      <a href="#servicios">Servicios</a>
+      <a href="#metodo">Método</a>
+      <a href="#nosotros">Nosotros</a>
+      <a href="#contacto" class="btn btn-p">Contanos tu proyecto</a>
     </div>
   </div>
 </nav>
 
 <main id="top">
 
-<!-- 1. HERO -->
-<section class="hero">
-  <div class="wrap hero-grid">
+<section class="hero" aria-labelledby="h1">
+  <div class="wrap hero-g">
     <div>
-      <span class="tag">Webs · Campañas · Setting · Para toda América e Inglaterra</span>
-      <h1>Construimos webs y campañas que <em>acercan un negocio a su gente.</em></h1>
-      <p class="lead">Somos Mateo Morales y Santiago Pica, dos socios en Entre Ríos, Argentina, y trabajamos para toda América e Inglaterra. Diseñamos y mantenemos webs, armamos campañas de Meta y ordenamos las conversaciones que llegan después. Te mostramos una demo de tu web antes de contratar, la entregamos rápido y te acompañamos siempre.</p>
+      <h1 id="h1">Un medio hacia el éxito.</h1>
+      <p class="lead">Hacemos webs y campañas para negocios y profesionales. Vos ponés el oficio, nosotros el camino.</p>
       <div class="hero-cta">
-        <a href="#casos" class="btn btn-primary">Ver casos</a>
-        <a href="#contacto" class="btn btn-ghost">Conocernos</a>
+        <a href="#trabajos" class="btn btn-p">Ver trabajos</a>
+        <a href="#" class="btn btn-s js-wa" data-msg="Hola, quiero pedir una demo de mi web.">Pedir una demo</a>
       </div>
+      <p class="hero-loc">Desde Entre Ríos, Argentina, para clientes de toda América e Inglaterra.</p>
     </div>
-    <div class="viz" aria-hidden="true">
-      <svg viewBox="0 0 520 330" focusable="false">
-        <line class="lane" x1="0" y1="70" x2="520" y2="70"/><g transform="translate(14 70)"><g class="before" style="animation-delay:-0.0s"><rect class="card" x="0" y="-22" width="64" height="44" rx="9"/><rect class="acc" x="8" y="-14" width="22" height="7" rx="3"/><rect class="mute" x="8" y="-2" width="46" height="5" rx="2.5"/><rect class="mute" x="8" y="8" width="32" height="5" rx="2.5"/></g></g><g transform="translate(364 70)"><g class="after" style="animation-delay:-0.0s"><rect class="card" x="0" y="-18" width="58" height="36" rx="12"/><path class="acc" d="M-1 12l-7 9 14-5z"/><circle class="dot" cx="17" cy="0" r="3"/><circle class="dot" cx="29" cy="0" r="3"/><circle class="dot" cx="41" cy="0" r="3"/></g></g><line class="lane" x1="0" y1="165" x2="520" y2="165"/><g transform="translate(14 165)"><g class="before" style="animation-delay:-3.0s"><rect class="card" x="0" y="-22" width="64" height="44" rx="9"/><path class="acc" d="M32 11c-9-6-14-10-14-16 0-4 3-6 6-6 3 0 6 2 8 5 2-3 5-5 8-5 3 0 6 2 6 6 0 6-5 10-14 16z"/></g></g><g transform="translate(364 165)"><g class="after" style="animation-delay:-3.0s"><circle class="acc" cx="20" cy="0" r="17"/><path d="M12 1l6 6 11-12" fill="none" stroke="var(--accent-ink)" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></g></g><line class="lane" x1="0" y1="260" x2="520" y2="260"/><g transform="translate(14 260)"><g class="before" style="animation-delay:-6.0s"><rect class="card" x="0" y="-22" width="64" height="44" rx="9"/><rect class="acc-s" x="10" y="-12" width="40" height="14" rx="5"/><path class="acc" d="M38 -2l0 20 5-5 4 9 3-1.5-4-9 7 0z"/></g></g><g transform="translate(364 260)"><g class="after" style="animation-delay:-6.0s"><rect class="card" x="0" y="-18" width="58" height="36" rx="12"/><path class="acc" d="M-1 12l-7 9 14-5z"/><rect class="mute" x="10" y="-8" width="38" height="5" rx="2.5"/><rect class="mute" x="10" y="3" width="26" height="5" rx="2.5"/></g></g>
-        <g transform="translate(250 8)">
-          <rect class="win" x="0" y="0" width="104" height="314" rx="14"/>
-          <path class="win-bar" d="M0 14a14 14 0 0 1 14-14h76a14 14 0 0 1 14 14v22H0z"/>
-          <circle class="dot" cx="16" cy="18" r="3.5"/><circle class="dot" cx="28" cy="18" r="3.5"/><circle class="dot" cx="40" cy="18" r="3.5"/>
-          <rect class="acc" x="14" y="56" width="52" height="10" rx="5"/>
-          <rect class="mute" x="14" y="80" width="76" height="6" rx="3"/><rect class="mute" x="14" y="94" width="62" height="6" rx="3"/>
-          <rect class="acc-s" x="14" y="124" width="76" height="46" rx="8"/>
-          <rect class="mute" x="14" y="190" width="76" height="6" rx="3"/><rect class="mute" x="14" y="204" width="50" height="6" rx="3"/>
-          <rect class="acc" x="14" y="266" width="48" height="24" rx="8"/>
-        </g>
-      </svg>
-      <div class="viz-cap"><span>Campaña</span><span>Web</span><span>Conversación</span></div>
+    <div class="arco" aria-hidden="true">
+      <svg viewBox="0 0 640 644" focusable="false"><g fill="none" stroke="currentColor" stroke-linejoin="round" stroke-linecap="round"><path pathLength="1" style="--i:1" class="l" d="M64 528H576V552H64Z"/>
+<path pathLength="1" style="--i:2" class="l" d="M48 552H592V576H48Z"/>
+<path pathLength="1" style="--i:3" class="l" d="M32 576H608V600H32Z"/>
+<path pathLength="1" style="--i:4" class="l" d="M16 600H624V624H16Z"/>
+<path pathLength="1" style="--i:5" class="l" d="M115 246L111 528M145 246L149 528"/>
+<path pathLength="1" style="--i:6" class="f" d="M121.8 252L119.5 525"/>
+<path pathLength="1" style="--i:7" class="f" d="M130 252L130 525"/>
+<path pathLength="1" style="--i:8" class="f" d="M138.2 252L140.4 525"/>
+<path pathLength="1" style="--i:9" class="h" d="M140.3 254L143.1 522"/>
+<path pathLength="1" style="--i:10" class="h" d="M141.4 254L144.4 522"/>
+<path pathLength="1" style="--i:11" class="h" d="M142.4 254L145.8 522"/>
+<path pathLength="1" style="--i:12" class="h" d="M143.5 254L147.1 522"/>
+<path pathLength="1" style="--i:13" class="h" d="M144.6 254L148.4 522"/>
+<path pathLength="1" style="--i:14" class="l" d="M114 246C111 240 107 237 106 234H154C153 237 149 240 146 246Z"/>
+<path pathLength="1" style="--i:15" class="l" d="M102 234H158V224H102Z"/>
+<path pathLength="1" style="--i:16" class="l" d="M191 246L187 528M221 246L225 528"/>
+<path pathLength="1" style="--i:17" class="f" d="M197.8 252L195.6 525"/>
+<path pathLength="1" style="--i:18" class="f" d="M206 252L206 525"/>
+<path pathLength="1" style="--i:19" class="f" d="M214.2 252L216.4 525"/>
+<path pathLength="1" style="--i:20" class="h" d="M216.3 254L219.1 522"/>
+<path pathLength="1" style="--i:21" class="h" d="M217.4 254L220.4 522"/>
+<path pathLength="1" style="--i:22" class="h" d="M218.4 254L221.8 522"/>
+<path pathLength="1" style="--i:23" class="h" d="M219.5 254L223.1 522"/>
+<path pathLength="1" style="--i:24" class="h" d="M220.6 254L224.4 522"/>
+<path pathLength="1" style="--i:25" class="l" d="M190 246C187 240 183 237 182 234H230C229 237 225 240 222 246Z"/>
+<path pathLength="1" style="--i:26" class="l" d="M178 234H234V224H178Z"/>
+<path pathLength="1" style="--i:27" class="l" d="M267 246L263 528M297 246L301 528"/>
+<path pathLength="1" style="--i:28" class="f" d="M273.8 252L271.6 525"/>
+<path pathLength="1" style="--i:29" class="f" d="M282 252L282 525"/>
+<path pathLength="1" style="--i:30" class="f" d="M290.2 252L292.4 525"/>
+<path pathLength="1" style="--i:31" class="h" d="M292.4 254L295.1 522"/>
+<path pathLength="1" style="--i:32" class="h" d="M293.4 254L296.4 522"/>
+<path pathLength="1" style="--i:33" class="h" d="M294.4 254L297.8 522"/>
+<path pathLength="1" style="--i:34" class="h" d="M295.5 254L299.1 522"/>
+<path pathLength="1" style="--i:35" class="h" d="M296.6 254L300.4 522"/>
+<path pathLength="1" style="--i:36" class="l" d="M266 246C263 240 259 237 258 234H306C305 237 301 240 298 246Z"/>
+<path pathLength="1" style="--i:37" class="l" d="M254 234H310V224H254Z"/>
+<path pathLength="1" style="--i:38" class="l" d="M343 246L339 528M373 246L377 528"/>
+<path pathLength="1" style="--i:39" class="f" d="M349.8 252L347.6 525"/>
+<path pathLength="1" style="--i:40" class="f" d="M358 252L358 525"/>
+<path pathLength="1" style="--i:41" class="f" d="M366.2 252L368.4 525"/>
+<path pathLength="1" style="--i:42" class="h" d="M368.4 254L371.1 522"/>
+<path pathLength="1" style="--i:43" class="h" d="M369.4 254L372.4 522"/>
+<path pathLength="1" style="--i:44" class="h" d="M370.4 254L373.8 522"/>
+<path pathLength="1" style="--i:45" class="h" d="M371.5 254L375.1 522"/>
+<path pathLength="1" style="--i:46" class="h" d="M372.6 254L376.4 522"/>
+<path pathLength="1" style="--i:47" class="l" d="M342 246C339 240 335 237 334 234H382C381 237 377 240 374 246Z"/>
+<path pathLength="1" style="--i:48" class="l" d="M330 234H386V224H330Z"/>
+<path pathLength="1" style="--i:49" class="l" d="M419 246L415 528M449 246L453 528"/>
+<path pathLength="1" style="--i:50" class="f" d="M425.8 252L423.6 525"/>
+<path pathLength="1" style="--i:51" class="f" d="M434 252L434 525"/>
+<path pathLength="1" style="--i:52" class="f" d="M442.2 252L444.4 525"/>
+<path pathLength="1" style="--i:53" class="h" d="M444.4 254L447.1 522"/>
+<path pathLength="1" style="--i:54" class="h" d="M445.4 254L448.4 522"/>
+<path pathLength="1" style="--i:55" class="h" d="M446.4 254L449.8 522"/>
+<path pathLength="1" style="--i:56" class="h" d="M447.5 254L451.1 522"/>
+<path pathLength="1" style="--i:57" class="h" d="M448.6 254L452.4 522"/>
+<path pathLength="1" style="--i:58" class="l" d="M418 246C415 240 411 237 410 234H458C457 237 453 240 450 246Z"/>
+<path pathLength="1" style="--i:59" class="l" d="M406 234H462V224H406Z"/>
+<path pathLength="1" style="--i:60" class="l" d="M495 246L491 528M525 246L529 528"/>
+<path pathLength="1" style="--i:61" class="f" d="M501.8 252L499.6 525"/>
+<path pathLength="1" style="--i:62" class="f" d="M510 252L510 525"/>
+<path pathLength="1" style="--i:63" class="f" d="M518.2 252L520.5 525"/>
+<path pathLength="1" style="--i:64" class="h" d="M520.4 254L523.1 522"/>
+<path pathLength="1" style="--i:65" class="h" d="M521.4 254L524.4 522"/>
+<path pathLength="1" style="--i:66" class="h" d="M522.5 254L525.8 522"/>
+<path pathLength="1" style="--i:67" class="h" d="M523.5 254L527.1 522"/>
+<path pathLength="1" style="--i:68" class="h" d="M524.5 254L528.4 522"/>
+<path pathLength="1" style="--i:69" class="l" d="M494 246C491 240 487 237 486 234H534C533 237 529 240 526 246Z"/>
+<path pathLength="1" style="--i:70" class="l" d="M482 234H538V224H482Z"/>
+<path pathLength="1" style="--i:71" class="l" d="M96 224H544V200H96Z"/>
+<path pathLength="1" style="--i:72" class="l" d="M96 200H544V158H96Z"/>
+<path pathLength="1" style="--i:73" class="l" d="M101 200V158M115 200V158"/>
+<path pathLength="1" style="--i:74" class="f" d="M105.5 196V162"/>
+<path pathLength="1" style="--i:75" class="f" d="M108 196V162"/>
+<path pathLength="1" style="--i:76" class="f" d="M110.5 196V162"/>
+<path pathLength="1" style="--i:77" class="l" d="M135.9 200V158M149.9 200V158"/>
+<path pathLength="1" style="--i:78" class="f" d="M140.4 196V162"/>
+<path pathLength="1" style="--i:79" class="f" d="M142.9 196V162"/>
+<path pathLength="1" style="--i:80" class="f" d="M145.4 196V162"/>
+<path pathLength="1" style="--i:81" class="l" d="M170.8 200V158M184.8 200V158"/>
+<path pathLength="1" style="--i:82" class="f" d="M175.3 196V162"/>
+<path pathLength="1" style="--i:83" class="f" d="M177.8 196V162"/>
+<path pathLength="1" style="--i:84" class="f" d="M180.3 196V162"/>
+<path pathLength="1" style="--i:85" class="l" d="M205.8 200V158M219.8 200V158"/>
+<path pathLength="1" style="--i:86" class="f" d="M210.3 196V162"/>
+<path pathLength="1" style="--i:87" class="f" d="M212.8 196V162"/>
+<path pathLength="1" style="--i:88" class="f" d="M215.3 196V162"/>
+<path pathLength="1" style="--i:89" class="l" d="M240.7 200V158M254.7 200V158"/>
+<path pathLength="1" style="--i:90" class="f" d="M245.2 196V162"/>
+<path pathLength="1" style="--i:91" class="f" d="M247.7 196V162"/>
+<path pathLength="1" style="--i:92" class="f" d="M250.2 196V162"/>
+<path pathLength="1" style="--i:93" class="l" d="M275.6 200V158M289.6 200V158"/>
+<path pathLength="1" style="--i:94" class="f" d="M280.1 196V162"/>
+<path pathLength="1" style="--i:95" class="f" d="M282.6 196V162"/>
+<path pathLength="1" style="--i:96" class="f" d="M285.1 196V162"/>
+<path pathLength="1" style="--i:97" class="l" d="M310.5 200V158M324.5 200V158"/>
+<path pathLength="1" style="--i:98" class="f" d="M315 196V162"/>
+<path pathLength="1" style="--i:99" class="f" d="M317.5 196V162"/>
+<path pathLength="1" style="--i:100" class="f" d="M320 196V162"/>
+<path pathLength="1" style="--i:101" class="l" d="M345.4 200V158M359.4 200V158"/>
+<path pathLength="1" style="--i:102" class="f" d="M349.9 196V162"/>
+<path pathLength="1" style="--i:103" class="f" d="M352.4 196V162"/>
+<path pathLength="1" style="--i:104" class="f" d="M354.9 196V162"/>
+<path pathLength="1" style="--i:105" class="l" d="M380.4 200V158M394.4 200V158"/>
+<path pathLength="1" style="--i:106" class="f" d="M384.9 196V162"/>
+<path pathLength="1" style="--i:107" class="f" d="M387.4 196V162"/>
+<path pathLength="1" style="--i:108" class="f" d="M389.9 196V162"/>
+<path pathLength="1" style="--i:109" class="l" d="M415.3 200V158M429.3 200V158"/>
+<path pathLength="1" style="--i:110" class="f" d="M419.8 196V162"/>
+<path pathLength="1" style="--i:111" class="f" d="M422.3 196V162"/>
+<path pathLength="1" style="--i:112" class="f" d="M424.8 196V162"/>
+<path pathLength="1" style="--i:113" class="l" d="M450.2 200V158M464.2 200V158"/>
+<path pathLength="1" style="--i:114" class="f" d="M454.7 196V162"/>
+<path pathLength="1" style="--i:115" class="f" d="M457.2 196V162"/>
+<path pathLength="1" style="--i:116" class="f" d="M459.7 196V162"/>
+<path pathLength="1" style="--i:117" class="l" d="M485.1 200V158M499.1 200V158"/>
+<path pathLength="1" style="--i:118" class="f" d="M489.6 196V162"/>
+<path pathLength="1" style="--i:119" class="f" d="M492.1 196V162"/>
+<path pathLength="1" style="--i:120" class="f" d="M494.6 196V162"/>
+<path pathLength="1" style="--i:121" class="l" d="M520 200V158M534 200V158"/>
+<path pathLength="1" style="--i:122" class="f" d="M524.5 196V162"/>
+<path pathLength="1" style="--i:123" class="f" d="M527 196V162"/>
+<path pathLength="1" style="--i:124" class="f" d="M529.5 196V162"/>
+<path pathLength="1" style="--i:125" class="l" d="M84 158H556V140H84Z"/>
+<path pathLength="1" style="--i:126" class="l" d="M84 140H556L320 32Z"/>
+<path pathLength="1" style="--i:127" class="l" d="M112 132H528L320 52Z"/>
+<path pathLength="1" style="--i:128" class="l" d="M278 132A42 42 0 0 1 362 132"/>
+<path pathLength="1" style="--i:129" class="l" d="M292 132A28 28 0 0 1 348 132"/>
+<path pathLength="1" style="--i:130" class="f" d="M270 132L248 132"/>
+<path pathLength="1" style="--i:131" class="f" d="M273.8 112.9L253.5 104.4"/>
+<path pathLength="1" style="--i:132" class="f" d="M284.6 96.6L269.1 81.1"/>
+<path pathLength="1" style="--i:133" class="f" d="M300.9 85.8L292.4 65.5"/>
+<path pathLength="1" style="--i:134" class="f" d="M339.1 85.8L347.6 65.5"/>
+<path pathLength="1" style="--i:135" class="f" d="M355.4 96.6L370.9 81.1"/>
+<path pathLength="1" style="--i:136" class="f" d="M366.2 112.9L386.5 104.4"/>
+<path pathLength="1" style="--i:137" class="f" d="M370 132L392 132"/>
+<path pathLength="1" style="--i:138" class="l" d="M320 32V22M312 22H328"/>
+<path pathLength="1" style="--i:139" class="h" d="M16 628H624"/>
+<path pathLength="1" style="--i:140" class="h" d="M46 634H594"/>
+<path pathLength="1" style="--i:141" class="h" d="M76 640H564"/></g></svg>
     </div>
   </div>
 </section>
 
-<!-- 2b. POR QUÉ NOSOTROS -->
-<section class="pq" aria-label="Cómo trabajamos con vos">
-  <div class="wrap pq-g">
-    <div class="pq-i"><h3>Atención constante</h3><p>Respondemos todos los días y seguimos cuidando tu web después de publicarla.</p></div>
-    <div class="pq-i"><h3>Rápidos y eficaces</h3><p>De la demo a la web publicada en días, no en meses.</p></div>
-    <div class="pq-i"><h3>Demo incluida</h3><p>Antes de decidir, ves tu página funcionando, con tu marca y tus datos.</p></div>
+<section class="vir" aria-label="Cómo trabajamos con vos">
+  <div class="wrap vir-g">
+    <div class="vir-i"><h3>Atención constante</h3><p>Respondemos todos los días y seguimos cuidando tu web después de publicarla.</p></div>
+    <div class="vir-i"><h3>Rápidos y eficaces</h3><p>De la demo a la web publicada en días, no en meses.</p></div>
+    <div class="vir-i"><h3>Demo incluida</h3><p>Antes de decidir, ves tu página funcionando, con tu marca y tus datos.</p></div>
   </div>
 </section>
 
-<!-- 3. NÚMEROS -->
-<section id="numeros">
+<section class="epi" aria-label="Cita">
+  <div class="greca claro"></div>
+  <div class="wrap epi-in">
+    <div class="epi-mark" aria-hidden="true">“</div>
+    <blockquote><p>Lo que se interpone en el camino se convierte en el camino.</p><cite>Marco Aurelio, Meditaciones, V, 20</cite></blockquote>
+  </div>
+  <div class="greca claro"></div>
+</section>
+
+<section class="blk" id="trabajos">
   <div class="wrap">
-    <p class="eyebrow">En números</p>
-    <h2>Lo que operamos, medido</h2>
-    <div class="stats">
-      <div class="stat"><div class="stat-n">2</div><div class="stat-l">países con campañas gestionadas</div><div class="stat-s">Argentina y México</div></div>
-      <div class="stat"><div class="stat-n">+10</div><div class="stat-l">páginas web hechas</div><div class="stat-s">Estudios jurídicos, seguros, comercios y marcas, como Organización Paraná, Estudio Herrera y Positive Mama</div></div>
-      <div class="stat"><div class="stat-n">2 socios</div><div class="stat-l">al frente de cada proyecto</div><div class="stat-s">Hablás con quienes hacen el trabajo</div></div>
-      <div class="stat"><div class="stat-n">24 h</div><div class="stat-l">tiempo máximo de respuesta</div><div class="stat-s">Es un compromiso nuestro</div></div>
+    <div class="head">
+      <h2>Lo hecho,<br>a la vista.</h2>
+      <p class="lead">Navegá cada web desde acá, como en un celular. Las marcadas como Demo son propuestas que preparamos para mostrar cómo podría quedar el sitio de cada negocio.</p>
     </div>
-    <p class="note">Solo publicamos números que podemos comprobar. Vamos a actualizarlos a medida que sumemos proyectos.</p>
-  </div>
-</section>
 
-<!-- 4. CASOS -->
-<section class="alt" id="casos">
-  <div class="wrap">
-    <p class="eyebrow">Casos</p>
-    <h2>Problemas reales, resueltos y funcionando</h2>
-    <p class="lead">Cada caso cuenta de dónde partimos, qué hicimos y cómo está hoy.</p>
-
-    <article class="case">
-      <div class="case-body">
-        <div class="badges"><span class="badge live">En producción</span><span class="badge">Web</span><span class="badge">Meta Ads</span><span class="badge">Hecho para Genuine Reach</span></div>
+    <article class="feat">
+      <div class="fig">
+        <div class="bro"><div class="bro-bar"><div class="nav-dots"><i></i><i></i><i></i></div><span>positivemama.org/parto-positivo-re-nacer</span></div><img src="assets/trabajos/renacer-pc.jpg" alt="Landing del programa RE-NACER de Positive Mama en computadora" width="1200" height="750" loading="lazy"></div>
+        <div class="cel"><img src="assets/trabajos/renacer-cel.jpg" alt="La misma landing en celular" loading="lazy"></div>
+      </div>
+      <div class="feat-t">
+        <div class="tags"><span class="tag vivo">En producción</span><span class="tag">Web</span><span class="tag">Meta Ads</span><span class="tag">Hecho para Genuine Reach</span></div>
         <h3>Un programa online con una landing que vende y campañas en dos países</h3>
-        <button class="more-btn" type="button" aria-expanded="false" aria-controls="m-1">Cómo lo hicimos <span class="ic" aria-hidden="true">+</span></button>
-        <div class="case-more" id="m-1" inert><div class="case-more-in"><p><b>Punto de partida:</b> un programa de hipnoparto (RE-NACER, de Positive Mama) que necesitaba una página de venta clara y anuncios que trajeran mujeres interesadas.</p>
-        <p><b>Qué hicimos:</b> armamos la landing de venta completa y las campañas de Meta: conjuntos de anuncios y anuncios, en Argentina y México.</p></div></div>
-        <div class="case-metric"><b>2 países</b><span>Campañas gestionadas en Argentina y México</span></div>
-        <a class="link" href="https://positivemama.org/parto-positivo-re-nacer/" target="_blank" rel="noopener">Ver sitio →</a>
+        <div class="metric"><b>2 países</b><span>Campañas gestionadas en Argentina y México</span></div>
+        <details class="mas"><summary>Cómo lo hicimos</summary>
+          <p><b>Punto de partida:</b> un programa de hipnoparto (RE-NACER, de Positive Mama) que necesitaba una página de venta clara y anuncios que trajeran mujeres interesadas.</p>
+          <p><b>Qué hicimos:</b> armamos la landing de venta completa y las campañas de Meta: conjuntos de anuncios y anuncios, en Argentina y México.</p>
+        </details>
+        <a class="vinc" href="https://positivemama.org/parto-positivo-re-nacer/" target="_blank" rel="noopener">Ver el sitio</a>
       </div>
-      <div class="shot" style="aspect-ratio:1200/684"><img src="assets/caso-renacer.jpg" alt="Landing del programa RE-NACER de Positive Mama" loading="lazy"></div>
     </article>
 
-    <article class="case flip">
-      <div class="case-body">
-        <div class="badges"><span class="badge live">En producción</span><span class="badge">Web</span><span class="badge">Registro</span><span class="badge">Hecho para Genuine Reach</span></div>
+    <article class="feat flip">
+      <div class="fig">
+        <div class="bro"><div class="bro-bar"><div class="nav-dots"><i></i><i></i><i></i></div><span>hipnopartointernacional.com/registro-profesional</span></div><img src="assets/trabajos/hipnoparto-pc.jpg" alt="Landing de registro de la masterclass gratuita de Hipnoparto Internacional" width="1200" height="750" loading="lazy"></div>
+        <div class="cel"><img src="assets/trabajos/hipnoparto-cel.jpg" alt="La misma landing en celular" loading="lazy"></div>
+      </div>
+      <div class="feat-t">
+        <div class="tags"><span class="tag vivo">En producción</span><span class="tag">Web</span><span class="tag">Registro</span><span class="tag">Hecho para Genuine Reach</span></div>
         <h3>Una landing con registro que termina en una bienvenida</h3>
-        <button class="more-btn" type="button" aria-expanded="false" aria-controls="m-2">Cómo lo hicimos <span class="ic" aria-hidden="true">+</span></button>
-        <div class="case-more" id="m-2" inert><div class="case-more-in"><p><b>Punto de partida:</b> Hipnoparto Internacional quería que profesionales se anotaran a una masterclass gratuita, en una página que transmitiera la calidad de la marca y que después de registrarse les dijera qué hacer.</p>
-        <p><b>Qué hicimos:</b> desarrollamos una landing con formulario de registro muy cuidada, con los colores, el logo y las redes de la marca, y un aviso fijo con fecha y botón de reserva. Al registrarse, la persona pasa a una página de gracias con un video de agradecimiento, el número de contacto y el enlace directo al grupo de Hipnoparto.</p></div></div>
-        <div class="case-metric"><b>Registro → Video → Grupo</b><span>Un recorrido completo: la persona se registra, recibe la bienvenida y entra a la comunidad</span></div>
-        <a class="link" href="https://www.hipnopartointernacional.com/registro-profesional" target="_blank" rel="noopener">Ver sitio →</a>
+        <div class="metric"><b>Registro, video, grupo</b><span>Un recorrido completo: la persona se registra, recibe la bienvenida y entra a la comunidad</span></div>
+        <details class="mas"><summary>Cómo lo hicimos</summary>
+          <p><b>Punto de partida:</b> Hipnoparto Internacional quería que profesionales se anotaran a una masterclass gratuita, en una página que transmitiera la calidad de la marca y que después de registrarse les dijera qué hacer.</p>
+          <p><b>Qué hicimos:</b> desarrollamos una landing con formulario de registro muy cuidada, con los colores, el logo y las redes de la marca, y un aviso fijo con fecha y botón de reserva. Al registrarse, la persona pasa a una página de gracias con un video de agradecimiento, el número de contacto y el enlace directo al grupo de Hipnoparto.</p>
+        </details>
+        <a class="vinc" href="https://www.hipnopartointernacional.com/registro-profesional" target="_blank" rel="noopener">Ver el sitio</a>
       </div>
-      <div class="shot" style="aspect-ratio:1200/629"><img src="assets/caso-hipnoparto.jpg" alt="Landing y registro de la masterclass gratuita de Hipnoparto Internacional" loading="lazy"></div>
     </article>
 
+    <div class="head" style="margin-top:var(--s8)">
+      <h2>Más trabajos</h2>
+      <div class="filtros" role="group" aria-label="Filtrar trabajos">
+        <button type="button" data-f="todos" aria-pressed="true">Todos</button>
+        <button type="button" data-f="vivo" aria-pressed="false">En producción</button>
+        <button type="button" data-f="demo" aria-pressed="false">Demos</button>
+      </div>
+    </div>
 
-    <div class="tb-tit"><h3>Más trabajos</h3><p>Navegalos acá mismo, como en un celular. Las marcadas como <b>Demo</b> son propuestas que preparamos para mostrar cómo podría quedar la web de cada negocio.</p></div>
-    <div class="tb-g">
-      <article class="tb">
-        <div class="tb-h"><div class="badges"><span class="badge live">En producción</span></div><h3>Estudio Jurídico Herrera</h3><p>Estudio jurídico · Resistencia, Chaco</p></div>
-        <div class="tb-f" data-src="https://estudiojuridicoherrerayasoc.com.ar/" data-name="Estudio Jurídico Herrera">
-          <div class="tb-bar"><i></i><i></i><i></i><span>estudiojuridicoherrerayasoc.com.ar</span></div>
-          <div class="tb-v"><img src="assets/caso-herrera.jpg" alt="Vista de Estudio Jurídico Herrera en celular" loading="lazy" width="390" height="720"><button class="tb-go" type="button">Navegar la web</button></div>
-        </div>
-        <a class="link" href="https://estudiojuridicoherrerayasoc.com.ar/" target="_blank" rel="noopener">Abrir en pantalla completa →</a>
+    <div class="grid-w" id="grid-w">
+      <article class="work" data-estado="vivo">
+        <div class="fig"><div class="bro"><div class="bro-bar"><div class="nav-dots"><i></i><i></i><i></i></div><span>estudiojuridicoherrerayasoc.com.ar</span></div><img src="assets/trabajos/herrera-pc.jpg" alt="Estudio Jurídico Herrera en computadora" width="1200" height="750" loading="lazy"></div><div class="cel"><img src="assets/trabajos/herrera-cel.jpg" alt="Estudio Jurídico Herrera en celular" loading="lazy"></div></div>
+        <div class="tags"><span class="tag vivo">En producción</span></div>
+        <h3>Estudio Jurídico Herrera</h3><p class="rubro">Estudio jurídico · Resistencia, Chaco</p>
+        <div class="work-a"><button type="button" class="btn btn-s" data-ver="https://estudiojuridicoherrerayasoc.com.ar/" data-name="Estudio Jurídico Herrera">Navegar la web</button><a class="vinc" style="margin:0" href="https://estudiojuridicoherrerayasoc.com.ar/" target="_blank" rel="noopener">Abrir</a></div>
       </article>
-      <article class="tb">
-        <div class="tb-h"><div class="badges"><span class="badge live">En producción</span></div><h3>Organización Paraná</h3><p>Seguros y gestoría · Paraná, Entre Ríos</p></div>
-        <div class="tb-f" data-src="https://www.organizacionparana.org/" data-name="Organización Paraná">
-          <div class="tb-bar"><i></i><i></i><i></i><span>www.organizacionparana.org</span></div>
-          <div class="tb-v"><img src="assets/caso-organizacion-parana.jpg" alt="Vista de Organización Paraná en celular" loading="lazy" width="390" height="720"><button class="tb-go" type="button">Navegar la web</button></div>
-        </div>
-        <a class="link" href="https://www.organizacionparana.org/" target="_blank" rel="noopener">Abrir en pantalla completa →</a>
+      <article class="work" data-estado="vivo">
+        <div class="fig"><div class="bro"><div class="bro-bar"><div class="nav-dots"><i></i><i></i><i></i></div><span>www.organizacionparana.org</span></div><img src="assets/trabajos/organizacion-parana-pc.jpg" alt="Organización Paraná en computadora" width="1200" height="750" loading="lazy"></div><div class="cel"><img src="assets/trabajos/organizacion-parana-cel.jpg" alt="Organización Paraná en celular" loading="lazy"></div></div>
+        <div class="tags"><span class="tag vivo">En producción</span></div>
+        <h3>Organización Paraná</h3><p class="rubro">Seguros y gestoría · Paraná, Entre Ríos</p>
+        <div class="work-a"><button type="button" class="btn btn-s" data-ver="https://www.organizacionparana.org/" data-name="Organización Paraná">Navegar la web</button><a class="vinc" style="margin:0" href="https://www.organizacionparana.org/" target="_blank" rel="noopener">Abrir</a></div>
       </article>
-      <article class="tb">
-        <div class="tb-h"><div class="badges"><span class="badge">Demo</span></div><h3>Laqueados Rosario</h3><p>Muebles a medida · Rosario</p></div>
-        <div class="tb-f" data-src="demos/laqueados-rosario.html" data-name="Laqueados Rosario">
-          <div class="tb-bar"><i></i><i></i><i></i><span>newmakingprogress.com/demos/laqueados-rosario.html</span></div>
-          <div class="tb-v"><img src="assets/caso-laqueados.jpg" alt="Vista de Laqueados Rosario en celular" loading="lazy" width="390" height="720"><button class="tb-go" type="button">Navegar la demo</button></div>
-        </div>
-        <a class="link" href="demos/laqueados-rosario.html" target="_blank" rel="noopener">Abrir en pantalla completa →</a>
+      <article class="work" data-estado="demo">
+        <div class="fig"><div class="bro"><div class="bro-bar"><div class="nav-dots"><i></i><i></i><i></i></div><span>newmakingprogress.com/demos/laqueados-rosario</span></div><img src="assets/trabajos/laqueados-pc.jpg" alt="Laqueados Rosario en computadora" width="1200" height="750" loading="lazy"></div><div class="cel"><img src="assets/trabajos/laqueados-cel.jpg" alt="Laqueados Rosario en celular" loading="lazy"></div></div>
+        <div class="tags"><span class="tag">Demo</span></div>
+        <h3>Laqueados Rosario</h3><p class="rubro">Muebles a medida · Rosario</p>
+        <div class="work-a"><button type="button" class="btn btn-s" data-ver="demos/laqueados-rosario.html" data-name="Laqueados Rosario">Navegar la demo</button><a class="vinc" style="margin:0" href="demos/laqueados-rosario.html" target="_blank" rel="noopener">Abrir</a></div>
       </article>
-      <article class="tb">
-        <div class="tb-h"><div class="badges"><span class="badge">Demo</span></div><h3>By Papas</h3><p>Gastronomía con sucursales</p></div>
-        <div class="tb-f" data-src="demos/by-papas.html" data-name="By Papas">
-          <div class="tb-bar"><i></i><i></i><i></i><span>newmakingprogress.com/demos/by-papas.html</span></div>
-          <div class="tb-v"><img src="assets/caso-by-papas.jpg" alt="Vista de By Papas en celular" loading="lazy" width="390" height="720"><button class="tb-go" type="button">Navegar la demo</button></div>
-        </div>
-        <a class="link" href="demos/by-papas.html" target="_blank" rel="noopener">Abrir en pantalla completa →</a>
+      <article class="work" data-estado="demo">
+        <div class="fig"><div class="bro"><div class="bro-bar"><div class="nav-dots"><i></i><i></i><i></i></div><span>newmakingprogress.com/demos/by-papas</span></div><img src="assets/trabajos/by-papas-pc.jpg" alt="By Papas en computadora" width="1200" height="750" loading="lazy"></div><div class="cel"><img src="assets/trabajos/by-papas-cel.jpg" alt="By Papas en celular" loading="lazy"></div></div>
+        <div class="tags"><span class="tag">Demo</span></div>
+        <h3>By Papas</h3><p class="rubro">Gastronomía con sucursales</p>
+        <div class="work-a"><button type="button" class="btn btn-s" data-ver="demos/by-papas.html" data-name="By Papas">Navegar la demo</button><a class="vinc" style="margin:0" href="demos/by-papas.html" target="_blank" rel="noopener">Abrir</a></div>
       </article>
-      <article class="tb">
-        <div class="tb-h"><div class="badges"><span class="badge">Demo</span></div><h3>Kamlofky & López Ciarroca</h3><p>Estudio jurídico · Paraná</p></div>
-        <div class="tb-f" data-src="demos/klc-abogados.html" data-name="Kamlofky & López Ciarroca">
-          <div class="tb-bar"><i></i><i></i><i></i><span>newmakingprogress.com/demos/klc-abogados.html</span></div>
-          <div class="tb-v"><img src="assets/caso-klc.jpg" alt="Vista de Kamlofky & López Ciarroca en celular" loading="lazy" width="390" height="720"><button class="tb-go" type="button">Navegar la demo</button></div>
-        </div>
-        <a class="link" href="demos/klc-abogados.html" target="_blank" rel="noopener">Abrir en pantalla completa →</a>
+      <article class="work" data-estado="demo">
+        <div class="fig"><div class="bro"><div class="bro-bar"><div class="nav-dots"><i></i><i></i><i></i></div><span>newmakingprogress.com/demos/klc-abogados</span></div><img src="assets/trabajos/klc-pc.jpg" alt="Kamlofky & López Ciarroca en computadora" width="1200" height="750" loading="lazy"></div><div class="cel"><img src="assets/trabajos/klc-cel.jpg" alt="Kamlofky & López Ciarroca en celular" loading="lazy"></div></div>
+        <div class="tags"><span class="tag">Demo</span></div>
+        <h3>Kamlofky &amp; López Ciarroca</h3><p class="rubro">Estudio jurídico · Paraná</p>
+        <div class="work-a"><button type="button" class="btn btn-s" data-ver="demos/klc-abogados.html" data-name="Kamlofky & López Ciarroca">Navegar la demo</button><a class="vinc" style="margin:0" href="demos/klc-abogados.html" target="_blank" rel="noopener">Abrir</a></div>
       </article>
-      <article class="tb">
-        <div class="tb-h"><div class="badges"><span class="badge">Demo</span></div><h3>La Selva Resto & Café</h3><p>Cafetería · Paraná</p></div>
-        <div class="tb-f" data-src="demos/la-selva-cafe.html" data-name="La Selva Resto & Café">
-          <div class="tb-bar"><i></i><i></i><i></i><span>newmakingprogress.com/demos/la-selva-cafe.html</span></div>
-          <div class="tb-v"><img src="assets/caso-la-selva.jpg" alt="Vista de La Selva Resto & Café en celular" loading="lazy" width="390" height="720"><button class="tb-go" type="button">Navegar la demo</button></div>
-        </div>
-        <a class="link" href="demos/la-selva-cafe.html" target="_blank" rel="noopener">Abrir en pantalla completa →</a>
+      <article class="work" data-estado="demo">
+        <div class="fig"><div class="bro"><div class="bro-bar"><div class="nav-dots"><i></i><i></i><i></i></div><span>newmakingprogress.com/demos/la-selva-cafe</span></div><img src="assets/trabajos/la-selva-pc.jpg" alt="La Selva Resto & Café en computadora" width="1200" height="750" loading="lazy"></div><div class="cel"><img src="assets/trabajos/la-selva-cel.jpg" alt="La Selva Resto & Café en celular" loading="lazy"></div></div>
+        <div class="tags"><span class="tag">Demo</span></div>
+        <h3>La Selva Resto &amp; Café</h3><p class="rubro">Cafetería · Paraná</p>
+        <div class="work-a"><button type="button" class="btn btn-s" data-ver="demos/la-selva-cafe.html" data-name="La Selva Resto & Café">Navegar la demo</button><a class="vinc" style="margin:0" href="demos/la-selva-cafe.html" target="_blank" rel="noopener">Abrir</a></div>
       </article>
     </div>
 
-    <div class="credit">Los proyectos de Genuine Reach fueron realizados por <b>Mateo Morales y Santiago Pica</b>, hoy socios de Making Progress, mientras trabajaban con esa agencia.</div>
+    <p class="credit">Los proyectos de Genuine Reach fueron realizados por <b>Mateo Morales y Santiago Pica</b>, hoy socios de Making Progress, mientras trabajaban con esa agencia.</p>
   </div>
 </section>
 
-<!-- 5. SISTEMA -->
-<section class="acc" id="sistema">
-  <div class="wrap">
-    <button class="acc-h" type="button" aria-expanded="false" aria-controls="p-sistema"><span><span class="eyebrow">Sistema Making Progress</span><span class="acc-t">Lo que se repite entre nuestros proyectos no es el diseño: es la forma</span></span><span class="acc-ic" aria-hidden="true">+</span></button>
-    <div class="acc-p" id="p-sistema" inert><div class="acc-in">
-    <p class="lead">Un negocio que mucha gente todavía no conoce se muestra, se encuentra, conversa y se mantiene. Cada etapa se puede trabajar por separado o en conjunto.</p>
-    <div class="sys">
-      <div class="sys-col"><div class="sys-n">01</div><h3>Captar</h3><p>Campañas de Meta: estructura, conjuntos de anuncios y anuncios que llevan a las personas correctas.</p></div>
-      <div class="sys-col"><div class="sys-n">02</div><h3>Presentar</h3><p>Webs y landings claras, rápidas y con la identidad de cada marca.</p></div>
-      <div class="sys-col"><div class="sys-n">03</div><h3>Conversar</h3><p>Setting: ordenamos las consultas que llegan por WhatsApp e Instagram.</p></div>
-      <div class="sys-col"><div class="sys-n">04</div><h3>Comunidad</h3><p>Creación y publicación de contenido, y community management.</p></div>
-      <div class="sys-col"><div class="sys-n">05</div><h3>Mantener</h3><p>Cuidamos lo que construimos: al día, seguro y funcionando.</p></div>
+<section class="blk srv" id="servicios">
+  <div class="wrap srv-g">
+    <div class="srv-l">
+      <h2>Todo el camino, de punta a punta.</h2>
+      <p class="lead">Un negocio que mucha gente todavía no conoce se muestra, se encuentra, conversa y se mantiene. Cada etapa se puede trabajar por separado o en conjunto.</p>
+      <svg class="srv-col" viewBox="0 0 120 392" aria-hidden="true"><use href="#columna"/></svg>
     </div>
-    </div></div>
+    <ol>
+      <li><span class="rom" aria-hidden="true">I</span><div><h3>Captar</h3><p>Campañas de Meta: estructura, conjuntos de anuncios y anuncios que llevan a las personas correctas.</p></div></li>
+      <li><span class="rom" aria-hidden="true">II</span><div><h3>Presentar</h3><p>Webs y landings claras, rápidas y con la identidad de cada marca.</p></div></li>
+      <li><span class="rom" aria-hidden="true">III</span><div><h3>Conversar</h3><p>Setting: ordenamos las consultas que llegan por WhatsApp e Instagram.</p></div></li>
+      <li><span class="rom" aria-hidden="true">IV</span><div><h3>Comunidad</h3><p>Creación y publicación de contenido, y community management.</p></div></li>
+      <li><span class="rom" aria-hidden="true">V</span><div><h3>Mantener</h3><p>Una web publicada no es una web terminada. Cuidamos lo que construimos: al día, seguro y funcionando.</p>
+        <ul class="checks">
+          <li><b>Cambios de contenido.</b> Textos, fotos, precios y ofertas actualizados cuando los necesites.</li>
+          <li><b>Revisión técnica mensual.</b> Que todo cargue bien, los formularios y botones funcionen y no haya errores.</li>
+          <li><b>Velocidad y seguridad.</b> Una web rápida es una mejor primera impresión.</li>
+          <li><b>Copias de seguridad.</b> Si algo falla, volvemos atrás sin perder trabajo.</li>
+          <li><b>Reporte mensual.</b> Te contamos qué hicimos y cómo se comportó tu web.</li>
+        </ul></div></li>
+    </ol>
   </div>
 </section>
 
-<!-- 6. MANTENIMIENTO -->
-<section class="acc" id="mantenimiento">
+<section class="epi marmol" aria-label="Cita">
+  <div class="greca azul"></div>
+  <svg class="laurel-bg" viewBox="0 0 200 200" aria-hidden="true"><use href="#laurel"/></svg>
+  <div class="wrap epi-in">
+    <div class="epi-mark" aria-hidden="true">“</div>
+    <blockquote><p>De las cosas, unas dependen de nosotros y otras no.</p><cite>Epicteto, Enquiridión, 1</cite></blockquote>
+  </div>
+  <div class="greca azul"></div>
+</section>
+
+<section class="blk" id="metodo">
   <div class="wrap">
-    <button class="acc-h" type="button" aria-expanded="false" aria-controls="p-mantenimiento"><span><span class="eyebrow">Mantenimiento</span><span class="acc-t">Una web publicada no es una web terminada</span></span><span class="acc-ic" aria-hidden="true">+</span></button>
-    <div class="acc-p" id="p-mantenimiento" inert><div class="acc-in">
-    <p class="lead">Parte de nuestro trabajo es seguir cuidando lo que construimos: que cargue rápido, esté al día y funcione.</p>
-    <div class="mant" style="grid-template-columns:1fr;max-width:640px">
-      <ul class="checks">
-        <li><div>Cambios de contenido<small>Textos, fotos, precios y ofertas actualizados cuando los necesites.</small></div></li>
-        <li><div>Revisión técnica mensual<small>Que todo cargue bien, los formularios y botones funcionen y no haya errores.</small></div></li>
-        <li><div>Velocidad y seguridad<small>Una web rápida es una mejor primera impresión.</small></div></li>
-        <li><div>Copias de seguridad<small>Si algo falla, volvemos atrás sin perder trabajo.</small></div></li>
-        <li><div>Reporte mensual<small>Te contamos qué hicimos y cómo se comportó tu web.</small></div></li>
-      </ul>
+    <div class="head">
+      <h2>Cuatro pasos, sin sorpresas.</h2>
+      <p class="lead">Cada paso te deja un poco más arriba que el anterior, y siempre sabés en cuál estás.</p>
     </div>
-    </div></div>
-  </div>
-</section>
-
-<!-- 8. CÓMO TRABAJAMOS -->
-<section class="acc" id="proceso">
-  <div class="wrap">
-    <button class="acc-h" type="button" aria-expanded="false" aria-controls="p-proceso"><span><span class="eyebrow">Cómo trabajamos</span><span class="acc-t">Cuatro pasos, sin sorpresas</span></span><span class="acc-ic" aria-hidden="true">+</span></button>
-    <div class="acc-p" id="p-proceso" inert><div class="acc-in">
-    <div class="steps">
-      <div class="step"><div class="step-n">01</div><h3>Diagnóstico</h3><p>Una charla corta para entender tu negocio, a quién le vendés y qué necesitás.</p></div>
-      <div class="step"><div class="step-n">02</div><h3>Propuesta</h3><p>Te contamos por escrito qué haríamos y en qué plazos.</p></div>
-      <div class="step"><div class="step-n">03</div><h3>Construcción</h3><p>Armamos la web y las campañas. Revisás y ajustamos antes de publicar.</p></div>
-      <div class="step"><div class="step-n">04</div><h3>Lanzamiento y mantenimiento</h3><p>Publicamos, medimos y seguimos mejorando mes a mes.</p></div>
+    <div class="esc">
+      <div class="paso-w"><div class="sp" aria-hidden="true"></div><div class="paso"><span class="rom" aria-hidden="true">I</span><h3>Diagnóstico</h3><p>Una charla corta para entender tu negocio, a quién le vendés y qué necesitás.</p></div></div>
+      <div class="paso-w"><div class="sp" aria-hidden="true"></div><div class="paso"><span class="rom" aria-hidden="true">II</span><h3>Propuesta</h3><p>Te contamos por escrito qué haríamos y en qué plazos.</p></div></div>
+      <div class="paso-w"><div class="sp" aria-hidden="true"></div><div class="paso"><span class="rom" aria-hidden="true">III</span><h3>Construcción</h3><p>Armamos la web y las campañas. Revisás y ajustamos antes de publicar.</p></div></div>
+      <div class="paso-w"><div class="sp" aria-hidden="true"></div><div class="paso"><span class="rom" aria-hidden="true">IV</span><h3>Lanzamiento y mantenimiento</h3><p>Publicamos, medimos y seguimos mejorando mes a mes.</p></div></div>
     </div>
-    </div></div>
   </div>
 </section>
 
-<!-- 9. EQUIPO -->
-<section class="acc" id="equipo">
+<section class="blk srv" id="nosotros">
   <div class="wrap">
-    <button class="acc-h" type="button" aria-expanded="false" aria-controls="p-equipo"><span><span class="eyebrow">Sobre nosotros</span><span class="acc-t">Dos socios, a partes iguales</span></span><span class="acc-ic" aria-hidden="true">+</span></button>
-    <div class="acc-p" id="p-equipo" inert><div class="acc-in">
-    <p class="lead">Making Progress la lideramos los dos, 50 y 50. Nos complementamos: cada uno cubre lo que el otro no, y todo proyecto pasa por los dos.</p>
-    <div class="about-text">
-      <p><b>Somos Mateo y Santiago.</b> Mateo nació en Bariloche y Santiago en Capital Federal; hoy vivimos los dos en Entre Ríos y nos conocemos desde hace años. Hacemos marketing para negocios y profesionales: webs, campañas de Meta, setting y contenido.</p>
-      <p>Trabajamos juntos en Genuine Reach, donde armamos webs y subimos campañas en Argentina y México. De ahí salió Making Progress, con la misma idea: que lo que se entrega funcione también después de entregado.</p>
-      <p>Trabajamos de a dos. Uno arma y ejecuta; el otro abre las conversaciones y ordena lo que va quedando. Preferimos explicar qué hacemos y por qué antes que prometer resultados.</p>
+    <div class="nos-g">
+      <div>
+        <h2>Dos socios, a partes iguales.</h2>
+        <p class="lead">Making Progress la lideramos los dos, 50 y 50. Nos complementamos: cada uno cubre lo que el otro no, y todo proyecto pasa por los dos.</p>
+      </div>
+      <div class="nos-t">
+        <p><b>Somos Mateo y Santiago.</b> Mateo nació en Bariloche y Santiago en Capital Federal; hoy vivimos los dos en Entre Ríos y nos conocemos desde hace años. Hacemos marketing para negocios y profesionales: webs, campañas de Meta, setting y contenido.</p>
+        <p>Trabajamos juntos en Genuine Reach, donde armamos webs y subimos campañas en Argentina y México. De ahí salió Making Progress, con la misma idea: que lo que se entrega funcione también después de entregado.</p>
+        <p>Trabajamos de a dos. Uno arma y ejecuta; el otro abre las conversaciones y ordena lo que va quedando. Preferimos explicar qué hacemos y por qué antes que prometer resultados.</p>
+      </div>
     </div>
     <div class="team">
-      <article class="person">
-        <div><h3>Mateo Morales</h3><div class="role">Socio · Armado y ejecución</div><p>Se encarga de armar y ejecutar: diseña, construye y publica cada web y deja las campañas listas para salir.</p></div>
-      </article>
-      <article class="person">
-        <div><h3>Santiago Pica</h3><div class="role">Socio · Conversaciones y comunidad</div><p>Inicia las conversaciones con los clientes, organiza los archivos y los pendientes y lleva el community management de Making Progress.</p></div>
-      </article>
+      <article class="person"><div class="med"><svg viewBox="0 0 200 200" aria-hidden="true"><use href="#laurel"/></svg><b>M</b></div><div><h3>Mateo Morales</h3><div class="rol">Socio. Armado y ejecución</div></div><p>Se encarga de armar y ejecutar: diseña, construye y publica cada web y deja las campañas listas para salir.</p></article>
+      <article class="person"><div class="med"><svg viewBox="0 0 200 200" aria-hidden="true"><use href="#laurel"/></svg><b>S</b></div><div><h3>Santiago Pica</h3><div class="rol">Socio. Conversaciones y comunidad</div></div><p>Inicia las conversaciones con los clientes, organiza los archivos y los pendientes y lleva el community management de Making Progress.</p></article>
     </div>
-    </div></div>
+    <div class="nums">
+      <div><b>2</b><span>países con campañas gestionadas, Argentina y México</span></div>
+      <div><b>+10</b><span>páginas web hechas para estudios, seguros, comercios y marcas</span></div>
+      <div><b>2 socios</b><span>al frente de cada proyecto</span></div>
+      <div><b>24 h</b><span>tiempo máximo de respuesta, es un compromiso nuestro</span></div>
+    </div>
   </div>
 </section>
 
-<!-- 11. CONTACTO -->
-<section id="contacto" style="border-top:none">
+<section class="cto" id="contacto">
+  <svg class="cto-sol" viewBox="0 0 800 304" aria-hidden="true"><use href="#sol"/></svg>
   <div class="wrap">
-    <div class="contact">
-      <h2>¿Querés conocernos o contarnos tu proyecto?</h2>
-      <p>Escribinos, sin compromiso. Charlamos y vemos si podemos aportar algo.</p>
-      <div class="contact-cta">
-        <a href="#" class="btn btn-primary js-wa" data-msg="Hola, vi su web y quiero conocerlos."><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3a9 9 0 0 0-7.7 13.6L3 21l4.5-1.2A9 9 0 1 0 12 3z"/><path d="M9 8.2c-.4 2.6 3.2 6.6 6.4 6.6l1-1.6-2-1-.9.8c-1-.4-2-1.4-2.4-2.4l.8-.9-1-2z"/></svg>Escribinos por WhatsApp</a>
-        <a href="#" class="btn btn-ghost" id="ig-btn" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.2" cy="6.8" r=".6" fill="currentColor"/></svg>@newmakingprogress</a>
-        <a href="#" class="btn btn-ghost" id="mail-btn"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2.5"/><path d="m4 7 8 6 8-6"/></svg>Email</a>
-      </div>
+    <h2>Contanos tu proyecto.</h2>
+    <p>Escribinos, sin compromiso. Charlamos y vemos si podemos aportar algo.</p>
+    <div class="cto-cta">
+      <a href="#" class="btn btn-w js-wa" data-msg="Hola, vi su web y quiero conocerlos."><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3a9 9 0 0 0-7.7 13.6L3 21l4.5-1.2A9 9 0 1 0 12 3z"/><path d="M9 8.2c-.4 2.6 3.2 6.6 6.4 6.6l1-1.6-2-1-.9.8c-1-.4-2-1.4-2.4-2.4l.8-.9-1-2z"/></svg>Escribinos por WhatsApp</a>
+      <a href="#" class="btn btn-wg js-ig" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.2" cy="6.8" r=".6" fill="currentColor"/></svg>@newmakingprogress</a>
+      <a href="#" class="btn btn-wg js-mail"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2.5"/><path d="m4 7 8 6 8-6"/></svg>Email</a>
     </div>
+    <p class="cto-lema">Non est ad astra mollis e terris via.<small>No es fácil el camino de la tierra a las estrellas. Séneca, Hércules furioso</small></p>
   </div>
 </section>
 
@@ -561,83 +892,61 @@ footer{padding:40px 0 48px;border-top:1px solid var(--line);font-size:14px;color
 
 <footer>
   <div class="wrap foot">
-    <div><picture><source srcset="assets/logo-blanco.png" media="(prefers-color-scheme: dark)"><img class="foot-logo" src="assets/logo-azul.png" alt="Making Progress" width="106" height="84"></picture><br>Webs, campañas y setting para profesionales y negocios.
-      <div class="social foot-social">
-        <a href="#" class="js-wa" data-msg="Hola, quiero consultar por una web." aria-label="WhatsApp" title="WhatsApp"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3a9 9 0 0 0-7.7 13.6L3 21l4.5-1.2A9 9 0 1 0 12 3z"/><path d="M9 8.2c-.4 2.6 3.2 6.6 6.4 6.6l1-1.6-2-1-.9.8c-1-.4-2-1.4-2.4-2.4l.8-.9-1-2z"/></svg></a>
-        <a href="#" class="js-ig" aria-label="Instagram" title="Instagram"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.2" cy="6.8" r=".6" fill="currentColor"/></svg></a>
-        <a href="#" class="js-mail" aria-label="Email" title="Email"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2.5"/><path d="m4 7 8 6 8-6"/></svg></a>
-      </div>
-    </div>
-    <div class="foot-links"><a href="#casos">Casos</a><a href="#sistema">Sistema</a><a href="#mantenimiento">Mantenimiento</a><a href="#equipo">Sobre nosotros</a><a href="#contacto">Contacto</a></div>
-    <div>© 2026 Making Progress</div>
+    <div><img src="assets/logo-azul.png" alt="Making Progress" width="88" height="70"><p>Un medio hacia el éxito.<br>Webs y campañas para profesionales y negocios.</p></div>
+    <div class="foot-l"><a href="#trabajos">Trabajos</a><a href="#servicios">Servicios</a><a href="#metodo">Método</a><a href="#nosotros">Nosotros</a><a href="#contacto">Contacto</a></div>
+    <div><small>© 2026 Making Progress<br>Entre Ríos, Argentina</small></div>
   </div>
 </footer>
 
+<dialog id="vw" aria-label="Vista de trabajo">
+  <div class="vw">
+    <div class="vw-top"><b id="vw-t"></b><button class="vw-x" type="button" id="vw-x" aria-label="Cerrar">×</button></div>
+    <div class="vw-ph" id="vw-ph"><iframe id="vw-f" title="Vista navegable"></iframe></div>
+    <a id="vw-a" href="#" target="_blank" rel="noopener">Abrir en pantalla completa</a>
+  </div>
+</dialog>
+
 <script>
-/* ═══════════════════════════════════════════════
-   ✏️  ACÁ EDITÁS TUS DATOS DE CONTACTO  ✏️
-   Todos los botones de la web usan estos valores.
-   ═══════════════════════════════════════════════ */
+/* Datos de contacto: todos los botones de la web usan estos valores */
 const CONTACTO = {
-  whatsapp:  "5493435361633",          // solo números, con código de país (+54 9 3435 36 1633)
+  whatsapp:  "5493435361633",          // solo números, con código de país
   instagram: "https://www.instagram.com/newmakingprogress",
   email:     "newmakingprogress@gmail.com"
 };
-
-/* WhatsApp con mensaje precargado */
 document.querySelectorAll('.js-wa').forEach(function(a){
-  var msg = a.dataset.msg || "Hola, quiero más información.";
-  a.href = "https://wa.me/" + CONTACTO.whatsapp + "?text=" + encodeURIComponent(msg);
+  a.href = "https://wa.me/" + CONTACTO.whatsapp + "?text=" + encodeURIComponent(a.dataset.msg || "Hola, quiero más información.");
   a.target = "_blank"; a.rel = "noopener";
 });
-["ig-link","ig-btn"].forEach(function(id){var e=document.getElementById(id); if(e) e.href = CONTACTO.instagram;});
-document.querySelectorAll(".js-ig").forEach(function(a){a.href = CONTACTO.instagram; a.target="_blank"; a.rel="noopener";});
-var m = document.getElementById("mail-btn"); if(m) m.href = "mailto:" + CONTACTO.email;
-document.querySelectorAll(".js-mail").forEach(function(a){a.href = "mailto:" + CONTACTO.email;});
+document.querySelectorAll('.js-ig').forEach(function(a){a.href = CONTACTO.instagram;});
+document.querySelectorAll('.js-mail').forEach(function(a){a.href = "mailto:" + CONTACTO.email;});
 
-
-/* plegables: secciones y detalle de casos */
-function setOpen(btn,open){
-  var t=document.getElementById(btn.getAttribute('aria-controls')); if(!t) return;
-  t.classList.toggle('open',open); btn.setAttribute('aria-expanded',open?'true':'false');
-  if(open) t.removeAttribute('inert'); else t.setAttribute('inert','');
-}
-document.querySelectorAll('.acc-h,.more-btn').forEach(function(b){
-  b.addEventListener('click',function(){ setOpen(b,b.getAttribute('aria-expanded')!=='true'); });
-});
-function openFromHash(){
-  var id=location.hash.slice(1); if(!id) return;
-  var el=document.getElementById(id);
-  if(el && el.classList.contains('acc')){ setOpen(el.querySelector('.acc-h'),true); setTimeout(function(){el.scrollIntoView({behavior:'smooth',block:'start'});},60); }
-}
-window.addEventListener('hashchange',openFromHash); openFromHash();
-document.addEventListener('click',function(e){
-  var a=e.target.closest('a[href^="#"]'); if(!a) return;
-  var el=document.getElementById(a.getAttribute('href').slice(1));
-  if(el && el.classList.contains('acc')) setOpen(el.querySelector('.acc-h'),true);
-});
-/* FAQ (sin uso) */
-document.querySelectorAll('.fq').forEach(function(b){
+/* filtros de trabajos */
+document.querySelectorAll('.filtros button').forEach(function(b){
   b.addEventListener('click', function(){
-    var item = b.parentElement, open = item.classList.contains('open');
-    document.querySelectorAll('.fi').forEach(function(i){
-      i.classList.remove('open');
-      i.querySelector('.fq').setAttribute('aria-expanded','false');
-    });
-    if(!open){ item.classList.add('open'); b.setAttribute('aria-expanded','true'); }
+    document.querySelectorAll('.filtros button').forEach(function(x){x.setAttribute('aria-pressed', x===b ? 'true':'false');});
+    var f=b.dataset.f;
+    document.querySelectorAll('#grid-w .work').forEach(function(w){ w.hidden = !(f==='todos' || w.dataset.estado===f); });
   });
 });
 
-/* trabajos: la vista se vuelve navegable al tocar "Navegar" */
-function fitFrame(v){var f=v.querySelector('iframe'); if(f) f.style.transform='scale('+(v.clientWidth/390)+')';}
-document.querySelectorAll('.tb-go').forEach(function(b){
-  b.addEventListener('click',function(){
-    var box=b.closest('.tb-f'), v=box.querySelector('.tb-v'), f=document.createElement('iframe');
-    f.src=box.dataset.src; f.title=box.dataset.name; f.loading='lazy';
-    v.innerHTML=''; v.appendChild(f); fitFrame(v);
+/* visor: la web se navega dentro de un celular */
+var vw=document.getElementById('vw'), vf=document.getElementById('vw-f'), ph=document.getElementById('vw-ph');
+function ajustar(){
+  var s=Math.min(1,(window.innerHeight-190)/796,(window.innerWidth-48)/406);
+  vf.style.transform='scale('+s+')'; ph.style.width=(390*s+16)+'px'; ph.style.height=(780*s+16)+'px';
+}
+document.querySelectorAll('[data-ver]').forEach(function(b){
+  b.addEventListener('click', function(){
+    document.getElementById('vw-t').textContent=b.dataset.name;
+    document.getElementById('vw-a').href=b.dataset.ver;
+    vf.src=b.dataset.ver; ajustar(); vw.showModal();
   });
 });
-window.addEventListener('resize',function(){document.querySelectorAll('.tb-v').forEach(fitFrame);});
+function cerrar(){ vw.close(); vf.removeAttribute('src'); }
+document.getElementById('vw-x').addEventListener('click', cerrar);
+vw.addEventListener('click', function(e){ if(e.target===vw) cerrar(); });
+vw.addEventListener('close', function(){ vf.removeAttribute('src'); });
+window.addEventListener('resize', ajustar);
 </script>
 </body>
 </html>
